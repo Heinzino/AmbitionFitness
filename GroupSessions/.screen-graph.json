@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "src/screens/GroupSessions/GroupSessions.tsx",
+      "label": "GroupSessions",
+      "routes": [
+        "/*"
+      ],
+      "dataModelId": "1:873",
+      "isRoot": true
+    }
+  ],
+  "edges": []
+}

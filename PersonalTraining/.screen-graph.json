@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "src/screens/PersonalTraining/PersonalTraining.tsx",
+      "label": "PersonalTraining",
+      "routes": [
+        "/*"
+      ],
+      "dataModelId": "1:456",
+      "isRoot": true
+    }
+  ],
+  "edges": []
+}

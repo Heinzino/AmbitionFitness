@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "src/screens/FacilityTour/FacilityTour.tsx",
+      "label": "FacilityTour",
+      "routes": [
+        "/*"
+      ],
+      "dataModelId": "1:1045",
+      "isRoot": true
+    }
+  ],
+  "edges": []
+}

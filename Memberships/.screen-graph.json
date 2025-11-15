@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {
+      "id": "src/screens/Memberships/Memberships.tsx",
+      "label": "Memberships",
+      "routes": [
+        "/*"
+      ],
+      "dataModelId": "1:731",
+      "isRoot": true
+    }
+  ],
+  "edges": []
+}
