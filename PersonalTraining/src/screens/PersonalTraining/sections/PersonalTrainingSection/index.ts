@@ -1,0 +1,1 @@
+export { PersonalTrainingSection } from "./PersonalTrainingSection";

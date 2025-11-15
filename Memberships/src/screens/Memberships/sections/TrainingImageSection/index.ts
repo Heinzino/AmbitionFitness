@@ -1,0 +1,1 @@
+export { TrainingImageSection } from "./TrainingImageSection";
