@@ -37,7 +37,7 @@ export const FooterSection = (): JSX.Element => {
     },
     {
       title: "Company",
-      links: [{ text: "Home", href: "/" }, { text: "Blog" }, { text: "Contact Us" }],
+      links: [{ text: "Home", href: "/" }, { text: "Blog" }, { text: "Contact Us", href: "/contact" }],
     },
   ];
 

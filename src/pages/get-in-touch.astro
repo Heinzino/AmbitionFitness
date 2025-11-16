@@ -1,0 +1,306 @@
+---
+import '../styles/global.css';
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "#", isActive: false },
+  { label: "Group Sessions", path: "#", isActive: false },
+  { label: "Virtual Tour", path: "#", isActive: false },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Get In Touch - Ambition Fitness Calgary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Inter:500,var(--16-medium-font-weight)|Montserrat:400,500,700,600|Prompt:500" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      * {
+        outline-offset: 0;
+      }
+
+      footer {
+        position: static !important;
+        padding: 0 !important;
+        padding-top: 2rem !important;
+        padding-bottom: 1.5rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        width: 100% !important;
+      }
+
+      @media (min-width: 768px) {
+        footer {
+          padding-top: 2.5rem !important;
+          padding-left: 2rem !important;
+          padding-right: 2rem !important;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        footer {
+          position: static !important;
+          padding-top: 3rem !important;
+          top: auto !important;
+          width: 100% !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black min-h-screen">
+    <!-- Navigation -->
+    <nav class="relative w-full z-50 bg-black">
+      <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-6 lg:max-w-[1200px] lg:mx-auto">
+          <!-- Logo -->
+          <a href="/">
+            <img
+              class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50"
+              alt="Ambition Fitness Logo"
+              src="/img/image-3-2.png"
+            />
+          </a>
+
+          <!-- Hamburger Menu Button (Mobile Only) -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+              {navigationLinks.map((link) => (
+                <a
+                  class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
+                  href={link.path}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            <a href="/get-in-touch" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto">
+              <span class="relative flex items-center justify-center w-fit font-16-medium font-[number:var(--16-medium-font-weight)] text-variable-collection-colorpriamry text-[length:var(--16-medium-font-size)] text-center tracking-[var(--16-medium-letter-spacing)] leading-[var(--16-medium-line-height)] whitespace-nowrap [font-style:var(--16-medium-font-style)]">
+                Get in Touch
+              </span>
+
+              <img
+                class="relative w-[18.33px] h-[11.41px]"
+                alt="Line"
+                src="/img/line-108-3.svg"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div
+          id="mobile-menu"
+          class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden md:hidden"
+        >
+          <div class="flex flex-col items-center justify-center h-full px-4">
+            <div class="flex flex-col items-center gap-8 w-full max-w-sm">
+              {navigationLinks.map((link) => (
+                <a
+                  class="text-white text-2xl font-semibold [font-family:'Inter',Helvetica] hover:text-variable-collection-coloryellow transition-colors"
+                  href={link.path}
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              <a href="/get-in-touch" class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-variable-collection-coloryellow rounded-[12.39px] mt-4">
+                <span class="font-semibold text-variable-collection-colorpriamry text-lg [font-family:'Inter',Helvetica]">
+                  Get in Touch
+                </span>
+                <img
+                  class="w-[18.33px] h-[11.41px]"
+                  alt="Line"
+                  src="/img/line-108-3.svg"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Cal.com Booking Section - First thing on the page -->
+    <div class="flex flex-col w-full items-center pt-8 md:pt-12 lg:pt-16 pb-12 md:pb-16 lg:pb-24">
+      <section class="flex flex-col w-full max-w-[1194px] items-center gap-8 md:gap-12 px-4 md:px-8 mb-12 md:mb-16">
+        <div class="w-full max-w-4xl">
+          <!-- Cal inline embed code begins -->
+          <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-30min"></div>
+
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "30min", {origin:"https://app.cal.com"});
+
+            Cal.ns["30min"]("inline", {
+              elementOrSelector:"#my-cal-inline-30min",
+              config: {"layout":"month_view"},
+              calLink: "heinz-veintimilla-nyfiro/30min",
+            });
+
+            Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
+          <!-- Cal inline embed code ends -->
+        </div>
+      </section>
+
+      <!-- Contact Information Section -->
+      <section class="flex flex-col w-full max-w-[1194px] items-center gap-8 md:gap-12 px-4 md:px-8">
+        <div class="flex flex-col items-center gap-6 md:gap-8">
+          <h2 class="relative [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-4xl lg:text-[45px] text-center tracking-[0] leading-tight">
+            CALL OR EMAIL US AT:
+          </h2>
+          
+          <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
+            <!-- Phone -->
+            <a href="tel:403-507-3099" class="flex items-center gap-4 group">
+              <svg class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 transition-transform group-hover:scale-110" fill="#fedf41" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <span class="[font-family:'Montserrat',Helvetica] font-medium text-white text-xl md:text-2xl lg:text-3xl hover:text-variable-collection-coloryellow transition-colors">
+                403-507-3099
+              </span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:info@ambitionfitness.ca" class="flex items-center gap-4 group">
+              <svg class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 transition-transform group-hover:scale-110" fill="#fedf41" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <span class="[font-family:'Montserrat',Helvetica] font-medium text-white text-xl md:text-2xl lg:text-3xl hover:text-variable-collection-coloryellow transition-colors">
+                info@ambitionfitness.ca
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full mt-12 pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and description -->
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm">
+              Join a community that's transforming lives through evidence-based fitness strategies.
+            </p>
+          </div>
+          <!-- Services -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Classes</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Online Training</a>
+            </div>
+          </div>
+          <!-- Service Area -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <span class="block text-[#e4e4e4] text-sm">Mayland Heights</span>
+              <span class="block text-[#e4e4e4] text-sm">Meridian</span>
+              <span class="block text-[#e4e4e4] text-sm">Raddison Heights</span>
+              <span class="block text-[#e4e4e4] text-sm">Bridgeland-Riverside</span>
+            </div>
+          </div>
+          <!-- Company -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/get-in-touch" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+              mobileMenu.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+
+              hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+              hamburgerLines[1].style.opacity = '0';
+              hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+
+              mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              isMenuOpen = false;
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
+

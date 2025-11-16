@@ -21,9 +21,9 @@ export const HeroSection = (): JSX.Element => {
         </div>
       </header>
 
-      <button
+      <a
+        href="/contact"
         className="flex-[0_0_auto] bg-variable-collection-coloryellow inline-flex items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] relative rounded-[1000px] cursor-pointer transition-transform hover:scale-105 active:scale-95 w-full md:w-auto"
-        type="button"
         aria-label="Book a FREE Consultation"
       >
         <span className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
@@ -36,7 +36,7 @@ export const HeroSection = (): JSX.Element => {
           src="/img/line-108-1.svg"
           aria-hidden="true"
         />
-      </button>
+      </a>
     </section>
   );
 };

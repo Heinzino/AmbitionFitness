@@ -85,9 +85,9 @@ export const HeaderSection = (): JSX.Element => {
             ))}
           </div>
 
-          <button
+          <a
+            href="/contact"
             className="inline-flex h-14 items-center justify-center gap-2.5 px-[35px] py-[15px] relative rounded-[1000px] border border-solid border-variable-collection-coloryellow bg-transparent cursor-pointer transition-transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-variable-collection-coloryellow focus:ring-offset-2 focus:ring-offset-variable-collection-colorpriamry"
-            type="button"
             aria-label="Talk to a Trainer"
           >
             <span className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
@@ -100,7 +100,7 @@ export const HeaderSection = (): JSX.Element => {
               src="/img/line-108-6.svg"
               aria-hidden="true"
             />
-          </button>
+          </a>
         </div>
       </section>
 
@@ -171,9 +171,9 @@ export const HeaderSection = (): JSX.Element => {
             ))}
           </div>
 
-          <button
+          <a
+            href="/contact"
             className="inline-flex h-14 items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] border border-solid border-variable-collection-coloryellow bg-transparent cursor-pointer transition-transform hover:scale-105 active:scale-95 w-full md:w-auto"
-            type="button"
             aria-label="Talk to a Trainer"
           >
             <span className="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
@@ -186,7 +186,7 @@ export const HeaderSection = (): JSX.Element => {
               src="/img/line-108-6.svg"
               aria-hidden="true"
             />
-          </button>
+          </a>
         </div>
       </section>
     </>
