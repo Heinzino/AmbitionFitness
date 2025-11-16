@@ -79,11 +79,12 @@ export const AboutUsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-[1203px] items-center gap-[50px] absolute top-[4159px] left-[calc(50.00%_-_601px)]">
+    <section className="flex flex-col w-full lg:w-[1203px] items-center gap-[50px] px-4 lg:px-0 mt-12 lg:absolute lg:top-[4159px] lg:left-[calc(50.00%_-_601px)]">
       <header className="flex flex-col items-start gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
         <div className="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
-          <p className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-white text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
-            Real people. Real results. Real commitment.
+          <p className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-white text-[15px] text-center tracking-[0.45px] leading-[24.0px]">
+            <span className="inline lg:inline">Real people. Real results. </span>
+            <span className="block lg:inline">Real commitment.</span>
           </p>
 
           <img
