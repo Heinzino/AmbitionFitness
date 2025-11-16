@@ -1,0 +1,675 @@
+---
+import '../styles/global.css';
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: true },
+  { label: "Memberships", path: "#", isActive: false },
+  { label: "Group Sessions", path: "#", isActive: false },
+  { label: "Virtual Tour", path: "#", isActive: false },
+];
+
+const clientTransformations = [
+  {
+    id: 1,
+    name: "Emma Johnson",
+    title: "Product Manager, Tech Solutions",
+    backgroundImage: "/img/review-6.png",
+    profileImage: "/img/user-profile-2.png",
+    playIcon: "/img/icon-park-solid-play.svg",
+  },
+  {
+    id: 2,
+    name: "Owen Parker",
+    title: "Gym Member",
+    backgroundImage: "/img/review-6.png",
+    profileImage: "/img/user-profile-2.png",
+    playIcon: "/img/icon-park-solid-play-1.svg",
+  },
+  {
+    id: 3,
+    name: "Lucas Hernandez",
+    title: "Film Enthusiast",
+    backgroundImage: "/img/review-7.png",
+    profileImage: "/img/user-profile-2.png",
+    playIcon: "/img/icon-park-solid-play-2.svg",
+  },
+];
+
+const features = [
+  {
+    id: "expertise",
+    icon: {
+      primary: "/img/vector-yellow.svg",
+    },
+    title: "Our expertise",
+    description:
+      "Our trainers design transformations, not just workouts. Each session is tailored to your body, goals, and lifestyle for results that last.",
+  },
+  {
+    id: "results",
+    icon: {
+      primary: "/img/vector-1-yellow.svg",
+      secondary: "/img/vector-2-yellow.svg",
+    },
+    title: "Lasting Results",
+  },
+  {
+    id: "accountability",
+    icon: {
+      primary: "/img/vector-3-yellow.svg",
+    },
+    title: "Accountability",
+  },
+];
+
+const personalTrainingTestimonials = [
+  {
+    id: 1,
+    name: "Jameela D",
+    backgroundImage: "/img/frame-1984077583-4.png",
+    testimonial:
+      '"It has been a lil over a year since I started training with Guil at Ambition Fitness . My friend had amazing results and had nothing but good things to say so I took a shot. First off his results have been insanely incredible . I\'ve struggled with weight and diet for over a decade and being able to look at myself in the mirror and be happy has been a massive accomplishment. That being said none of this would\'ve been possible without Guil. He has a great work ethic , is quite knowledgeable ; any question you may have he will have an answer to , Google generally confirms he\'s correct but the thing that helps me is he never makes you feel like you\'re going through your fitness journey alone . When he says 24/7 support, he means it . With Ambitions Academy the amount of time , effort and energy you put into it , is exactly what you get back & the results are priceless."',
+  },
+  {
+    id: 2,
+    name: "Kelly Heath",
+    image: "/img/image-11-8.png",
+    backgroundImage: "/img/frame-1984077586-4.png",
+    hasOverlay: true,
+    testimonial:
+      '"Ambition Fitness Weight Loss Program has delivered outstanding results. To my surprise I found the Ideal Fitness Routine for my lifestyle. The progress that is visible on a weekly basis provides me great motivation to continue on and achieve my weight loss goal. The success I had with Ambition Fitness program has improved my life quality, and I am committed to living a healthier lifestyle."',
+  },
+  {
+    id: 3,
+    name: "Rebecca Rosaasen",
+    image: "/img/image-11-9.png",
+    backgroundImage: "/img/frame-1984077586-4.png",
+    hasOverlay: true,
+    testimonial:
+      '"I\'ve been training on and off with Guil for a couple of months. He is amazing! He helped me reach my goals and up my self esteem, to the point I didn\'t know originally existed!! He is very flexible with scheduling, and always has a smiling face when you walk through the door! I highly recommend coming here! If you want that dream body and are willing to do the work he will get you there!"',
+  },
+];
+
+const transformationData = [
+  { name: "Justin", hasImage: false },
+  { name: "Sara", image: "/img/image-11-6.png", hasImage: true },
+  { name: "Jennifer", image: "/img/image-11-7.png", hasImage: true },
+  { name: "Justin", hasImage: false },
+  { name: "Sara", image: "/img/image-11-6.png", hasImage: true },
+  { name: "Jennifer", image: "/img/image-11-7.png", hasImage: true },
+  { name: "Justin", hasImage: false },
+  { name: "Sara", image: "/img/image-11-6.png", hasImage: true },
+  { name: "Jennifer", image: "/img/image-11-7.png", hasImage: true },
+  { name: "Justin", hasImage: false },
+  { name: "Sara", image: "/img/image-11-6.png", hasImage: true },
+  { name: "Jennifer", image: "/img/image-11-7.png", hasImage: true },
+];
+
+const rows = [
+  transformationData.slice(0, 3),
+  transformationData.slice(3, 6),
+  transformationData.slice(6, 9),
+  transformationData.slice(9, 12),
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Personal Training - Ambition Fitness Calgary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Inter:500,var(--16-medium-font-weight)|Montserrat:400,500,700,600|Prompt:500" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
+    <style>
+      /* Ensure smooth scrolling behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      /* Prevent focus trap issues */
+      * {
+        outline-offset: 0;
+      }
+
+      /* Aggressively override ALL footer styles */
+      footer {
+        position: static !important;
+        padding: 0 !important;
+        padding-top: 2rem !important;
+        padding-bottom: 1.5rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        width: 100% !important;
+      }
+
+      @media (min-width: 768px) {
+        footer {
+          padding-top: 2.5rem !important;
+          padding-left: 2rem !important;
+          padding-right: 2rem !important;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        footer {
+          position: static !important;
+          padding-top: 3rem !important;
+          top: auto !important;
+          width: 100% !important;
+        }
+        /* Remove the lg:pt-[110px] class effect */
+        footer.pt-12,
+        footer.md\:pt-16,
+        footer.lg\:pt-\[110px\] {
+          padding-top: 3rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black min-h-screen">
+      <!-- Hero Background Section -->
+      <div class="relative w-full h-[500px] md:h-[700px] lg:h-[752px]">
+        <!-- Background Image -->
+        <img
+          class="absolute top-0 left-0 w-full h-full object-cover"
+          alt="Hero Background"
+          src="/img/rectangle-6542.png"
+        />
+
+        <!-- Decorative Line -->
+        <img
+          class="hidden lg:block absolute top-11 left-[538px] w-px h-[33px]"
+          alt="Line"
+          src="/img/line-217.svg"
+        />
+
+        <!-- Navigation -->
+        <nav class="flex flex-col md:flex-row lg:inline-flex items-center gap-4 lg:gap-[221px] px-4 md:px-8 lg:px-0 py-4 lg:py-0 absolute top-0 lg:top-[15px] left-0 lg:left-[360px] w-full lg:w-auto z-10">
+          <img
+            class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative"
+            alt="Ambition Fitness Logo"
+            src="/img/image-3-2.png"
+          />
+
+          <div class="flex flex-col md:flex-row items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+              {navigationLinks.map((link) =>
+                link.isActive ? (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-variable-collection-coloryellow text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ),
+              )}
+            </div>
+
+            <button class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto">
+              <span class="relative flex items-center justify-center w-fit font-16-medium font-[number:var(--16-medium-font-weight)] text-variable-collection-colorpriamry text-[length:var(--16-medium-font-size)] text-center tracking-[var(--16-medium-letter-spacing)] leading-[var(--16-medium-line-height)] whitespace-nowrap [font-style:var(--16-medium-font-style)]">
+                Get in Touch
+              </span>
+
+              <img
+                class="relative w-[18.33px] h-[11.41px]"
+                alt="Line"
+                src="/img/line-108-3.svg"
+              />
+            </button>
+          </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col w-full max-w-[90%] md:max-w-[780px] items-center justify-center gap-6 md:gap-10 px-6 md:px-[60px] py-8 md:py-[50px] bg-[#0000000f] rounded-xl backdrop-blur-[17px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(17px)_brightness(100%)]">
+          <div class="flex flex-col items-start gap-4 md:gap-6 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="flex flex-col items-start gap-6 md:gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
+              <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+                <h1 class="relative self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-transparent text-3xl md:text-5xl lg:text-[65px] text-center tracking-[0] leading-tight md:leading-[78.7px]">
+                  <span class="text-[#f0f0f0]">Unlock Your </span>
+                  <span class="text-[#fedf41]">Strongest</span>
+                  <span class="text-[#f0f0f0]"> Self</span>
+                </h1>
+              </div>
+
+              <p class="relative self-stretch opacity-[0.99] [font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-xl lg:text-[22px] text-center tracking-[0] leading-relaxed md:leading-[35.2px]">
+                Transform your body and mind with personalized training built around
+                you. Move better, feel stronger, and reach your goals faster.
+              </p>
+            </div>
+          </div>
+
+          <button
+            class="inline-flex items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[1000px] cursor-pointer transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-variable-collection-coloryellow focus:ring-offset-2 focus:ring-offset-transparent"
+            aria-label="Start your transformation today"
+          >
+            <span class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+              Start your transformation today
+            </span>
+
+            <img
+              class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+              alt=""
+              src="/img/line-108-3.svg"
+              aria-hidden="true"
+            />
+          </button>
+        </section>
+      </div>
+
+      <!-- Main Content -->
+      <div class="flex flex-col w-full items-center">
+        <!-- Client Transformations Section -->
+        <section class="flex flex-col w-full max-w-[1194px] items-start gap-8 md:gap-[50px] px-4 md:px-8 py-12 md:py-16 mx-auto">
+          <header class="inline-flex flex-col items-start justify-center gap-3 relative flex-[0_0_auto]">
+            <div class="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
+              <p class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
+                Hear from our successful clients
+              </p>
+
+              <img
+                class="relative w-[110.67px] h-[2.97px]"
+                alt=""
+                src="/img/rectangle-5-2.svg"
+                role="presentation"
+              />
+            </div>
+
+            <h2 class="relative flex items-center justify-center self-stretch [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-[28.8px]">
+              Testimonials
+            </h2>
+          </header>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 relative self-stretch w-full flex-[0_0_auto]">
+            {clientTransformations.map((testimonial) => (
+              <article class="relative flex-1 rounded-[19.68px] shadow-[0px_2.46px_4.92px_#0000001a] overflow-hidden">
+                <!-- Testimonial.to iframe -->
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://embed-v2.testimonial.to/v/0437de57-8443-4d24-bcdb-82fc53d78a8c"
+                  frameborder="0"
+                  scrolling="no"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  style="min-height: 350px; display: block;"
+                  class="md:min-h-[492px]"
+                ></iframe>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <!-- Personal Training Features Section with Background -->
+        <div class="relative w-full py-16 md:py-24">
+          <!-- Background Image -->
+          <img
+            class="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Union"
+            src="/img/union-grey.svg"
+          />
+
+          <!-- Personal Training Features Section -->
+          <section class="relative flex flex-col w-full max-w-[1192px] items-center gap-12 md:gap-[83px] px-4 md:px-8 mx-auto z-10">
+            <h2 class="self-stretch font-semibold text-3xl md:text-[45px] text-center leading-tight md:leading-[72.0px] relative mt-[-1.00px] [font-family:'Montserrat',Helvetica] text-white tracking-[0]">
+              Personal Training
+            </h2>
+
+            <div class="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-[117px] relative self-stretch w-full flex-[0_0_auto]">
+              <div class="flex flex-col w-full lg:w-[466.94px] items-start gap-8 md:gap-[55px] relative">
+                <article class="flex flex-col items-start gap-4 md:gap-[16.21px] relative self-stretch w-full flex-[0_0_auto]">
+                  <div class="inline-flex items-start gap-2.5 relative flex-[0_0_auto]">
+                    <div class="relative w-[30px] h-[30px] aspect-[1]" aria-hidden="true">
+                      <img
+                        class="absolute w-[91.67%] h-[91.67%] top-0 left-0"
+                        alt=""
+                        src={features[0].icon.primary}
+                      />
+                    </div>
+
+                    <h3 class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-xl md:text-2xl tracking-[0] leading-[26.6px] whitespace-nowrap">
+                      {features[0].title}
+                    </h3>
+                  </div>
+
+                  <p class="relative self-stretch [font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-[19.5px] tracking-[0] leading-relaxed md:leading-[29.2px]">
+                    {features[0].description}
+                  </p>
+                </article>
+
+                <div class="flex flex-col items-start gap-8 md:gap-[55px] relative self-stretch w-full flex-[0_0_auto]">
+                  <hr
+                    class="relative self-stretch w-full h-px mt-[-1.00px] border-0 bg-[url(/img/line-225.svg)] bg-cover"
+                    aria-hidden="true"
+                  />
+
+                  <article class="flex flex-col items-start gap-4 md:gap-[22.7px] relative self-stretch w-full flex-[0_0_auto] rounded-[6.49px]">
+                    <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+                      <div class="relative w-[30px] h-[30px] aspect-[1]" aria-hidden="true">
+                        <img
+                          class="absolute w-[37.50%] h-[37.50%] top-[40.62%] left-[31.25%]"
+                          alt=""
+                          src={features[1].icon.primary}
+                        />
+
+                        <img
+                          class="absolute w-[68.75%] h-[87.50%] top-[6.25%] left-[15.62%]"
+                          alt=""
+                          src={features[1].icon.secondary}
+                        />
+                      </div>
+
+                      <h3 class="relative w-fit mt-[-0.58px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-xl md:text-2xl tracking-[0] leading-[normal]">
+                        {features[1].title}
+                      </h3>
+                    </div>
+                  </article>
+
+                  <hr
+                    class="relative self-stretch w-full h-px border-0 bg-[url(/img/line-225.svg)] bg-cover"
+                    aria-hidden="true"
+                  />
+
+                  <article class="flex items-center justify-center gap-[15px] relative self-stretch w-full flex-[0_0_auto]">
+                    <div class="relative w-[30px] h-[30px] aspect-[1]" aria-hidden="true">
+                      <img
+                        class="absolute w-[83.33%] h-[83.33%] top-[8.33%] left-[8.33%]"
+                        alt=""
+                        src={features[2].icon.primary}
+                      />
+                    </div>
+
+                    <h3 class="relative flex-1 mt-[-1.08px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-xl md:text-2xl tracking-[0] leading-9">
+                      {features[2].title}
+                    </h3>
+                  </article>
+                </div>
+              </div>
+
+              <div
+                class="relative w-full lg:w-[608px] h-[300px] md:h-[400px] lg:h-[526px] rounded-[12.97px] bg-[url(/img/frame-1984077981.png)] bg-cover bg-[50%_50%]"
+                role="img"
+                aria-label="Personal training session"
+              />
+            </div>
+          </section>
+        </div>
+
+        <!-- Personal Training Testimonials Section -->
+        <section class="flex flex-col w-full max-w-[1194px] items-start gap-8 md:gap-[50px] px-4 md:px-8 py-12 md:py-16 mx-auto">
+          <header class="inline-flex flex-col items-start justify-center gap-3 relative flex-[0_0_auto]">
+            <div class="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
+              <p class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
+                Hear from our successful clients
+              </p>
+
+              <img
+                class="relative w-[110.67px] h-[2.97px]"
+                alt=""
+                src="/img/rectangle-5-2.svg"
+                role="presentation"
+              />
+            </div>
+
+            <h2 class="relative flex items-center justify-center self-stretch [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-[28.8px]">
+              Testimonials
+            </h2>
+          </header>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[30px] relative flex-[0_0_auto] w-full">
+            {personalTrainingTestimonials.map((testimonial, index) => (
+              <article class="flex flex-col items-start gap-6 md:gap-[30px] relative w-full">
+                <div
+                  class="w-full h-[250px] md:h-[382px] relative rounded-xl overflow-hidden border-2 border-solid border-[#2e2e2e] bg-cover bg-[50%_50%]"
+                  style={`background-image: url(${testimonial.backgroundImage})`}
+                  role="img"
+                  aria-label={`${testimonial.name} testimonial`}
+                >
+                  {testimonial.hasOverlay && testimonial.image && (
+                    <img
+                      class="absolute inset-0 w-full h-full object-cover"
+                      alt=""
+                      src={testimonial.image}
+                      role="presentation"
+                    />
+                  )}
+                </div>
+
+                <div class="flex flex-col items-start gap-[11.29px] relative self-stretch w-full flex-[0_0_auto]">
+                  <div class="flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+                    <h3 class="h-auto md:h-[38px] mt-[-0.81px] [font-family:'Montserrat',Helvetica] text-xl md:text-2xl tracking-[0.48px] leading-6 font-semibold text-white">
+                      {testimonial.name}
+                    </h3>
+
+                    <blockquote class="relative flex items-center justify-center self-stretch opacity-80 [font-family:'Montserrat',Helvetica] font-normal text-white text-base md:text-lg tracking-[0] leading-relaxed md:leading-[27px]">
+                      {testimonial.testimonial}
+                    </blockquote>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <!-- Client Transformations Gallery Section -->
+        <section class="flex flex-col w-full max-w-[1203px] items-center gap-8 md:gap-[50px] px-4 md:px-8 py-12 md:py-16 mx-auto">
+          <header class="flex flex-col items-start gap-4 md:gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
+            <div class="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
+              <p class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-white text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
+                Real people. Real results. Real commitment.
+              </p>
+
+              <img
+                class="relative w-[110.67px] h-[2.97px]"
+                alt=""
+                src="/img/rectangle-5.svg"
+                aria-hidden="true"
+              />
+            </div>
+
+            <h2 class="relative flex items-center justify-center self-stretch [font-family:'Montserrat',Helvetica] font-semibold text-white text-3xl md:text-[45px] tracking-[0] leading-[45px]">
+              Client Transformations
+            </h2>
+          </header>
+
+          <div id="transformations-container" class="flex flex-col w-full gap-6 md:gap-[30px]">
+            {rows.map((row, rowIndex) => (
+              <div class={`flex flex-col w-full max-w-[1194px] items-start gap-6 md:gap-[30px] relative flex-[0_0_auto] transformation-row ${rowIndex >= 2 ? 'hidden' : ''}`} data-row={rowIndex}>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
+                {row.map((card, cardIndex) => (
+                  <article
+                    class={`flex flex-col w-full items-start justify-end gap-2.5 px-6 md:px-[25px] py-5 md:py-[22px] bg-[url(/img/frame-1984077586-4.png)] h-[250px] md:h-[382px] relative rounded-xl border-2 border-solid border-[#2e2e2e] bg-cover bg-[50%_50%] ${
+                      card.hasImage ? "overflow-hidden" : ""
+                    }`}
+                  >
+                    {card.hasImage && card.image && (
+                      <img
+                        class="absolute inset-0 w-full h-full object-cover"
+                        alt={`${card.name} transformation`}
+                        src={card.image}
+                      />
+                    )}
+
+                    <div class="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto] z-10">
+                      <div class="inline-flex flex-col items-start justify-center gap-[7px] relative flex-[0_0_auto]">
+                        <h3 class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-white text-base md:text-lg tracking-[0] leading-[28.8px] whitespace-nowrap">
+                          {card.name}
+                        </h3>
+
+                        <div class="flex w-auto md:w-[122px] items-center gap-2.5 relative flex-[0_0_auto]">
+                          <span class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+                            Before
+                          </span>
+
+                          <img
+                            class="relative w-[13.5px] h-[7.36px] object-cover"
+                            alt="Arrow"
+                            src="/img/line-218-11.svg"
+                          />
+
+                          <span class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+                            After
+                          </span>
+                        </div>
+                      </div>
+
+                      <div
+                        class="relative w-[7px] h-[7px] bg-variable-collection-coloryellow rounded-[3.5px]"
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+            ))}
+          </div>
+
+          <button
+            id="load-more-btn"
+            class="inline-flex items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[1000px] hover:opacity-90 transition-opacity"
+            aria-label="Load more transformations"
+          >
+            <span class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+              Load More
+            </span>
+
+            <img
+              class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+              alt=""
+              src="/img/line-108-2.svg"
+              aria-hidden="true"
+            />
+          </button>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="flex flex-col w-full max-w-[1010px] items-center justify-center gap-6 md:gap-10 p-8 md:p-[60px] mx-4 md:mx-auto mt-12 md:mt-16 mb-8 md:mb-12 bg-variable-collection-coloryellow rounded-xl">
+          <div class="flex flex-col items-start justify-center gap-4 md:gap-5 relative self-stretch w-full flex-[0_0_auto]">
+            <h2 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Prompt',Helvetica] font-medium text-variable-collection-colorpriamry text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[53.3px]">
+              Get Started Today!
+            </h2>
+
+            <p class="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#222222] text-base md:text-[21px] text-center tracking-[0] leading-relaxed md:leading-[31.5px]">
+              If you are ready to start living a healthy lifestyle, message me to
+              get started! Everyone has a unique situation, and I'll strive to
+              accommodate yours.
+            </p>
+          </div>
+
+          <button
+            class="inline-flex h-12 md:h-14 items-center justify-center gap-3 md:gap-[13px] px-5 md:px-6 py-4 md:py-5 relative bg-variable-collection-colorpriamry rounded-xl overflow-hidden cursor-pointer transition-opacity hover:opacity-90"
+            aria-label="Get Started Today"
+          >
+            <span class="relative w-fit [font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-6 whitespace-nowrap">
+              Get Started Today
+            </span>
+
+            <img
+              class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+              alt=""
+              src="/img/line-108-2.svg"
+              aria-hidden="true"
+            />
+          </button>
+        </section>
+      </div>
+
+      <!-- Simple inline footer with minimal spacing -->
+      <footer class="w-full mt-12 pt-12 pb-8 px-4 md:px-8 bg-black">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <!-- Logo and description -->
+            <div class="md:col-span-1">
+              <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+              <p class="text-[#e4e4e4] text-sm">
+                Join a community that's transforming lives through evidence-based fitness strategies.
+              </p>
+            </div>
+            <!-- Services -->
+            <div>
+              <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+              <div class="space-y-2">
+                <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+                <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Classes</a>
+                <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Online Training</a>
+              </div>
+            </div>
+            <!-- Service Area -->
+            <div>
+              <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+              <div class="space-y-2">
+                <span class="block text-[#e4e4e4] text-sm">Mayland Heights</span>
+                <span class="block text-[#e4e4e4] text-sm">Meridian</span>
+                <span class="block text-[#e4e4e4] text-sm">Raddison Heights</span>
+                <span class="block text-[#e4e4e4] text-sm">Bridgeland-Riverside</span>
+              </div>
+            </div>
+            <!-- Company -->
+            <div>
+              <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+              <div class="space-y-2">
+                <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+                <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+                <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+              </div>
+            </div>
+          </div>
+          <!-- Copyright -->
+          <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+            <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+            <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+              <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+            </a>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        // Load More functionality for Client Transformations Gallery
+        document.addEventListener('DOMContentLoaded', function() {
+          const loadMoreBtn = document.getElementById('load-more-btn');
+          const transformationRows = document.querySelectorAll('.transformation-row');
+          let visibleRows = 2; // Initially show 2 rows
+
+          if (loadMoreBtn && transformationRows.length > 0) {
+            // Hide button if all rows are already visible
+            if (visibleRows >= transformationRows.length) {
+              loadMoreBtn.style.display = 'none';
+            }
+
+            loadMoreBtn.addEventListener('click', function() {
+              // Show the next row
+              if (visibleRows < transformationRows.length) {
+                transformationRows[visibleRows].classList.remove('hidden');
+                visibleRows++;
+
+                // Hide button if all rows are now visible
+                if (visibleRows >= transformationRows.length) {
+                  loadMoreBtn.style.display = 'none';
+                }
+              }
+            });
+          }
+        });
+      </script>
+  </body>
+</html>

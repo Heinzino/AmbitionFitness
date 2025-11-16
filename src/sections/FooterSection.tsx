@@ -21,7 +21,7 @@ export const FooterSection = (): JSX.Element => {
     {
       title: "Services",
       links: [
-        { text: "Personal Training" },
+        { text: "Personal Training", href: "/personal-training" },
         { text: "Group Classes" },
         { text: "Online Training" },
       ],
@@ -37,7 +37,7 @@ export const FooterSection = (): JSX.Element => {
     },
     {
       title: "Company",
-      links: [{ text: "Home" }, { text: "Blog" }, { text: "Contact Us" }],
+      links: [{ text: "Home", href: "/" }, { text: "Blog" }, { text: "Contact Us" }],
     },
   ];
 

@@ -7,6 +7,7 @@ interface ServiceItem {
   image: string;
   imageAlt: string;
   imagePosition: "left" | "right";
+  link?: string;
 }
 
 export const WhyChooseUsSection = (): JSX.Element => {
@@ -19,6 +20,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       image: "/img/image-1.png",
       imageAlt: "Personal Training",
       imagePosition: "left",
+      link: "/personal-training",
     },
     {
       id: 2,
@@ -85,21 +87,40 @@ export const WhyChooseUsSection = (): JSX.Element => {
                   {service.description}
                 </p>
 
-                <button
-                  className="inline-flex h-12 md:h-14 items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] border border-solid border-variable-collection-coloryellow cursor-pointer transition-transform hover:scale-105 active:scale-95 w-full md:w-auto"
-                  aria-label={`Learn more about ${service.title}`}
-                >
-                  <span className="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-                    Learn More
-                  </span>
+                {service.link ? (
+                  <a
+                    href={service.link}
+                    className="inline-flex h-12 md:h-14 items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] border border-solid border-variable-collection-coloryellow cursor-pointer transition-transform hover:scale-105 active:scale-95 w-full md:w-auto"
+                    aria-label={`Learn more about ${service.title}`}
+                  >
+                    <span className="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+                      Learn More
+                    </span>
 
-                  <img
-                    className="w-[18.33px] h-[11.41px]"
-                    alt=""
-                    src="/img/line-108-4.svg"
-                    aria-hidden="true"
-                  />
-                </button>
+                    <img
+                      className="w-[18.33px] h-[11.41px]"
+                      alt=""
+                      src="/img/line-108-4.svg"
+                      aria-hidden="true"
+                    />
+                  </a>
+                ) : (
+                  <button
+                    className="inline-flex h-12 md:h-14 items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] border border-solid border-variable-collection-coloryellow cursor-pointer transition-transform hover:scale-105 active:scale-95 w-full md:w-auto"
+                    aria-label={`Learn more about ${service.title}`}
+                  >
+                    <span className="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+                      Learn More
+                    </span>
+
+                    <img
+                      className="w-[18.33px] h-[11.41px]"
+                      alt=""
+                      src="/img/line-108-4.svg"
+                      aria-hidden="true"
+                    />
+                  </button>
+                )}
               </div>
             </div>
 
