@@ -117,7 +117,7 @@ export const TestimonialsSection = (): JSX.Element => {
 
   return (
     <section
-      className="flex flex-col w-[1200px] items-center gap-12 absolute top-[5950px] left-[calc(50.00%_-_600px)]"
+      className="flex flex-col w-full lg:w-[1200px] mx-auto lg:mx-0 items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 lg:py-0 relative lg:absolute lg:top-[5950px] lg:left-[calc(50.00%_-_600px)]"
       itemScope
       itemType="https://schema.org/LocalBusiness"
     >
@@ -130,30 +130,30 @@ export const TestimonialsSection = (): JSX.Element => {
         <meta itemProp="reviewCount" content="48" />
       </div>
 
-      <header className="flex flex-col items-center gap-[25px] relative self-stretch w-full flex-[0_0_auto]">
-        <div className="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
-          <p className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
+      <header className="flex flex-col items-center gap-4 md:gap-[25px] w-full">
+        <div className="inline-flex items-center gap-1.5">
+          <p className="w-fit [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
             What Our Clients Say
           </p>
 
           <img
-            className="relative w-[110.67px] h-[2.97px]"
+            className="w-16 md:w-[110.67px] h-[2.97px]"
             alt=""
             src="/img/rectangle-5-1.svg"
             aria-hidden="true"
           />
         </div>
 
-        <h2 className="relative flex items-center justify-center self-stretch [font-family:'Montserrat',Helvetica] font-semibold text-white text-[45px] tracking-[0] leading-[45px]">
+        <h2 className="flex items-center justify-center self-stretch [font-family:'Montserrat',Helvetica] font-semibold text-white text-3xl md:text-4xl lg:text-[45px] tracking-[0] leading-tight md:leading-[45px]">
           Client Reviews
         </h2>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
           <div className="flex gap-1">
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
-                className="w-6 h-6 text-variable-collection-coloryellow"
+                className="w-5 h-5 md:w-6 md:h-6 text-variable-collection-coloryellow"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -162,13 +162,13 @@ export const TestimonialsSection = (): JSX.Element => {
               </svg>
             ))}
           </div>
-          <p className="[font-family:'Montserrat',Helvetica] font-medium text-white text-xl">
+          <p className="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-xl text-center md:text-left">
             4.7 out of 5 <span className="opacity-60">• 48 Google Reviews</span>
           </p>
         </div>
       </header>
 
-      <div className="relative w-full max-w-[900px]">
+      <div className="relative w-full max-w-[900px] px-8 md:px-12 lg:px-0">
         <div className="overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-out"
@@ -177,7 +177,7 @@ export const TestimonialsSection = (): JSX.Element => {
             {reviews.map((review, index) => (
               <article
                 key={index}
-                className="min-w-full flex flex-col items-center gap-6 px-8"
+                className="min-w-full flex flex-col items-center gap-4 md:gap-6 px-4 md:px-8"
                 itemProp="review"
                 itemScope
                 itemType="https://schema.org/Review"
@@ -187,25 +187,25 @@ export const TestimonialsSection = (): JSX.Element => {
                   <meta itemProp="bestRating" content="5" />
                 </div>
 
-                <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col items-center gap-3 md:gap-4">
                   {review.avatar && (
                     <img
                       src={review.avatar}
                       alt={review.name}
-                      className="w-16 h-16 rounded-full object-cover"
+                      className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover"
                       itemProp="author"
                     />
                   )}
                   <div className="flex flex-col items-center gap-2">
                     <h3
-                      className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-xl"
+                      className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg md:text-xl"
                       itemProp="author"
                     >
                       {review.name}
                     </h3>
                     <StarRating rating={review.rating} />
                     <time
-                      className="[font-family:'Montserrat',Helvetica] font-normal text-white/60 text-sm"
+                      className="[font-family:'Montserrat',Helvetica] font-normal text-white/60 text-xs md:text-sm"
                       itemProp="datePublished"
                     >
                       {review.date}
@@ -214,7 +214,7 @@ export const TestimonialsSection = (): JSX.Element => {
                 </div>
 
                 <blockquote
-                  className="[font-family:'Montserrat',Helvetica] font-normal text-white/90 text-lg text-center leading-[27px] max-w-[700px]"
+                  className="[font-family:'Montserrat',Helvetica] font-normal text-white/90 text-base md:text-lg text-center leading-[24px] md:leading-[27px] max-w-[700px]"
                   itemProp="reviewBody"
                 >
                   "{review.text}"
@@ -224,10 +224,10 @@ export const TestimonialsSection = (): JSX.Element => {
           </div>
         </div>
 
-        {/* Navigation Arrows */}
+        {/* Navigation Arrows - Hidden on mobile, visible on larger screens */}
         <button
           onClick={goToPrevious}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full transition-all cursor-pointer"
+          className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-12 h-12 items-center justify-center bg-white/10 hover:bg-white/20 rounded-full transition-all cursor-pointer"
           aria-label="Previous review"
         >
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,7 +237,7 @@ export const TestimonialsSection = (): JSX.Element => {
 
         <button
           onClick={goToNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-full transition-all cursor-pointer"
+          className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-12 h-12 items-center justify-center bg-white/10 hover:bg-white/20 rounded-full transition-all cursor-pointer"
           aria-label="Next review"
         >
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -247,14 +247,14 @@ export const TestimonialsSection = (): JSX.Element => {
       </div>
 
       {/* Dots Navigation */}
-      <div className="flex gap-2">
+      <div className="flex gap-2 flex-wrap justify-center">
         {reviews.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
               index === currentIndex
-                ? 'bg-variable-collection-coloryellow w-8'
+                ? 'bg-variable-collection-coloryellow w-6 md:w-8'
                 : 'bg-white/30 hover:bg-white/50'
             }`}
             aria-label={`Go to review ${index + 1}`}
@@ -266,14 +266,14 @@ export const TestimonialsSection = (): JSX.Element => {
         href="https://www.google.com/maps/place/Ambition+Fitness/@51.0499657,-113.9887337,17z/data=!4m8!3m7!1s0x53717ad599fe5191:0x8c4deee3c86105e0!8m2!3d51.0499657!4d-113.9861588!9m1!1b1!16s%2Fg%2F11c1q9zv0k"
         target="_blank"
         rel="noopener noreferrer"
-        className="h-14 bg-variable-collection-colorpriamry inline-flex items-center justify-center gap-2.5 px-[35px] py-[15px] relative rounded-[1000px] cursor-pointer transition-transform hover:scale-105 active:scale-95"
+        className="h-12 md:h-14 bg-variable-collection-colorpriamry inline-flex items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] cursor-pointer transition-transform hover:scale-105 active:scale-95"
       >
-        <span className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-white text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+        <span className="w-fit [font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
           Read All Reviews on Google
         </span>
 
         <img
-          className="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+          className="w-[18.33px] h-[11.41px]"
           alt=""
           src="/img/line-108-5.svg"
           aria-hidden="true"

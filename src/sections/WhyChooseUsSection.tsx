@@ -41,60 +41,60 @@ export const WhyChooseUsSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-[1203px] items-center gap-[50px] absolute top-[4290px] left-[calc(50.00%_-_601px)]">
-      <header className="flex flex-col items-center gap-1.5 relative self-stretch w-full flex-[0_0_auto]">
-        <div className="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
-          <p className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
+    <section className="flex flex-col w-full lg:w-[1203px] items-center gap-8 md:gap-[50px] px-4 md:px-8 py-12 md:py-16 lg:py-0 mx-auto lg:mx-0 relative lg:absolute lg:top-[4290px] lg:left-[calc(50.00%_-_601px)]">
+      <header className="flex flex-col items-center gap-1.5 w-full">
+        <div className="inline-flex items-center gap-1.5">
+          <p className="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
             Our Services
           </p>
 
           <img
-            className="relative w-[110.67px] h-[2.97px]"
+            className="w-[110.67px] h-[2.97px]"
             alt=""
             src="/img/rectangle-5-4.svg"
             aria-hidden="true"
           />
         </div>
 
-        <h2 className="relative flex items-center justify-center self-stretch h-[57.36px] [font-family:'Montserrat',Helvetica] font-semibold text-white text-[45px] text-center tracking-[0] leading-[45px]">
+        <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-3xl md:text-4xl lg:text-[45px] text-center tracking-[0] leading-tight">
           Feature Products
         </h2>
       </header>
 
-      <div className="flex flex-col items-end gap-[70px] relative self-stretch w-full flex-[0_0_auto]">
+      <div className="flex flex-col items-center gap-10 md:gap-[70px] w-full">
         {services.map((service) => (
           <article
             key={service.id}
-            className="flex items-center gap-[50px] relative self-stretch w-full flex-[0_0_auto] shadow-[0px_3.22px_40.31px_#0000000d]"
+            className="flex flex-col lg:flex-row items-center gap-6 md:gap-[50px] w-full shadow-[0px_3.22px_40.31px_#0000000d] rounded-lg lg:rounded-none overflow-hidden lg:overflow-visible"
           >
             {service.imagePosition === "left" && (
               <img
-                className="relative flex-1 grow h-[395.85px] object-cover"
+                className="w-full lg:flex-1 h-[250px] md:h-[350px] lg:h-[395.85px] object-cover"
                 alt={service.imageAlt}
                 src={service.image}
               />
             )}
 
-            <div className="flex flex-col items-start gap-[11.29px] p-5 relative flex-1 grow">
-              <div className="flex flex-col items-start gap-[15px] relative self-stretch w-full flex-[0_0_auto]">
-                <h3 className="relative self-stretch h-[38px] mt-[-0.81px] [font-family:'Montserrat',Helvetica] font-semibold text-white text-3xl tracking-[0.60px] leading-[30px]">
+            <div className="flex flex-col items-start gap-4 md:gap-[11.29px] p-4 md:p-5 w-full lg:flex-1">
+              <div className="flex flex-col items-start gap-[15px] w-full">
+                <h3 className="w-full [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-3xl tracking-[0.60px] leading-[30px]">
                   {service.title}
                 </h3>
 
-                <p className="relative flex items-center justify-center self-stretch opacity-80 [font-family:'Montserrat',Helvetica] font-normal text-white text-lg tracking-[0] leading-[27px]">
+                <p className="w-full opacity-80 [font-family:'Montserrat',Helvetica] font-normal text-white text-base md:text-lg tracking-[0] leading-[27px]">
                   {service.description}
                 </p>
 
                 <button
-                  className="inline-flex h-14 items-center justify-center gap-2.5 px-[35px] py-[15px] relative rounded-[1000px] border border-solid border-variable-collection-coloryellow cursor-pointer transition-transform hover:scale-105 active:scale-95"
+                  className="inline-flex h-12 md:h-14 items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] border border-solid border-variable-collection-coloryellow cursor-pointer transition-transform hover:scale-105 active:scale-95 w-full md:w-auto"
                   aria-label={`Learn more about ${service.title}`}
                 >
-                  <span className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+                  <span className="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
                     Learn More
                   </span>
 
                   <img
-                    className="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+                    className="w-[18.33px] h-[11.41px]"
                     alt=""
                     src="/img/line-108-4.svg"
                     aria-hidden="true"
@@ -105,7 +105,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
 
             {service.imagePosition === "right" && (
               <img
-                className="relative flex-1 grow h-[395.85px] object-cover"
+                className="w-full lg:flex-1 h-[250px] md:h-[350px] lg:h-[395.85px] object-cover order-first lg:order-last"
                 alt={service.imageAlt}
                 src={service.image}
               />
