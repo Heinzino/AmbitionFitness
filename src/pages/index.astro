@@ -93,46 +93,101 @@ const navigationLinks = [
         src="/img/line-217.svg"
       />
 
-      <!-- Responsive Navigation -->
-      <nav class="flex flex-col md:flex-row lg:inline-flex items-center gap-4 lg:gap-[221px] px-4 md:px-8 lg:px-0 py-4 lg:py-0 relative lg:absolute lg:top-[15px] lg:left-[360px] w-full lg:w-auto z-10">
-        <img
-          class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative"
-          alt="Image"
-          src="/img/image-3-2.png"
-        />
+      <!-- Navigation -->
+      <nav class="absolute top-0 left-0 w-full z-50">
+        <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto bg-black/50 md:bg-transparent">
+          <!-- Logo -->
+          <img
+            class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50"
+            alt="Ambition Fitness Logo"
+            src="/img/image-3-2.png"
+          />
 
-        <div class="flex flex-col md:flex-row items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
-          <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
-            {navigationLinks.map((link) =>
-              link.isActive ? (
-                <a
-                  class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-variable-collection-coloryellow text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
-                  href={link.path}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <a
-                  class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
-                  href={link.path}
-                >
-                  {link.label}
-                </a>
-              ),
-            )}
-          </div>
-
-          <button class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto">
-            <span class="relative flex items-center justify-center w-fit font-16-medium font-[number:var(--16-medium-font-weight)] text-variable-collection-colorpriamry text-[length:var(--16-medium-font-size)] text-center tracking-[var(--16-medium-letter-spacing)] leading-[var(--16-medium-line-height)] whitespace-nowrap [font-style:var(--16-medium-font-style)]">
-              Get in Touch
-            </span>
-
-            <img
-              class="relative w-[18.33px] h-[11.41px]"
-              alt="Line"
-              src="/img/line-108-1.svg"
-            />
+          <!-- Hamburger Menu Button (Mobile Only) -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
           </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+              {navigationLinks.map((link) =>
+                link.isActive ? (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-variable-collection-coloryellow text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ),
+              )}
+            </div>
+
+            <button class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto">
+              <span class="relative flex items-center justify-center w-fit font-16-medium font-[number:var(--16-medium-font-weight)] text-variable-collection-colorpriamry text-[length:var(--16-medium-font-size)] text-center tracking-[var(--16-medium-letter-spacing)] leading-[var(--16-medium-line-height)] whitespace-nowrap [font-style:var(--16-medium-font-style)]">
+                Get in Touch
+              </span>
+
+              <img
+                class="relative w-[18.33px] h-[11.41px]"
+                alt="Line"
+                src="/img/line-108-1.svg"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div
+          id="mobile-menu"
+          class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden md:hidden"
+        >
+          <div class="flex flex-col items-center justify-center h-full px-4">
+            <div class="flex flex-col items-center gap-8 w-full max-w-sm">
+              {navigationLinks.map((link) =>
+                link.isActive ? (
+                  <a
+                    class="text-variable-collection-coloryellow text-2xl font-semibold [font-family:'Inter',Helvetica]"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    class="text-white text-2xl font-semibold [font-family:'Inter',Helvetica] hover:text-variable-collection-coloryellow transition-colors"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ),
+              )}
+
+              <button class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-variable-collection-coloryellow rounded-[12.39px] mt-4">
+                <span class="font-semibold text-variable-collection-colorpriamry text-lg [font-family:'Inter',Helvetica]">
+                  Get in Touch
+                </span>
+                <img
+                  class="w-[18.33px] h-[11.41px]"
+                  alt="Line"
+                  src="/img/line-108-1.svg"
+                />
+              </button>
+            </div>
+          </div>
         </div>
       </nav>
 
@@ -204,5 +259,59 @@ const navigationLinks = [
         <FooterSection client:load />
       </div>
     </div>
+
+    <script>
+      // Mobile Menu Toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+              // Show menu
+              mobileMenu.classList.remove('hidden');
+              document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+
+              // Animate hamburger to X
+              hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+              hamburgerLines[1].style.opacity = '0';
+              hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+
+              mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+              // Hide menu
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = ''; // Re-enable scrolling
+
+              // Animate X back to hamburger
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Close menu when clicking on a link
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              isMenuOpen = false;
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
