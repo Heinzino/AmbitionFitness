@@ -43,10 +43,10 @@ export const FeatureProductsSection = (): JSX.Element => {
             <button
               type="submit"
               className="inline-flex h-12 md:h-14 items-center justify-center gap-2 md:gap-[13px] px-5 md:px-6 py-3 md:py-5 bg-variable-collection-coloryellow rounded-xl overflow-hidden cursor-pointer hover:opacity-90 transition-opacity whitespace-nowrap"
-              aria-label="Start free trial"
+              aria-label="Subscribe"
             >
               <span className="[font-family:'Montserrat',Helvetica] font-medium text-[#2f2f2f] text-sm md:text-base tracking-[0] leading-6 whitespace-nowrap">
-                Start Free Trial
+                Subscribe
               </span>
 
               <img
