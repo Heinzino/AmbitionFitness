@@ -1,0 +1,651 @@
+---
+import '../styles/global.css';
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: false },
+  { label: "Group Sessions", path: "/group-sessions", isActive: true },
+  { label: "Virtual Tour", path: "#", isActive: false },
+];
+
+const groupSessions = [
+  {
+    icon: "/img/vector-13.svg",
+    iconAlt: "Senior Fitness Icon",
+    iconStyles: "absolute w-[83.33%] h-[75.00%] top-[5.83%] left-0",
+    title: "Senior Fitness",
+    description:
+      "Low-impact exercises designed specifically for seniors to improve mobility, strength, and balance in a supportive group setting.",
+    benefits: [
+      { text: "Improves balance and coordination" },
+      { text: "Builds strength safely" },
+      { text: "Social and supportive atmosphere" },
+      { text: "Modified exercises for all abilities" },
+    ],
+    image: "/img/rectangle-6547.png",
+    imageAlt: "Senior Fitness Class",
+  },
+  {
+    icon: "/img/vector-lightning.svg",
+    iconAlt: "Boot Camp Icon",
+    iconStyles: "absolute w-[75.03%] h-[83.36%] top-[4.16%] left-[8.32%]",
+    title: "Boot Camp",
+    description:
+      "High-energy group training combining cardio and strength for all fitness levels. Challenge yourself in a motivating team environment.",
+    benefits: [
+      { text: "Full-body workouts" },
+      { text: "Burn calories efficiently" },
+      { text: "Motivating group energy" },
+      { text: "Scalable to your fitness level" },
+    ],
+    image: "/img/rectangle-6546.png",
+    imageAlt: "Boot Camp Class",
+  },
+];
+
+const whyChooseBenefits = [
+  {
+    icon: {
+      images: [
+        {
+          src: "/img/vector-community-1.svg",
+          alt: "Community icon part 1",
+          className:
+            "absolute w-[58.33%] h-[25.00%] top-[58.33%] left-[4.17%]",
+        },
+        {
+          src: "/img/vector-community-2.svg",
+          alt: "Community icon part 2",
+          className:
+            "absolute w-[33.33%] h-[33.33%] top-[8.33%] left-[16.67%]",
+        },
+        {
+          src: "/img/vector-community-3.svg",
+          alt: "Community icon part 3",
+          className:
+            "absolute w-[12.50%] h-[24.46%] top-[58.87%] left-[75.00%]",
+        },
+        {
+          src: "/img/vector-community-4.svg",
+          alt: "Community icon part 4",
+          className:
+            "absolute w-[12.53%] h-[32.29%] top-[8.87%] left-[62.50%]",
+        },
+      ],
+    },
+    title: "Community",
+    description: "Train with like-minded individuals",
+  },
+  {
+    icon: {
+      images: [
+        {
+          src: "/img/vector-lightning.svg",
+          alt: "Motivation icon",
+          className:
+            "absolute w-[75.03%] h-[83.36%] top-[4.16%] left-[8.32%]",
+        },
+      ],
+    },
+    title: "Motivation",
+    description: "Group energy keeps you pushing harder",
+  },
+  {
+    icon: {
+      images: [
+        {
+          src: "/img/vector-calendar-1.svg",
+          alt: "Structure icon part 1",
+          className: "absolute w-[8.33%] h-[25.00%] top-0 left-[29.17%]",
+        },
+        {
+          src: "/img/vector-calendar-1.svg",
+          alt: "Structure icon part 2",
+          className: "absolute w-[8.33%] h-[25.00%] top-0 left-[62.50%]",
+        },
+        {
+          src: "/img/vector-calendar-2.svg",
+          alt: "Structure icon part 3",
+          className:
+            "absolute w-[83.33%] h-[83.33%] top-[16.67%] left-[8.33%]",
+        },
+        {
+          src: "/img/vector-calendar-3.svg",
+          alt: "Structure icon part 4",
+          className: "absolute w-[83.33%] h-[8.33%] top-[41.67%] left-[8.33%]",
+        },
+      ],
+    },
+    title: "Structure",
+    description: "Scheduled classes keep you consistent",
+  },
+];
+
+const scheduleData = {
+  title: "Class Schedule",
+  subtitle: "Join us for energizing group sessions throughout the week",
+  days: [
+    {
+      name: "Monday",
+      classes: [
+        { time: "6:00 AM", name: "Boot Camp", duration: "45 min" },
+        { time: "10:00 AM", name: "Senior Fitness", duration: "60 min" },
+        { time: "5:30 PM", name: "Boot Camp", duration: "45 min" },
+      ],
+    },
+    {
+      name: "Tuesday",
+      classes: [
+        { time: "10:00 AM", name: "Senior Fitness", duration: "60 min" },
+        { time: "6:00 PM", name: "Boot Camp", duration: "45 min" },
+      ],
+    },
+    {
+      name: "Wednesday",
+      classes: [
+        { time: "6:00 AM", name: "Boot Camp", duration: "45 min" },
+        { time: "10:00 AM", name: "Senior Fitness", duration: "60 min" },
+        { time: "5:30 PM", name: "Boot Camp", duration: "45 min" },
+      ],
+    },
+    {
+      name: "Thursday",
+      classes: [
+        { time: "10:00 AM", name: "Senior Fitness", duration: "60 min" },
+        { time: "6:00 PM", name: "Boot Camp", duration: "45 min" },
+      ],
+    },
+    {
+      name: "Friday",
+      classes: [
+        { time: "6:00 AM", name: "Boot Camp", duration: "45 min" },
+        { time: "10:00 AM", name: "Senior Fitness", duration: "60 min" },
+      ],
+    },
+    {
+      name: "Saturday",
+      classes: [
+        { time: "8:00 AM", name: "Boot Camp", duration: "60 min" },
+        { time: "10:00 AM", name: "Senior Fitness", duration: "60 min" },
+      ],
+    },
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Group Sessions - Ambition Fitness Calgary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Inter:500,var(--16-medium-font-weight)|Montserrat:400,500,700,600|Prompt:500" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
+    <style>
+      /* Ensure smooth scrolling behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+
+      /* Prevent focus trap issues */
+      * {
+        outline-offset: 0;
+      }
+
+      /* Aggressively override ALL footer styles */
+      footer {
+        position: static !important;
+        padding: 0 !important;
+        padding-top: 2rem !important;
+        padding-bottom: 1.5rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        top: auto !important;
+        left: auto !important;
+        margin: 0 !important;
+        width: 100% !important;
+      }
+
+      @media (min-width: 768px) {
+        footer {
+          padding-top: 2.5rem !important;
+          padding-left: 2rem !important;
+          padding-right: 2rem !important;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        footer {
+          position: static !important;
+          padding-top: 3rem !important;
+          top: auto !important;
+          width: 100% !important;
+        }
+        /* Remove the lg:pt-[110px] class effect */
+        footer.pt-12,
+        footer.md\:pt-16,
+        footer.lg\:pt-\[110px\] {
+          padding-top: 3rem !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black min-h-screen">
+    <!-- Hero Background Section -->
+    <div class="relative w-full h-[500px] md:h-[600px] lg:h-[458px] bg-[#14181f]">
+      <!-- Decorative Line -->
+      <img
+        class="hidden lg:block absolute top-11 left-[538px] w-px h-[33px]"
+        alt="Line"
+        src="/img/line-217.svg"
+      />
+
+      <!-- Navigation -->
+      <nav class="absolute top-0 left-0 w-full z-50">
+        <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto">
+          <!-- Logo -->
+          <img
+            class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50"
+            alt="Ambition Fitness Logo"
+            src="/img/image-3-2.png"
+          />
+
+          <!-- Hamburger Menu Button (Mobile Only) -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+              {navigationLinks.map((link) =>
+                link.isActive ? (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-variable-collection-coloryellow text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ),
+              )}
+            </div>
+
+            <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto hover:opacity-90 transition-opacity">
+              <span class="relative flex items-center justify-center w-fit font-16-medium font-[number:var(--16-medium-font-weight)] text-variable-collection-colorpriamry text-[length:var(--16-medium-font-size)] text-center tracking-[var(--16-medium-letter-spacing)] leading-[var(--16-medium-line-height)] whitespace-nowrap [font-style:var(--16-medium-font-style)]">
+                Get in Touch
+              </span>
+
+              <img
+                class="relative w-[18.33px] h-[11.41px]"
+                alt="Line"
+                src="/img/line-108-3.svg"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div
+          id="mobile-menu"
+          class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden md:hidden"
+        >
+          <div class="flex flex-col items-center justify-center h-full px-4">
+            <div class="flex flex-col items-center gap-8 w-full max-w-sm">
+              {navigationLinks.map((link) =>
+                link.isActive ? (
+                  <a
+                    class="text-variable-collection-coloryellow text-2xl font-semibold [font-family:'Inter',Helvetica]"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    class="text-white text-2xl font-semibold [font-family:'Inter',Helvetica] hover:text-variable-collection-coloryellow transition-colors"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ),
+              )}
+
+              <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-variable-collection-coloryellow rounded-[12.39px] mt-4 hover:opacity-90 transition-opacity">
+                <span class="font-semibold text-variable-collection-colorpriamry text-lg [font-family:'Inter',Helvetica]">
+                  Get in Touch
+                </span>
+                <img
+                  class="w-[18.33px] h-[11.41px]"
+                  alt="Line"
+                  src="/img/line-108-3.svg"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 px-4 md:px-8 w-full max-w-4xl">
+        <h1 class="[font-family:'Montserrat',Helvetica] font-semibold text-transparent text-3xl md:text-5xl lg:text-[65px] text-center tracking-[0] leading-tight md:leading-[78.7px]">
+          <span class="text-[#f0f0f0]">Group </span>
+          <span class="text-[#fedf41]">Sessions</span>
+        </h1>
+        <p class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-lg lg:text-[22px] text-center tracking-[0] leading-[1.6] lg:leading-[35.2px] px-4 md:px-0 whitespace-nowrap opacity-[0.99]">
+          Train together, achieve together in our supportive group classes
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex flex-col w-full items-center">
+      <!-- Group Sessions Cards Section -->
+      <section class="flex flex-col w-full max-w-[1200px] items-start gap-8 md:gap-[30px] px-4 md:px-8 py-12 md:py-16 mx-auto">
+        {groupSessions.map((session, index) => (
+          <article class="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-[30px] relative self-stretch w-full">
+            <div class="flex-1 inline-flex flex-col items-start p-6 md:p-8 lg:p-[30px] bg-[#191919] rounded-xl">
+              <div class="inline-flex flex-col items-start justify-center gap-6 lg:gap-8 relative w-full">
+                <div class="flex flex-col w-full items-start gap-4 lg:gap-[26px]">
+                  <header class="flex flex-col items-start relative self-stretch w-full">
+                    <div class="flex items-center gap-4 relative self-stretch w-full">
+                      <div
+                        class="relative w-[30px] h-[30px] aspect-[1]"
+                        aria-hidden="true"
+                      >
+                        <img
+                          class={session.iconStyles}
+                          alt={session.iconAlt}
+                          src={session.icon}
+                        />
+                      </div>
+
+                      <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-3xl tracking-[0] leading-[40px] md:leading-[60px]">
+                        {session.title}
+                      </h2>
+                    </div>
+
+                    <div class="flex flex-col items-start pt-0 pb-2 px-0 relative self-stretch w-full">
+                      <p class="[font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-relaxed md:leading-6">
+                        {session.description}
+                      </p>
+                    </div>
+                  </header>
+
+                  <a
+                    href="/contact"
+                    class="inline-flex items-center justify-center gap-2.5 px-6 md:px-[29px] py-3 bg-variable-collection-coloryellow rounded-[1000px] hover:opacity-90 transition-opacity"
+                    aria-label={`Join ${session.title} class`}
+                  >
+                    <span class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+                      Join This Class
+                    </span>
+
+                    <img
+                      class="w-4 h-4"
+                      alt=""
+                      src="/img/line-108-3.svg"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </div>
+
+                <div class="flex flex-col w-full items-start gap-4">
+                  <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 text-xl md:text-2xl tracking-[0] leading-8 md:leading-10">
+                    Benefits:
+                  </h3>
+
+                  <ul class="flex flex-col items-start gap-3 relative self-stretch w-full">
+                    {session.benefits.map((benefit, benefitIndex) => (
+                      <li class="flex items-start gap-3 relative self-stretch w-full">
+                        <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
+                          <div class="flex w-6 h-6 items-center justify-center relative bg-[#e2b91233] rounded-full">
+                            <div class="relative w-3 h-3 bg-[#e2b912] rounded-full" />
+                          </div>
+                        </div>
+
+                        <span class="flex-1 [font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-6">
+                          {benefit.text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <img
+              class="w-full lg:w-[600px] h-[300px] md:h-[400px] lg:h-[512px] object-cover rounded-xl"
+              alt={session.imageAlt}
+              src={session.image}
+            />
+          </article>
+        ))}
+      </section>
+
+      <!-- Class Schedule Section -->
+      <section class="flex flex-col w-full max-w-[1200px] items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 mx-auto">
+        <header class="flex flex-col items-center gap-2 md:gap-4">
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-3xl md:text-[45px] text-center tracking-[0] leading-tight md:leading-[60px]">
+            {scheduleData.title}
+          </h2>
+          <p class="[font-family:'Montserrat',Helvetica] font-medium text-white/80 text-base md:text-lg text-center">
+            {scheduleData.subtitle}
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          {scheduleData.days.map((day) => (
+            <div class="bg-[#191919] rounded-xl p-6">
+              <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-variable-collection-coloryellow text-xl mb-4">
+                {day.name}
+              </h3>
+              <div class="space-y-3">
+                {day.classes.map((classItem) => (
+                  <div class="flex justify-between items-center py-2 border-b border-gray-700 last:border-0">
+                    <div>
+                      <p class="text-white font-medium">{classItem.name}</p>
+                      <p class="text-gray-400 text-sm">{classItem.time}</p>
+                    </div>
+                    <span class="text-gray-400 text-sm">{classItem.duration}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Why Choose Group Sessions Section -->
+      <section class="flex flex-col w-full max-w-[1200px] items-start gap-8 md:gap-[58px] px-4 md:px-8 py-12 md:py-16 mx-auto">
+        <header class="flex flex-col items-center relative self-stretch w-full">
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-3xl md:text-[45px] text-center tracking-[0] leading-tight md:leading-[60px]">
+            Why Choose Group Sessions?
+          </h2>
+        </header>
+
+        <div class="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] lg:gap-[98px] relative self-stretch w-full">
+          {whyChooseBenefits.map((benefit, index) => (
+            <article class="flex flex-col items-center gap-4 md:gap-[26px] relative flex-1">
+              <div class="relative w-12 h-12 overflow-visible" role="img" aria-label={benefit.title}>
+                {benefit.icon.images.map((image, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    class={image.className}
+                    alt={image.alt}
+                    src={image.src}
+                  />
+                ))}
+              </div>
+
+              <div class="flex flex-col items-center gap-2 relative self-stretch w-full">
+                <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-variable-collection-coloryellow text-xl md:text-2xl text-center tracking-[0] leading-[32px]">
+                  {benefit.title}
+                </h3>
+
+                <p class="[font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base text-center tracking-[0] leading-relaxed md:leading-[25px]">
+                  {benefit.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="flex flex-col w-full max-w-[1010px] items-center justify-center gap-6 md:gap-10 p-8 md:p-[60px] mx-4 md:mx-auto mt-12 md:mt-16 mb-8 md:mb-12 bg-variable-collection-coloryellow rounded-xl">
+        <div class="flex flex-col items-start justify-center gap-4 md:gap-5 relative self-stretch w-full">
+          <h2 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Prompt',Helvetica] font-medium text-variable-collection-colorpriamry text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[53.3px]">
+            Get Started Today!
+          </h2>
+
+          <p class="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#222222] text-base md:text-[21px] text-center tracking-[0] leading-relaxed md:leading-[31.5px]">
+            Join our group sessions and experience the power of training together.
+            Build strength, burn calories, and become part of our fitness community.
+          </p>
+        </div>
+
+        <a
+          href="/contact"
+          class="inline-flex h-12 md:h-14 items-center justify-center gap-3 md:gap-[13px] px-5 md:px-6 py-4 md:py-5 relative bg-variable-collection-colorpriamry rounded-xl overflow-hidden cursor-pointer transition-opacity hover:opacity-90"
+          aria-label="Start Your Journey"
+        >
+          <span class="relative w-fit [font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-6 whitespace-nowrap text-center">
+            Start Your Journey
+          </span>
+
+          <img
+            class="relative w-[18.33px] h-[11.41px]"
+            alt=""
+            src="/img/line-108-white.svg"
+            aria-hidden="true"
+          />
+        </a>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full mt-12 pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and description -->
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm">
+              Join a community that's transforming lives through evidence-based fitness strategies.
+            </p>
+          </div>
+          <!-- Services -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="/memberships" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Memberships</a>
+              <a href="/group-sessions" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Sessions</a>
+            </div>
+          </div>
+          <!-- Service Area -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <span class="block text-[#e4e4e4] text-sm">Mayland Heights</span>
+              <span class="block text-[#e4e4e4] text-sm">Meridian</span>
+              <span class="block text-[#e4e4e4] text-sm">Raddison Heights</span>
+              <span class="block text-[#e4e4e4] text-sm">Bridgeland-Riverside</span>
+            </div>
+          </div>
+          <!-- Company -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+              // Show menu
+              mobileMenu.classList.remove('hidden');
+              document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+
+              // Animate hamburger to X
+              hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+              hamburgerLines[1].style.opacity = '0';
+              hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+
+              mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+              // Hide menu
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = ''; // Re-enable scrolling
+
+              // Animate X back to hamburger
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          // Close menu when clicking on a link
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              isMenuOpen = false;
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
