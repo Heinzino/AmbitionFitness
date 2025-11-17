@@ -22,8 +22,8 @@ export const FooterSection = (): JSX.Element => {
       title: "Services",
       links: [
         { text: "Personal Training", href: "/personal-training" },
+        { text: "Memberships", href: "/memberships" },
         { text: "Group Classes" },
-        { text: "Online Training" },
       ],
     },
     {
@@ -46,7 +46,7 @@ export const FooterSection = (): JSX.Element => {
   ];
 
   return (
-    <footer className="flex flex-col w-full lg:w-[1920px] items-start justify-center gap-6 md:gap-[30px] pt-12 md:pt-16 lg:pt-[110px] pb-6 md:pb-[30px] px-4 md:px-8 lg:px-[360px] relative lg:absolute lg:top-[8050px] lg:left-[calc(50.00%_-_960px)]">
+    <footer className="flex flex-col w-full lg:w-[1920px] items-start justify-center gap-6 md:gap-[30px] pt-12 md:pt-16 lg:pt-[110px] pb-6 md:pb-8 px-4 md:px-8 lg:px-[360px] relative lg:absolute lg:top-[8050px] lg:left-[calc(50.00%_-_960px)]">
       <div className="flex flex-col items-start gap-12 md:gap-20 self-stretch w-full">
         <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-[31px] self-stretch w-full">
           <div className="flex flex-col w-full lg:w-[414px] items-start justify-center gap-4 pr-0 lg:pr-5">

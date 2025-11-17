@@ -1,0 +1,562 @@
+---
+import '../styles/global.css';
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: true },
+  { label: "Group Sessions", path: "#", isActive: false },
+  { label: "Virtual Tour", path: "#", isActive: false },
+];
+
+// Membership Benefits Data
+const membershipBenefitsRow1 = [
+  {
+    icon: {
+      images: [
+        { src: "/img/vector-6.svg", alt: "Clock icon", className: "absolute w-[83.33%] h-[83.33%] top-[4.17%] left-[4.17%]" },
+        { src: "/img/vector-1.svg", alt: "Clock hand", className: "absolute w-[16.67%] h-[33.33%] top-[20.83%] left-[45.83%]" },
+      ],
+    },
+    title: "24/7 Access",
+    description: "Train whenever it fits your schedule,\nday or night",
+  },
+  {
+    icon: {
+      images: [
+        { src: "/img/vector-2.svg", alt: "People base", className: "absolute w-[58.33%] h-[25.00%] top-[58.33%] left-[4.17%]" },
+        { src: "/img/vector-3.svg", alt: "Person left", className: "absolute w-[33.33%] h-[33.33%] top-[8.33%] left-[16.67%]" },
+        { src: "/img/vector-4.svg", alt: "Person right small", className: "absolute w-[12.50%] h-[24.46%] top-[58.87%] left-[75.00%]" },
+        { src: "/img/vector-5.svg", alt: "Person right large", className: "absolute w-[12.53%] h-[32.29%] top-[8.87%] left-[62.50%]" },
+      ],
+    },
+    title: "Limited Spots",
+    description: "Exclusive membership ensures it's\nnever crowded",
+  },
+  {
+    icon: {
+      images: [
+        { src: "/img/vector-6.svg", alt: "Face circle", className: "absolute w-[83.33%] h-[83.33%] top-[4.17%] left-[4.17%]" },
+        { src: "/img/vector-7.svg", alt: "Smile", className: "absolute w-[33.33%] h-[8.33%] top-[54.17%] left-[29.17%]" },
+        { src: "/img/vector-9.svg", alt: "Eye left", className: "absolute w-[4.55%] h-[3.64%] top-[33.33%] left-[33.33%]" },
+        { src: "/img/vector-9.svg", alt: "Eye right", className: "absolute w-[4.55%] h-[3.64%] top-[33.33%] left-[58.33%]" },
+      ],
+    },
+    title: "Non-Intimidating",
+    description: "Welcoming environment for all\nfitness levels",
+  },
+];
+
+const membershipBenefitsRow2 = [
+  {
+    icon: {
+      images: [
+        { src: "/img/vector-10.svg", alt: "Document with X", className: "absolute w-[66.67%] h-[83.35%] top-[4.16%] left-[12.50%]" },
+      ],
+    },
+    title: "No Contracts",
+    description: "Month-to-month flexibility, cancel\nanytime",
+  },
+  {
+    icon: {
+      images: [
+        { src: "/img/vector-11.svg", alt: "Dollar sign line", className: "absolute w-0 h-[83.33%] top-[4.17%] left-[45.83%]" },
+        { src: "/img/vector-12.svg", alt: "Dollar sign S", className: "absolute w-[50.00%] h-[58.33%] top-[16.67%] left-[20.83%]" },
+      ],
+    },
+    title: "No Hidden Fees",
+    description: "Simple, transparent pricing with\neverything included",
+  },
+  {
+    icon: {
+      images: [
+        { src: "/img/vector-13.svg", alt: "Star decoration", className: "absolute w-[25.36%] h-[25.36%] top-[12.50%] left-[60.42%]" },
+        { src: "/img/vector-14.svg", alt: "Key head", className: "absolute w-[40.00%] h-[40.00%] top-[4.17%] left-[43.33%]" },
+        { src: "/img/vector-15.svg", alt: "Key body", className: "absolute w-[45.83%] h-[45.83%] top-[37.50%] left-[4.17%]" },
+      ],
+    },
+    title: "Private Facility",
+    description: "Secure access to a clean, well-\nmaintained space",
+  },
+];
+
+const membershipIncludes = [
+  "Full access to all equipment and facilities",
+  "Member-only events and challenges",
+  "Clean, sanitized equipment daily",
+  "Free parking and secure entry",
+  "Showers and locker room access",
+  "Friendly, supportive training environment",
+];
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memberships - Ambition Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&family=Prompt:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .font-montserrat { font-family: 'Montserrat', Helvetica, sans-serif; }
+      .font-inter { font-family: 'Inter', Helvetica, sans-serif; }
+      .font-prompt { font-family: 'Prompt', Helvetica, sans-serif; }
+
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-black overflow-hidden w-full min-w-[1920px] min-h-[4000px] relative" data-model-id="1:731">
+
+      <!-- Background Images and Elements -->
+      <img
+        class="absolute top-[1169px] left-0 w-[1920px] h-[787px]"
+        alt="Union"
+        src="/img/union.svg"
+      />
+
+      <img
+        class="absolute top-[1438px] left-[1009px] w-[559px] h-[354px]"
+        alt="Rectangle"
+        src="/img/rectangle-6544.png"
+      />
+
+      <div class="absolute top-0 left-0 w-[1920px] h-[458px] bg-[#14181f]" />
+
+      <img
+        class="absolute top-11 left-[538px] w-px h-[33px]"
+        alt="Line"
+        src="/img/line-217.svg"
+      />
+
+      <!-- Header / IncludedFeaturesSection -->
+      <header class="inline-flex items-start gap-[221px] absolute top-[15px] left-[360px]">
+        <a href="/" aria-label="Home">
+          <img
+            class="relative w-[95px] h-[102.62px] aspect-[0.93] object-cover"
+            alt="Company Logo"
+            src="/img/image-3-2-1.png"
+          />
+        </a>
+
+        <div class="inline-flex items-center justify-end gap-10 relative flex-[0_0_auto]">
+          <nav
+            class="inline-flex gap-[30px] flex-[0_0_auto] items-center relative"
+            aria-label="Main navigation"
+          >
+            {navigationLinks.map((item) =>
+              item.isActive ? (
+                <a
+                  class="relative flex items-center justify-center w-fit mt-[-1.03px] font-inter font-medium text-[#fedf41] text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
+                  href={item.path}
+                  aria-current="page"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <a
+                  class="flex justify-center w-fit mt-[-1.03px] font-inter font-medium text-white text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap items-center relative hover:text-[#fedf41] transition-colors"
+                  href={item.path}
+                >
+                  {item.label}
+                </a>
+              )
+            )}
+          </nav>
+
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-[10.33px] px-[23px] py-[15.49px] relative flex-[0_0_auto] bg-[#fedf41] rounded-[12.39px] cursor-pointer transition-opacity hover:opacity-90"
+            aria-label="Get in Touch"
+          >
+            <span class="relative flex items-center justify-center w-fit mt-[-1.55px] font-montserrat font-medium text-[#14181f] text-base text-center tracking-[0] leading-[25.6px] whitespace-nowrap">
+              Get in Touch
+            </span>
+
+            <img
+              class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+              alt=""
+              src="/img/line-108-1.svg"
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+      </header>
+
+      <!-- FitnessImageSection -->
+      <section class="flex flex-col w-[780px] items-center justify-center gap-10 absolute top-[203px] left-[calc(50.00%_-_390px)] rounded-xl">
+        <header class="flex flex-col items-start gap-6 relative self-stretch w-full flex-[0_0_auto]">
+          <div class="flex flex-col items-start gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
+            <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+              <h1 class="relative self-stretch mt-[-1.00px] font-montserrat font-semibold text-transparent text-[65px] text-center tracking-[0] leading-[78.7px]">
+                <span class="text-[#f0f0f0]">Flexible </span>
+                <span class="text-[#fedf41]">Memberships</span>
+              </h1>
+            </div>
+
+            <p class="relative self-stretch opacity-[0.99] font-montserrat font-medium text-white text-[22px] text-center tracking-[0] leading-[35.2px]">
+              Join a fitness community that puts you first
+            </p>
+          </div>
+        </header>
+      </section>
+
+      <!-- MembershipBenefitsSection -->
+      <section class="flex flex-col w-[1194px] items-start gap-[30px] absolute top-[554px] left-[360px]">
+        <div class="flex items-center gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
+          {membershipBenefitsRow1.map((benefit) => (
+            <article
+              class="flex flex-col items-center gap-[22px] p-[33px] relative flex-1 grow bg-[#191919] rounded-xl shadow-[0px_1px_2px_#0000000d]"
+            >
+              <div class="relative w-12 h-12" role="img" aria-label={benefit.title}>
+                {benefit.icon.images.map((image) => (
+                  <img
+                    class={image.className}
+                    alt={image.alt}
+                    src={image.src}
+                  />
+                ))}
+              </div>
+
+              <div class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
+                <h3 class="relative flex items-center justify-center w-fit mt-[-1.00px] font-montserrat font-medium text-neutral-50 text-2xl text-center tracking-[0] leading-6 whitespace-nowrap">
+                  {benefit.title}
+                </h3>
+              </div>
+
+              <div class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
+                <p class="relative flex items-center justify-center w-fit mt-[-1.00px] font-montserrat font-medium text-[#b3b3b3] text-center tracking-[0] leading-7 whitespace-pre-line">
+                  {benefit.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div class="flex items-center gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
+          {membershipBenefitsRow2.map((benefit) => (
+            <article
+              class="flex flex-col items-center gap-[22px] p-[33px] relative flex-1 grow bg-[#191919] rounded-xl shadow-[0px_1px_2px_#0000000d]"
+            >
+              <div class="relative w-12 h-12" role="img" aria-label={benefit.title}>
+                {benefit.icon.images.map((image) => (
+                  <img
+                    class={image.className}
+                    alt={image.alt}
+                    src={image.src}
+                  />
+                ))}
+              </div>
+
+              <div class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
+                <h3 class="relative flex items-center justify-center w-fit mt-[-1.00px] font-montserrat font-medium text-neutral-50 text-2xl text-center tracking-[0] leading-6 whitespace-nowrap">
+                  {benefit.title}
+                </h3>
+              </div>
+
+              <div class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
+                <p class="relative flex items-center justify-center w-fit mt-[-1.00px] font-montserrat font-medium text-[#b3b3b3] text-center tracking-[0] leading-7 whitespace-pre-line">
+                  {benefit.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- TestimonialsSection -->
+      <section
+        class="flex flex-col w-[748px] items-start gap-11 px-[49px] py-10 absolute top-[1416px] left-[calc(50.00%_-_595px)] bg-black rounded-xl border border-solid border-[#363d49] shadow-[0px_1px_2px_#0000000d]"
+        aria-labelledby="testimonials-heading"
+      >
+        <div class="flex flex-col items-start gap-3.5 relative self-stretch w-full flex-[0_0_auto]">
+          <div class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
+            <h2
+              id="testimonials-heading"
+              class="relative flex items-center justify-center self-stretch mt-[-1.00px] font-montserrat font-semibold text-neutral-50 text-[45px] text-center tracking-[0] leading-[60px]"
+            >
+              Why Ambition Fitness?
+            </h2>
+          </div>
+
+          <div class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
+            <p class="relative flex items-center justify-center self-stretch mt-[-1.00px] font-montserrat font-medium text-white text-base text-center tracking-[0] leading-6">
+              We're not your typical gym. Our limited membership model ensures
+              you'll never fight for
+              <br />
+              equipment or feel lost in the crowd. <br />
+              <br />
+              With 24/7 access, no contracts, and a supportive
+              <br />
+              environment, you can focus on what matters most - your fitness
+              journey.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center justify-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2.5 px-[35px] py-[15px] relative flex-[0_0_auto] bg-[#fedf41] rounded-[1000px] cursor-pointer transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#fedf41] focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Book an In-Person Tour"
+          >
+            <span class="relative w-fit mt-[-1.00px] font-montserrat font-medium text-[#14181f] text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+              Book an In-Person Tour
+            </span>
+            <img
+              class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+              alt=""
+              src="/img/line-108-1.svg"
+              aria-hidden="true"
+            />
+          </a>
+
+          <a
+            href="#"
+            class="inline-flex items-center justify-center gap-2.5 px-[35px] py-[15px] relative flex-[0_0_auto] bg-transparent border-2 border-[#fedf41] rounded-[1000px] cursor-pointer transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#fedf41] focus:ring-offset-2 focus:ring-offset-black"
+            aria-label="Take a Virtual Tour"
+          >
+            <span class="relative w-fit mt-[-1.00px] font-montserrat font-medium text-[#fedf41] text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+              Take a Virtual Tour
+            </span>
+            <img
+              class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+              alt=""
+              src="/img/line-108-yellow.svg"
+              aria-hidden="true"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- WhyChooseUsSection -->
+      <section
+        class="flex flex-col w-[734px] items-start gap-12 absolute top-[2032px] left-[calc(50.00%_-_367px)]"
+        aria-labelledby="whats-included-heading"
+      >
+        <div class="flex flex-col w-[781px] items-center relative flex-[0_0_auto] mr-[-47.00px]">
+          <h2
+            id="whats-included-heading"
+            class="relative flex items-center justify-center self-stretch mt-[-1.00px] font-montserrat font-semibold text-neutral-50 text-[45px] text-center tracking-[0] leading-[60px]"
+          >
+            What's Included
+          </h2>
+        </div>
+
+        <ul
+          class="grid grid-cols-2 grid-rows-4 w-[calc(100%_+_47px)] h-[184px] gap-[24px_0px] absolute top-[108px] left-0"
+          role="list"
+        >
+          {membershipIncludes.map((benefit, index) => (
+            <li
+              class={`relative row-[${Math.floor(index / 2) + 1}_/_${Math.floor(index / 2) + 2}] col-[${(index % 2) + 1}_/_${(index % 2) + 2}] w-[343px] h-fit flex items-start gap-3`}
+            >
+              <div
+                class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative"
+                aria-hidden="true"
+              >
+                <div class="flex w-6 h-6 items-center justify-center relative bg-[#e2b91233] rounded-full">
+                  <div class="relative w-3 h-3 bg-[#e2b912] rounded-full" />
+                </div>
+              </div>
+
+              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] font-montserrat font-medium text-neutral-50 text-base tracking-[0] leading-7 whitespace-nowrap">
+                {benefit}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- Main Image -->
+      <img
+        class="absolute top-[2378px] left-[360px] w-[1196px] h-[449px] object-cover"
+        alt="Rectangle"
+        src="/img/rectangle-6543.png"
+      />
+
+      <!-- TrainingImageSection / Get Started Today -->
+      <section class="flex flex-col w-[1010px] items-center justify-center gap-10 p-[60px] absolute top-[2936px] left-[calc(50.00%_-_505px)] bg-[#fedf41] rounded-xl">
+        <div class="flex flex-col items-start justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
+          <h2 class="relative flex items-center justify-center self-stretch mt-[-1.00px] font-prompt font-medium text-[#14181f] text-5xl text-center tracking-[0] leading-[53.3px]">
+            Get Started Today!
+          </h2>
+
+          <p class="relative self-stretch font-montserrat font-normal text-[#222222] text-[21px] text-center tracking-[0] leading-[31.5px]">
+            If you are ready to start living a healthy lifestyle, message me to
+            get started! Everyone has a unique situation, and I'll strive to
+            accommodate yours.
+          </p>
+        </div>
+
+        <a
+          href="/contact"
+          class="inline-flex items-center justify-center gap-[13px] px-6 py-4 bg-[#14181f] rounded-xl cursor-pointer transition-opacity hover:opacity-90"
+          aria-label="Get Started Today"
+        >
+          <span class="font-montserrat font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">
+            Get Started Today
+          </span>
+
+          <img
+            class="w-[18.33px] h-[11.41px]"
+            alt=""
+            src="/img/line-108-white.svg"
+            aria-hidden="true"
+          />
+        </a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="flex flex-col w-[1920px] items-start justify-center gap-[30px] pt-[110px] pb-8 px-[360px] absolute left-[calc(50.00%_-_960px)] top-[3400px]">
+        <div class="flex flex-col items-start gap-20 self-stretch w-full">
+          <div class="flex items-start gap-[31px] self-stretch w-full">
+            <div class="flex flex-col w-[414px] items-start justify-center gap-4 pr-5">
+              <img
+                class="w-[63px] h-auto aspect-[0.93] object-cover"
+                alt="Ambition Fitness Logo"
+                src="/img/image-3-2-1.png"
+              />
+
+              <p class="self-stretch font-montserrat font-normal text-transparent text-sm tracking-[0] leading-[22.4px]">
+                <span class="text-[#ebebeb]">
+                  Transform your body and mind with our world-class personal
+                  training facility. Expert coaches, cutting-edge equipment,
+                  proven results. <br />
+                </span>
+
+                <a href="#" class="text-[#fedf41] hover:underline">
+                  Read More
+                </a>
+              </p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-[31px] flex-1 w-full">
+              <nav
+                class="flex flex-col items-start gap-[13px]"
+                aria-label="Services"
+              >
+                <h3 class="self-stretch font-montserrat font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]">
+                  Services
+                </h3>
+
+                <ul class="flex flex-col items-start justify-center gap-1 self-stretch w-full opacity-80 list-none">
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="/personal-training" class="hover:text-[#fedf41] transition-colors">
+                      Personal Training
+                    </a>
+                  </li>
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="/memberships" class="hover:text-[#fedf41] transition-colors">
+                      Memberships
+                    </a>
+                  </li>
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Group Classes
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <nav
+                class="flex flex-col items-start gap-[13px]"
+                aria-label="Service Area"
+              >
+                <h3 class="self-stretch font-montserrat font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]">
+                  Service Area
+                </h3>
+
+                <ul class="flex flex-col items-start justify-center gap-1 self-stretch w-full opacity-80 list-none">
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Mayland Heights
+                    </a>
+                  </li>
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Meridian
+                    </a>
+                  </li>
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Raddison Heights
+                    </a>
+                  </li>
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Bridgeland-Riverside
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <nav
+                class="flex flex-col items-start gap-[13px]"
+                aria-label="Company"
+              >
+                <h3 class="self-stretch font-montserrat font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]">
+                  Company
+                </h3>
+
+                <ul class="flex flex-col items-start justify-center gap-1 self-stretch w-full opacity-80 list-none">
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="/" class="hover:text-[#fedf41] transition-colors">
+                      Home
+                    </a>
+                  </li>
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Blog
+                    </a>
+                  </li>
+                  <li class="w-fit font-montserrat font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
+                    <a href="/contact" class="hover:text-[#fedf41] transition-colors">
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <hr
+            class="self-stretch w-full h-px border-0 bg-white opacity-20"
+            aria-hidden="true"
+          />
+        </div>
+
+        <div class="flex items-center justify-between self-stretch w-full">
+          <p class="w-fit font-montserrat font-normal text-[#e4e4e4] text-base text-center tracking-[0] leading-[normal]">
+            Copyright © 2025 Ambition Fitness - All Rights Reserved.
+          </p>
+
+          <div class="inline-flex items-start gap-[7.89px] opacity-60">
+            <a
+              href="https://www.instagram.com/ambitionfitness.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center p-[10px] bg-[#384254] rounded-full hover:bg-[#4a5568] transition-colors"
+              aria-label="Instagram"
+            >
+              <img
+                class="w-5 h-5"
+                alt="Instagram"
+                src="/img/instagram-icon.svg"
+              />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
