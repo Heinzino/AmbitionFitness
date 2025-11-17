@@ -240,7 +240,7 @@ const scheduleData = {
   </head>
   <body class="bg-black min-h-screen">
     <!-- Hero Background Section -->
-    <div class="relative w-full h-[500px] md:h-[600px] lg:h-[458px] bg-[#14181f]">
+    <div class="relative w-full h-[400px] md:h-[450px] lg:h-[458px] bg-[#14181f]">
       <!-- Decorative Line -->
       <img
         class="hidden lg:block absolute top-11 left-[538px] w-px h-[33px]"
@@ -350,11 +350,11 @@ const scheduleData = {
       <section class="flex flex-col items-center justify-center gap-6 md:gap-10 px-4 absolute top-[120px] md:top-[150px] lg:top-[203px] left-0 right-0 lg:left-[calc(50%_-_390px)] lg:right-auto lg:w-[780px]">
         <header class="flex flex-col items-center gap-4 md:gap-6 w-full">
           <div class="flex flex-col items-center gap-4 md:gap-[30px] w-full">
-            <h1 class="[font-family:'Montserrat',Helvetica] font-semibold text-transparent text-3xl md:text-5xl lg:text-[65px] text-center tracking-[0] leading-[1.2] lg:leading-[78.7px]">
+            <h1 class="font-montserrat font-semibold text-transparent text-3xl md:text-5xl lg:text-[65px] text-center tracking-[0] leading-[1.2] lg:leading-[78.7px]">
               <span class="text-[#f0f0f0]">Group </span>
               <span class="text-[#fedf41]">Sessions</span>
             </h1>
-            <p class="opacity-[0.99] [font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-lg lg:text-[22px] text-center tracking-[0] leading-[1.6] lg:leading-[35.2px] px-4 md:px-0 whitespace-nowrap">
+            <p class="opacity-[0.99] font-montserrat font-medium text-white text-base md:text-lg lg:text-[22px] text-center tracking-[0] leading-[1.6] lg:leading-[35.2px] px-4 md:px-0 max-w-[90%] md:max-w-none">
               Train together, achieve together in our supportive group classes
             </p>
           </div>
@@ -488,10 +488,10 @@ const scheduleData = {
           </h2>
         </header>
 
-        <div class="flex flex-col md:flex-row items-start gap-8 md:gap-[50px] lg:gap-[98px] relative self-stretch w-full">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-[50px] lg:gap-[98px] relative self-stretch w-full">
           {whyChooseBenefits.map((benefit, index) => (
             <article class="flex flex-col items-center gap-4 md:gap-[26px] relative flex-1">
-              <div class="relative w-12 h-12 overflow-visible" role="img" aria-label={benefit.title}>
+              <div class="relative w-20 h-20 overflow-visible" role="img" aria-label={benefit.title}>
                 {benefit.icon.images.map((image, imgIndex) => (
                   <img
                     key={imgIndex}
