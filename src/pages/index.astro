@@ -7,7 +7,6 @@ import { WhyChooseUsSection } from '../sections/WhyChooseUsSection';
 import { ClientTransformationsSection } from '../sections/ClientTransformationsSection';
 import { FeatureProductsSection } from '../sections/FeatureProductsSection';
 import { TestimonialsSection } from '../sections/TestimonialsSection';
-import { FooterSection } from '../sections/FooterSection';
 import { FindUsNearYouSection } from '../sections/FindUsNearYouSection';
 
 const whyChooseUsFeatures = [
@@ -69,7 +68,7 @@ const navigationLinks = [
   </head>
   <body>
     <div
-      class="bg-black overflow-hidden w-full lg:min-w-[1920px] min-h-screen lg:min-h-[8650px] relative"
+      class="bg-black overflow-x-hidden w-full lg:min-w-[1920px] min-h-screen lg:min-h-[8100px] relative"
       data-model-id="1:24"
     >
       <!-- Background decorative images - hidden on mobile for performance -->
@@ -197,7 +196,7 @@ const navigationLinks = [
         </div>
       </nav>
 
-      <div class="flex flex-col w-full">
+      <div class="flex flex-col w-full relative">
         <HeroSection client:load />
         <NewsletterSection client:load />
         <HeaderSection client:load />
@@ -262,9 +261,58 @@ const navigationLinks = [
         <TestimonialsSection client:load />
         <FindUsNearYouSection client:load />
         <FeatureProductsSection client:load />
-        <FooterSection client:load />
       </div>
     </div>
+
+    <!-- Simple inline footer with minimal spacing -->
+    <footer class="w-full mt-0 pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and description -->
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm">
+              Join a community that's transforming lives through evidence-based fitness strategies.
+            </p>
+          </div>
+          <!-- Services -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="/memberships" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Memberships</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Classes</a>
+            </div>
+          </div>
+          <!-- Service Area -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <span class="block text-[#e4e4e4] text-sm">Mayland Heights</span>
+              <span class="block text-[#e4e4e4] text-sm">Meridian</span>
+              <span class="block text-[#e4e4e4] text-sm">Raddison Heights</span>
+              <span class="block text-[#e4e4e4] text-sm">Bridgeland-Riverside</span>
+            </div>
+          </div>
+          <!-- Company -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
 
     <script>
       // Mobile Menu Toggle
