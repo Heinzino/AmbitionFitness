@@ -1,5 +1,59 @@
 ---
 import '../styles/global.css';
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: false },
+  { label: "Group Sessions", path: "/group-sessions", isActive: false },
+  { label: "Virtual Tour", path: "/virtual-tour", isActive: true },
+];
+
+const facilityFeatures = [
+  "State-of-the-art cardio equipment",
+  "Full range of free weights and machines",
+  "Dedicated stretching and mobility area",
+  "Clean, well-maintained locker rooms",
+  "Climate-controlled environment",
+  "Private training areas",
+  "Ample parking",
+  "24/7 secure access",
+];
+
+const differentiators = [
+  {
+    title: "Never Crowded",
+    description: "Our limited membership model ensures you always have access to the equipment you need, when you need it. No more waiting, no more frustration.",
+  },
+  {
+    title: "Always Clean",
+    description: "We take pride in maintaining a spotless facility. Equipment is sanitized daily, and our space is always ready for your workout.",
+  },
+  {
+    title: "Non-Intimidating",
+    description: "We've created a welcoming environment where everyone feels comfortable, regardless of fitness level or experience. This is your space to grow.",
+  },
+  {
+    title: "Private Access",
+    description: "Secure 24/7 access means you can train on your schedule. Early morning or late night, we're here when you need us.",
+  },
+];
+
+const galleryImages = [
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/1-0001.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/1-0001.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Gym Entrance" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0004-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0004-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Training Area" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0019-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0019-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Weight Training Zone" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0025-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0025-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Cardio Equipment" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/unnamed.jpg/:/rs=w:1160,h:840", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/unnamed.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Functional Training Area" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0067-HDR.jpg/:/rs=w:1280,h:854", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0067-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Free Weights Section" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0058-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0058-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Stretching Area" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0106-HDR.jpg/:/rs=w:1280,h:854", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0106-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Machine Training Zone" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0172-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0172-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Personal Training Area" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0148-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0148-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Equipment Detail" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0070-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0070-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Training Floor" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0064-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0064-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Gym Overview" },
+  { src: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0073-HDR.jpg/:/rs=w:1280,h:853", thumb: "//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0073-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc", alt: "Fitness Equipment" },
+];
 ---
 
 <!DOCTYPE html>
@@ -13,167 +67,189 @@ import '../styles/global.css';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700|Montserrat:400,500,600,700|Prompt:500" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    </style>
   </head>
-  <body class="overflow-x-hidden">
-    <div
-      class="bg-black overflow-x-hidden w-full lg:min-w-[1920px] min-h-[5314px] relative"
-      data-model-id="1:1045"
-    >
-      <!-- Background decorative images -->
+  <body class="bg-black min-h-screen">
+    <!-- Hero Background Section -->
+    <div class="relative w-full h-[400px] md:h-[450px] lg:h-[458px] bg-[#14181f]">
+      <!-- Decorative Line -->
       <img
-        class="absolute top-[1493px] left-0 w-[1920px] h-[916px]"
-        alt="Union"
-        src="/img/union.svg"
-      />
-
-      <img
-        class="absolute top-[3328px] left-0 w-[1920px] h-[1011px]"
-        alt="Union"
-        src="/img/union-1.svg"
-      />
-
-      <div class="absolute top-0 left-0 w-full lg:w-[1943px] h-[458px] bg-[#14181f]" />
-
-      <img
-        class="absolute top-11 left-[538px] w-px h-[33px]"
+        class="hidden lg:block absolute top-11 left-[538px] w-px h-[33px]"
         alt="Line"
         src="/img/line-217.svg"
       />
 
-      <!-- Main Navigation Section -->
-      <header class="inline-flex items-start gap-[221px] absolute top-[15px] left-[360px]">
-        <a href="/" aria-label="Home">
-          <img
-            class="relative w-[95px] h-[102.62px] aspect-[0.93] object-cover"
-            alt="Company Logo"
-            src="/img/image-3-2-1.png"
-          />
-        </a>
-
-        <nav class="inline-flex items-center justify-end gap-10 relative flex-[0_0_auto]">
-          <ul class="inline-flex items-center gap-[30px] relative flex-[0_0_auto]">
-            <li>
-              <a
-                href="/"
-                class="relative flex items-center justify-center w-fit mt-[-1.03px] [font-family:'Inter',Helvetica] font-medium text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap text-white hover:text-[#fedf41] transition-colors"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/personal-training"
-                class="relative flex items-center justify-center w-fit mt-[-1.03px] [font-family:'Inter',Helvetica] font-medium text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap text-white hover:text-[#fedf41] transition-colors"
-              >
-                Personal Training
-              </a>
-            </li>
-            <li>
-              <a
-                href="/memberships"
-                class="relative flex items-center justify-center w-fit mt-[-1.03px] [font-family:'Inter',Helvetica] font-medium text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap text-white hover:text-[#fedf41] transition-colors"
-              >
-                Memberships
-              </a>
-            </li>
-            <li>
-              <a
-                href="/group-sessions"
-                class="relative flex items-center justify-center w-fit mt-[-1.03px] [font-family:'Inter',Helvetica] font-medium text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap text-white hover:text-[#fedf41] transition-colors"
-              >
-                Group Sessions
-              </a>
-            </li>
-            <li>
-              <a
-                href="/virtual-tour"
-                class="relative flex items-center justify-center w-fit mt-[-1.03px] [font-family:'Inter',Helvetica] font-medium text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap text-[#fedf41]"
-              >
-                Virtual Tour
-              </a>
-            </li>
-          </ul>
-
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center gap-[10.33px] px-[23px] py-[15.49px] relative flex-[0_0_auto] bg-[#fedf41] rounded-[12.39px] hover:opacity-90 transition-opacity"
-          >
-            <span class="relative flex items-center justify-center w-fit mt-[-1.55px] [font-family:'Inter',Helvetica] font-medium text-black text-base text-center tracking-[0] leading-6 whitespace-nowrap">
-              Get in Touch
-            </span>
-
+      <!-- Navigation -->
+      <nav class="absolute top-0 left-0 w-full z-50">
+        <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto">
+          <!-- Logo -->
+          <a href="/" aria-label="Home">
             <img
-              class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
-              alt=""
-              src="/img/line-108-1.svg"
+              class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50"
+              alt="Ambition Fitness Logo"
+              src="/img/image-3-2.png"
             />
           </a>
-        </nav>
-      </header>
 
-      <!-- What Makes Us Different Section (Hero) -->
-      <section class="flex flex-col w-[780px] items-center justify-center gap-[30px] absolute top-[181px] left-[calc(50.00%_-_390px)] rounded-xl">
-        <div class="flex flex-col items-center gap-11 relative self-stretch w-full flex-[0_0_auto]">
-          <header class="flex flex-col items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-            <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-              <h1 class="relative self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-transparent text-[65px] text-center tracking-[0] leading-[78.7px]">
-                <span class="text-[#fedf41]">Tour</span>
-                <span class="text-[#f0f0f0]"> Our Facility</span>
-              </h1>
+          <!-- Hamburger Menu Button (Mobile Only) -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+              {navigationLinks.map((link) =>
+                link.isActive ? (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-[#fedf41] text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-[#fedf41] transition-colors"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
             </div>
 
-            <p class="relative self-stretch opacity-[0.99] [font-family:'Montserrat',Helvetica] font-medium text-white text-[22px] text-center tracking-[0] leading-[35.2px]">
-              A private, premium fitness space designed for your success
-            </p>
-          </header>
+            <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-[#fedf41] rounded-[12.39px] w-full md:w-auto hover:opacity-90 transition-opacity">
+              <span class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-black text-base text-center tracking-[0] leading-6 whitespace-nowrap">
+                Get in Touch
+              </span>
 
-          <button
-            class="inline-flex items-center justify-center gap-2.5 px-[29px] py-3 relative flex-[0_0_auto] bg-[#fedf41] rounded-[1000px] cursor-pointer transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#fedf41] focus:ring-offset-2 focus:ring-offset-transparent"
-            type="button"
-            aria-label="Book In-Person Tour"
-          >
-            <span class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-black text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-              Book In-Person Tour
-            </span>
-
-            <svg
-              class="relative w-4 h-4"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-            >
-              <path
-                d="M1.33333 2V14H13.3333V2H1.33333Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <img
+                class="relative w-[18.33px] h-[11.41px]"
+                alt="Arrow"
+                src="/img/line-108-3.svg"
               />
-              <path
-                d="M1.33333 6H13.3333"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M10.6667 0V4M5.33333 0V4"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </button>
+            </a>
+          </div>
         </div>
-      </section>
 
-      <!-- Header Section (Virtual Tour) -->
-      <section class="flex flex-col w-[1200px] items-start gap-12 absolute top-[574px] left-[calc(50.00%_-_600px)]">
-        <header class="flex flex-col items-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
+        <!-- Mobile Menu Overlay -->
+        <div
+          id="mobile-menu"
+          class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden md:hidden"
+        >
+          <div class="flex flex-col items-center justify-center h-full px-4">
+            <div class="flex flex-col items-center gap-8 w-full max-w-sm">
+              {navigationLinks.map((link) =>
+                link.isActive ? (
+                  <a
+                    class="text-[#fedf41] text-2xl font-semibold [font-family:'Inter',Helvetica]"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <a
+                    class="text-white text-2xl font-semibold [font-family:'Inter',Helvetica] hover:text-[#fedf41] transition-colors"
+                    href={link.path}
+                  >
+                    {link.label}
+                  </a>
+                )
+              )}
+
+              <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-[#fedf41] rounded-[12.39px] mt-4 hover:opacity-90 transition-opacity">
+                <span class="font-semibold text-black text-lg [font-family:'Inter',Helvetica]">
+                  Get in Touch
+                </span>
+                <img
+                  class="w-[18.33px] h-[11.41px]"
+                  alt="Arrow"
+                  src="/img/line-108-3.svg"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="flex flex-col items-center justify-center gap-6 md:gap-8 px-4 absolute top-[120px] md:top-[150px] lg:top-[181px] left-0 right-0 lg:left-[calc(50%_-_390px)] lg:right-auto lg:w-[780px]">
+        <header class="flex flex-col items-center gap-4 md:gap-5 w-full">
+          <h1 class="[font-family:'Montserrat',Helvetica] font-semibold text-transparent text-3xl md:text-5xl lg:text-[65px] text-center tracking-[0] leading-[1.2] lg:leading-[78.7px]">
+            <span class="text-[#fedf41]">Tour</span>
+            <span class="text-[#f0f0f0]"> Our Facility</span>
+          </h1>
+
+          <p class="opacity-[0.99] [font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-lg lg:text-[22px] text-center tracking-[0] leading-[1.6] lg:leading-[35.2px] px-4 md:px-0">
+            A private, premium fitness space designed for your success
+          </p>
+        </header>
+
+        <button
+          class="inline-flex items-center justify-center gap-2.5 px-6 md:px-[29px] py-3 bg-[#fedf41] rounded-[1000px] cursor-pointer transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#fedf41] focus:ring-offset-2 focus:ring-offset-transparent"
+          type="button"
+          onclick="window.location.href='/contact'"
+          aria-label="Book In-Person Tour"
+        >
+          <span class="[font-family:'Montserrat',Helvetica] font-medium text-black text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+            Book In-Person Tour
+          </span>
+
+          <svg
+            class="w-4 h-4"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M1.33333 2V14H13.3333V2H1.33333Z"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M1.33333 6H13.3333"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10.6667 0V4M5.33333 0V4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </section>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex flex-col w-full items-center">
+      <!-- Virtual Tour Section -->
+      <section class="flex flex-col w-full max-w-[1200px] items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 mx-auto relative z-10">
+        <header class="flex flex-col items-center gap-4 w-full">
           <div
-            class="relative w-16 h-16"
+            class="relative w-12 h-12 md:w-16 md:h-16"
             role="img"
             aria-label="Virtual tour icon"
           >
@@ -190,24 +266,24 @@ import '../styles/global.css';
             />
           </div>
 
-          <div class="flex flex-col items-start gap-1.5 relative self-stretch w-full flex-[0_0_auto]">
-            <h2 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 text-[45px] text-center tracking-[0] leading-[60px]">
+          <div class="flex flex-col items-center gap-1.5 w-full">
+            <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 text-2xl md:text-4xl lg:text-[45px] text-center tracking-[0] leading-[1.3] lg:leading-[60px]">
               Virtual Tour
             </h2>
 
-            <p class="relative flex items-center justify-center self-stretch [font-family:'Montserrat',Helvetica] font-normal text-white text-base text-center tracking-[0] leading-7">
+            <p class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm md:text-base text-center tracking-[0] leading-7">
               Explore our facility from the comfort of your home
             </p>
           </div>
         </header>
 
-        <div class="flex-col items-start p-px relative self-stretch w-full flex-[0_0_auto] bg-[#191919] overflow-hidden flex rounded-xl shadow-[0px_1px_2px_#0000000d]">
+        <div class="w-full bg-[#191919] overflow-hidden rounded-xl shadow-[0px_1px_2px_#0000000d]">
           <!-- Kuula 360° Virtual Tour Embed -->
           <iframe
             title="Ambition Fitness 360° Virtual Tour"
             width="100%"
-            height="575"
-            style="width: 100%; height: 575px; border: none; max-width: 100%; border-radius: 12px;"
+            height="400"
+            class="w-full h-[300px] md:h-[450px] lg:h-[575px] border-none rounded-xl"
             frameborder="0"
             allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
             scrolling="no"
@@ -218,147 +294,47 @@ import '../styles/global.css';
         </div>
       </section>
 
-      <!-- Virtual Tour Section (Facility Features) -->
-      <section class="flex w-[1201px] top-[1737px] left-[calc(50.00%_-_601px)] flex-col items-center absolute">
-        <div class="flex flex-col max-w-4xl items-start gap-12 relative w-full flex-[0_0_auto]">
-          <header class="items-center flex flex-col relative self-stretch w-full flex-[0_0_auto]">
-            <h2 class="self-stretch text-[45px] text-center leading-[60px] relative flex items-center justify-center mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 tracking-[0]">
+      <!-- Facility Features Section with Grey Wave Background -->
+      <div class="relative w-full">
+        <!-- Grey Wave Background -->
+        <img
+          class="hidden lg:block absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
+          alt=""
+          src="/img/union.svg"
+        />
+
+        <section class="flex flex-col w-full max-w-4xl items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 mx-auto relative z-10">
+          <header class="flex flex-col items-center w-full">
+            <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 text-2xl md:text-4xl lg:text-[45px] text-center tracking-[0] leading-[1.3] lg:leading-[60px]">
               Facility Features
             </h2>
           </header>
 
-          <div class="relative self-stretch w-full h-96">
-            <!-- Row 1 -->
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-0 left-0">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+            {facilityFeatures.map((feature) => (
+              <div class="flex items-start gap-4 p-4 md:p-[25px] bg-black rounded-xl shadow-[0px_1px_2px_#0000000d]">
+                <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0">
+                  <div class="relative w-6 h-6">
+                    <img
+                      class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
+                      alt=""
+                      src="/img/vector-15.svg"
+                    />
+                  </div>
                 </div>
+                <p class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm md:text-base tracking-[0] leading-7">
+                  {feature}
+                </p>
               </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[16.2px] tracking-[0] leading-7 whitespace-nowrap">
-                State-of-the-art cardio equipment
-              </p>
-            </div>
-
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-0 left-[460px]">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
-                </div>
-              </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[16.7px] tracking-[0] leading-7 whitespace-nowrap">
-                Full range of free weights and machines
-              </p>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-[102px] left-0">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
-                </div>
-              </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[16.6px] tracking-[0] leading-7 whitespace-nowrap">
-                Dedicated stretching and mobility area
-              </p>
-            </div>
-
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-[102px] left-[460px]">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
-                </div>
-              </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[16.7px] tracking-[0] leading-7 whitespace-nowrap">
-                Clean, well-maintained locker rooms
-              </p>
-            </div>
-
-            <!-- Row 3 -->
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-[204px] left-0">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
-                </div>
-              </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[16.6px] tracking-[0] leading-7 whitespace-nowrap">
-                Climate-controlled environment
-              </p>
-            </div>
-
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-[204px] left-[460px]">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
-                </div>
-              </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[16.9px] tracking-[0] leading-7 whitespace-nowrap">
-                Private training areas
-              </p>
-            </div>
-
-            <!-- Row 4 -->
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-[306px] left-0">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
-                </div>
-              </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[17px] tracking-[0] leading-7 whitespace-nowrap">
-                Ample parking
-              </p>
-            </div>
-
-            <div class="w-[calc(100%_-_460px)] items-start gap-4 p-[25px] absolute bg-black flex rounded-xl shadow-[0px_1px_2px_#0000000d] top-[306px] left-[460px]">
-              <div class="flex flex-col w-6 h-7 items-start pt-1 pb-0 px-0 relative">
-                <div class="relative w-6 h-6">
-                  <img
-                    class="absolute w-[66.67%] h-[45.83%] top-[20.83%] left-[12.50%]"
-                    alt=""
-                    src="/img/vector-15.svg"
-                  />
-                </div>
-              </div>
-              <p class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-[16.7px] tracking-[0] leading-7 whitespace-nowrap">
-                24/7 secure access
-              </p>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <!-- Facility Gallery Section with Carousel -->
-      <section class="flex w-[1400px] gap-12 px-4 py-0 top-[2509px] left-[calc(50.00%_-_700px)] flex-col items-center absolute">
-        <header class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
-          <h2 class="self-stretch text-[45px] text-center leading-[60px] relative flex items-center justify-center mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 tracking-[0]">
+      <section class="flex flex-col w-full max-w-[1400px] items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 mx-auto">
+        <header class="flex flex-col items-center w-full">
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 text-2xl md:text-4xl lg:text-[45px] text-center tracking-[0] leading-[1.3] lg:leading-[60px]">
             Facility Gallery
           </h2>
         </header>
@@ -367,58 +343,23 @@ import '../styles/global.css';
         <div class="relative w-full max-w-[1200px]">
           <div class="carousel-container relative w-full">
             <!-- Main Image Display -->
-            <div class="carousel-viewport relative w-full h-[600px] bg-black rounded-xl overflow-hidden">
+            <div class="carousel-viewport relative w-full h-[250px] md:h-[400px] lg:h-[600px] bg-black rounded-xl overflow-hidden">
               <ul id="carousel-track" class="carousel-track flex transition-transform duration-500 ease-in-out h-full">
-                <!-- Carousel Images -->
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/1-0001.jpg/:/rs=w:1280,h:853" alt="Gym Entrance" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0004-HDR.jpg/:/rs=w:1280,h:853" alt="Training Area" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0019-HDR.jpg/:/rs=w:1280,h:853" alt="Weight Training Zone" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0025-HDR.jpg/:/rs=w:1280,h:853" alt="Cardio Equipment" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/unnamed.jpg/:/rs=w:1160,h:840" alt="Functional Training Area" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0067-HDR.jpg/:/rs=w:1280,h:854" alt="Free Weights Section" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0058-HDR.jpg/:/rs=w:1280,h:853" alt="Stretching Area" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0106-HDR.jpg/:/rs=w:1280,h:854" alt="Machine Training Zone" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0172-HDR.jpg/:/rs=w:1280,h:853" alt="Personal Training Area" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0148-HDR.jpg/:/rs=w:1280,h:853" alt="Equipment Detail" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0070-HDR.jpg/:/rs=w:1280,h:853" alt="Training Floor" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0064-HDR.jpg/:/rs=w:1280,h:853" alt="Gym Overview" class="w-full h-full object-cover" />
-                </li>
-                <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0073-HDR.jpg/:/rs=w:1280,h:853" alt="Fitness Equipment" class="w-full h-full object-cover" />
-                </li>
+                {galleryImages.map((image) => (
+                  <li class="carousel-slide min-w-full h-full flex-shrink-0">
+                    <img src={image.src} alt={image.alt} class="w-full h-full object-cover" />
+                  </li>
+                ))}
               </ul>
 
               <!-- Navigation Arrows -->
-              <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <button id="carousel-prev" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 md:p-3 rounded-full transition-all z-10">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 md:w-7 md:h-7">
                   <path fill-rule="evenodd" d="M15.485 4L7 11.769l.499.484-.002.001L15.463 20l1.48-1.394-6.984-6.794 6.963-6.375z"></path>
                 </svg>
               </button>
-              <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+              <button id="carousel-next" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 md:p-3 rounded-full transition-all z-10">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 md:w-7 md:h-7">
                   <path fill-rule="evenodd" d="M8.515 4L17 11.769l-.499.484.002.001L8.537 20l-1.48-1.394 6.984-6.794-6.963-6.375z"></path>
                 </svg>
               </button>
@@ -426,257 +367,73 @@ import '../styles/global.css';
 
             <!-- Thumbnail Navigation -->
             <div class="mt-4 overflow-x-auto overflow-y-hidden">
-              <ul id="thumbnail-nav" class="flex gap-2 justify-center">
-                <li class="thumbnail-item opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/1-0001.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 1" class="w-[70px] h-[70px] object-cover rounded border-2 border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0004-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 2" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0019-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 3" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0025-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 4" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/unnamed.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 5" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0067-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 6" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0058-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 7" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0106-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 8" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0172-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 9" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0148-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 10" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0070-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 11" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0064-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 12" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
-                <li class="thumbnail-item opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
-                  <img src="//img1.wsimg.com/isteam/ip/6a30f4a0-7267-4714-8260-f9482ecd1f55/IMG_0073-HDR.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Thumbnail 13" class="w-[70px] h-[70px] object-cover rounded border-2 border-transparent hover:border-[#fedf41]" />
-                </li>
+              <ul id="thumbnail-nav" class="flex gap-2 justify-start md:justify-center pb-2">
+                {galleryImages.map((image, index) => (
+                  <li class={`thumbnail-item ${index === 0 ? 'opacity-100' : 'opacity-60 hover:opacity-100'} transition-opacity cursor-pointer flex-shrink-0`}>
+                    <img src={image.thumb} alt={`Thumbnail ${index + 1}`} class={`w-[50px] h-[50px] md:w-[70px] md:h-[70px] object-cover rounded border-2 ${index === 0 ? 'border-[#fedf41]' : 'border-transparent hover:border-[#fedf41]'}`} />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <script>
-        // Carousel functionality
-        document.addEventListener('DOMContentLoaded', function() {
-          const track = document.getElementById('carousel-track');
-          const slides = track?.querySelectorAll('.carousel-slide');
-          const prevButton = document.getElementById('carousel-prev');
-          const nextButton = document.getElementById('carousel-next');
-          const thumbnails = document.querySelectorAll('.thumbnail-item');
+      <!-- What Makes Us Different Section with Grey Wave Background -->
+      <div class="relative w-full">
+        <!-- Grey Wave Background -->
+        <img
+          class="hidden lg:block absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
+          alt=""
+          src="/img/union-1.svg"
+        />
 
-          let currentIndex = 0;
-          const totalSlides = slides?.length || 0;
-          let autoPlayInterval;
-
-          function updateCarousel() {
-            if (track) {
-              track.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-
-            // Update thumbnail active states with smoother transitions
-            thumbnails.forEach((thumb, index) => {
-              const img = thumb.querySelector('img');
-              if (index === currentIndex) {
-                thumb.classList.remove('opacity-60');
-                thumb.classList.add('opacity-100');
-                img?.classList.remove('border-transparent', 'border-white/20');
-                img?.classList.add('border-[#fedf41]', 'scale-105');
-                if (img) img.style.transition = 'all 0.3s ease';
-              } else {
-                thumb.classList.add('opacity-60');
-                thumb.classList.remove('opacity-100');
-                img?.classList.add('border-transparent');
-                img?.classList.remove('border-[#fedf41]', 'scale-105');
-                img?.classList.add('border-white/20');
-                if (img) img.style.transition = 'all 0.3s ease';
-              }
-            });
-          }
-
-          function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateCarousel();
-          }
-
-          function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-          }
-
-          function resetAutoPlay() {
-            // Clear existing interval
-            if (autoPlayInterval) {
-              clearInterval(autoPlayInterval);
-            }
-            // Set new interval for 11 seconds
-            autoPlayInterval = setInterval(nextSlide, 11000);
-          }
-
-          // Event listeners
-          nextButton?.addEventListener('click', () => {
-            nextSlide();
-            resetAutoPlay(); // Reset timer when manually navigating
-          });
-
-          prevButton?.addEventListener('click', () => {
-            prevSlide();
-            resetAutoPlay(); // Reset timer when manually navigating
-          });
-
-          // Thumbnail click handlers with improved feedback
-          thumbnails.forEach((thumb, index) => {
-            thumb.addEventListener('click', () => {
-              currentIndex = index;
-              updateCarousel();
-              resetAutoPlay(); // Reset timer when thumbnail clicked
-            });
-
-            // Add hover effect
-            thumb.addEventListener('mouseenter', () => {
-              if (index !== currentIndex) {
-                thumb.classList.remove('opacity-60');
-                thumb.classList.add('opacity-80');
-              }
-            });
-
-            thumb.addEventListener('mouseleave', () => {
-              if (index !== currentIndex) {
-                thumb.classList.remove('opacity-80');
-                thumb.classList.add('opacity-60');
-              }
-            });
-          });
-
-          // Initialize carousel
-          updateCarousel();
-
-          // Start auto-play carousel with 11 second intervals
-          resetAutoPlay();
-
-          // Pause auto-play on hover
-          const carouselContainer = document.querySelector('.carousel-viewport');
-          carouselContainer?.addEventListener('mouseenter', () => {
-            clearInterval(autoPlayInterval);
-          });
-
-          carouselContainer?.addEventListener('mouseleave', () => {
-            resetAutoPlay();
-          });
-        });
-      </script>
-
-      <!-- What Makes Us Different Section (FacilityGallerySection in Anima) -->
-      <section class="inline-flex justify-center top-[3551px] left-[calc(50.00%_-_598px)] flex-col items-center absolute">
-        <div class="flex flex-col max-w-[1196px] w-[1196px] items-start gap-12 relative flex-[0_0_auto]">
-          <header class="flex flex-col items-center relative self-stretch w-full flex-[0_0_auto]">
-            <h2 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 text-[45px] text-center tracking-[0] leading-[60px]">
+        <section class="flex flex-col w-full max-w-[1196px] items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 mx-auto relative z-10">
+          <header class="flex flex-col items-center w-full">
+            <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-neutral-50 text-2xl md:text-4xl lg:text-[45px] text-center tracking-[0] leading-[1.3] lg:leading-[60px]">
               What Makes Us Different
             </h2>
           </header>
 
-          <div class="flex flex-col items-start gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
-            <!-- Row 1 -->
-            <div class="flex items-start gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
-              <article class="flex flex-col items-start gap-1.5 p-[33px] relative flex-1 self-stretch grow bg-black rounded-xl shadow-[0px_1px_2px_#0000000d]">
-                <div class="items-start flex flex-col relative self-stretch w-full flex-[0_0_auto]">
-                  <h3 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl tracking-[0] leading-10">
-                    Never Crowded
-                  </h3>
-                </div>
-                <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                  <p class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-[#eeeeee] text-[16.7px] tracking-[0] leading-7">
-                    Our limited membership model ensures you always have access to the equipment you need, when you need it. No more waiting, no more frustration.
-                  </p>
-                </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-[30px] w-full">
+            {differentiators.map((item) => (
+              <article class="flex flex-col items-start gap-1.5 p-6 md:p-[33px] bg-black rounded-xl shadow-[0px_1px_2px_#0000000d]">
+                <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-xl md:text-2xl tracking-[0] leading-10">
+                  {item.title}
+                </h3>
+                <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#eeeeee] text-sm md:text-base tracking-[0] leading-7">
+                  {item.description}
+                </p>
               </article>
-
-              <article class="flex flex-col items-start gap-1.5 p-[33px] relative flex-1 self-stretch grow bg-black rounded-xl shadow-[0px_1px_2px_#0000000d]">
-                <div class="items-start flex flex-col relative self-stretch w-full flex-[0_0_auto]">
-                  <h3 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl tracking-[0] leading-10">
-                    Always Clean
-                  </h3>
-                </div>
-                <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                  <p class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-[#eeeeee] text-[16.7px] tracking-[0] leading-7">
-                    We take pride in maintaining a spotless facility. Equipment is sanitized daily, and our space is always ready for your workout.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <!-- Row 2 -->
-            <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-              <article class="flex flex-col items-start gap-1.5 p-[33px] relative flex-1 self-stretch grow bg-black rounded-xl shadow-[0px_1px_2px_#0000000d]">
-                <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                  <h3 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl tracking-[0] leading-10">
-                    Non-Intimidating
-                  </h3>
-                </div>
-                <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                  <p class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-[#eeeeee] text-[17px] tracking-[0] leading-7">
-                    We've created a welcoming environment where everyone feels comfortable, regardless of fitness level or experience. This is your space to grow.
-                  </p>
-                </div>
-              </article>
-
-              <article class="flex flex-col items-start gap-1.5 p-[33px] relative flex-1 self-stretch grow bg-black rounded-xl shadow-[0px_1px_2px_#0000000d]">
-                <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                  <h3 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl tracking-[0] leading-10">
-                    Private Access
-                  </h3>
-                </div>
-                <div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
-                  <p class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-[#eeeeee] text-[17px] tracking-[0] leading-7">
-                    Secure 24/7 access means you can train on your schedule. Early morning or late night, we're here when you need us.
-                  </p>
-                </div>
-              </article>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <!-- Get Started Section -->
-      <section class="flex flex-col w-[1010px] items-center justify-center gap-10 p-[60px] absolute top-[4474px] left-[455px] bg-[#fedf41] rounded-xl">
-        <div class="flex flex-col items-start justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
-          <h2 class="relative flex items-center justify-center self-stretch mt-[-1.00px] [font-family:'Prompt',Helvetica] font-medium text-black text-5xl text-center tracking-[0] leading-[53.3px]">
+      <section class="flex flex-col w-full max-w-[1010px] items-center justify-center gap-8 md:gap-10 p-6 md:p-[60px] mx-4 md:mx-8 my-12 md:my-16 bg-[#fedf41] rounded-xl">
+        <div class="flex flex-col items-center justify-center gap-4 md:gap-5 w-full">
+          <h2 class="[font-family:'Prompt',Helvetica] font-medium text-black text-2xl md:text-4xl lg:text-5xl text-center tracking-[0] leading-[1.2] lg:leading-[53.3px]">
             Get Started Today!
           </h2>
 
-          <p class="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-[#222222] text-[21px] text-center tracking-[0] leading-[31.5px]">
+          <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#222222] text-base md:text-lg lg:text-[21px] text-center tracking-[0] leading-[1.5] lg:leading-[31.5px]">
             If you are ready to start living a healthy lifestyle, message me to get started! Everyone has a unique situation, and I'll strive to accommodate yours.
           </p>
         </div>
 
         <button
-          class="inline-flex h-14 items-center justify-center gap-[13px] px-6 py-5 relative bg-black rounded-xl overflow-hidden cursor-pointer transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+          class="inline-flex h-12 md:h-14 items-center justify-center gap-3 md:gap-[13px] px-5 md:px-6 py-4 md:py-5 bg-black rounded-xl overflow-hidden cursor-pointer transition-opacity hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
           onclick="window.location.href='/contact'"
           type="button"
           aria-label="Get Started Today"
         >
-          <span class="relative w-fit mt-[-6.00px] mb-[-2.00px] [font-family:'Montserrat',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">
+          <span class="[font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-6 whitespace-nowrap">
             Get Started Today
           </span>
 
           <img
-            class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+            class="w-[18.33px] h-[11.41px]"
             alt=""
             src="/img/line-108.svg"
             aria-hidden="true"
@@ -684,19 +441,19 @@ import '../styles/global.css';
         </button>
       </section>
 
-      <!-- Footer (FacilityFeaturesSection in Anima) -->
-      <footer class="flex flex-col w-[1920px] items-start justify-center gap-[30px] pt-[110px] pb-[30px] px-[360px] absolute left-[calc(50.00%_-_960px)] bottom-[-135px]">
-        <div class="flex flex-col items-start gap-20 relative self-stretch w-full flex-[0_0_auto]">
-          <div class="flex items-start gap-[31px] relative self-stretch w-full flex-[0_0_auto]">
+      <!-- Footer -->
+      <footer class="flex flex-col w-full items-start justify-center gap-6 md:gap-[30px] pt-8 md:pt-12 lg:pt-[110px] pb-6 md:pb-[30px] px-4 md:px-8 lg:px-[360px]">
+        <div class="flex flex-col items-start gap-12 md:gap-20 w-full">
+          <div class="flex flex-col lg:flex-row items-start gap-8 md:gap-[31px] w-full">
             <!-- Company Info -->
-            <div class="flex flex-col w-[414px] items-start justify-center gap-4 pl-0 pr-5 py-0 relative">
+            <div class="flex flex-col w-full lg:w-[414px] items-start justify-center gap-4 pr-0 lg:pr-5">
               <img
-                class="relative w-[63px] h-[68.05px] aspect-[0.93] object-cover"
+                class="w-[50px] md:w-[63px] h-auto aspect-[0.93] object-cover"
                 alt="Ambition Fitness Logo"
                 src="/img/image-3-2.png"
               />
 
-              <p class="relative self-stretch [font-family:'Montserrat',Helvetica] font-normal text-transparent text-sm tracking-[0] leading-[22.4px]">
+              <p class="[font-family:'Montserrat',Helvetica] font-normal text-transparent text-sm tracking-[0] leading-[22.4px]">
                 <span class="text-[#ebebeb]">
                   Transform your body and mind with our world-class personal training facility. Expert coaches, cutting-edge equipment, proven results. <br />
                 </span>
@@ -706,114 +463,96 @@ import '../styles/global.css';
               </p>
             </div>
 
-            <!-- Services -->
-            <nav
-              class="flex flex-col items-start gap-[13px] relative flex-1 grow"
-              aria-labelledby="services-heading"
-            >
-              <h3
-                id="services-heading"
-                class="relative self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]"
-              >
-                Services
-              </h3>
+            <!-- Footer Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-[31px] flex-1 w-full">
+              <!-- Services -->
+              <nav class="flex flex-col items-start gap-[13px]" aria-labelledby="services-heading">
+                <h3 id="services-heading" class="[font-family:'Montserrat',Helvetica] font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]">
+                  Services
+                </h3>
 
-              <ul class="flex flex-col items-start justify-center gap-1 relative self-stretch w-full flex-[0_0_auto] opacity-80">
-                <li class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="/personal-training" class="hover:text-[#fedf41] transition-colors">
-                    Personal Training
-                  </a>
-                </li>
-                <li class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="/group-sessions" class="hover:text-[#fedf41] transition-colors">
-                    Group Classes
-                  </a>
-                </li>
-                <li class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="#" class="hover:text-[#fedf41] transition-colors">
-                    Online Training
-                  </a>
-                </li>
-              </ul>
-            </nav>
+                <ul class="flex flex-col items-start justify-center gap-1 opacity-80">
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="/personal-training" class="hover:text-[#fedf41] transition-colors">
+                      Personal Training
+                    </a>
+                  </li>
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="/group-sessions" class="hover:text-[#fedf41] transition-colors">
+                      Group Classes
+                    </a>
+                  </li>
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Online Training
+                    </a>
+                  </li>
+                </ul>
+              </nav>
 
-            <!-- Service Area -->
-            <nav
-              class="flex flex-col items-start gap-[13px] relative flex-1 grow"
-              aria-labelledby="service-area-heading"
-            >
-              <h3
-                id="service-area-heading"
-                class="relative self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]"
-              >
-                Service Area
-              </h3>
+              <!-- Service Area -->
+              <nav class="flex flex-col items-start gap-[13px]" aria-labelledby="service-area-heading">
+                <h3 id="service-area-heading" class="[font-family:'Montserrat',Helvetica] font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]">
+                  Service Area
+                </h3>
 
-              <ul class="flex flex-col items-start justify-center gap-1 relative self-stretch w-full flex-[0_0_auto] opacity-80">
-                <li class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="#" class="hover:text-[#fedf41] transition-colors">
-                    Mayland Heights
-                  </a>
-                </li>
-                <li class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="#" class="hover:text-[#fedf41] transition-colors">
-                    Meridian
-                  </a>
-                </li>
-                <li class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="#" class="hover:text-[#fedf41] transition-colors">
-                    Raddison Heights
-                  </a>
-                </li>
-                <li class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="#" class="hover:text-[#fedf41] transition-colors">
-                    Bridgeland-Riverside
-                  </a>
-                </li>
-              </ul>
-            </nav>
+                <ul class="flex flex-col items-start justify-center gap-1 opacity-80">
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Mayland Heights
+                    </a>
+                  </li>
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Meridian
+                    </a>
+                  </li>
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Raddison Heights
+                    </a>
+                  </li>
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Bridgeland-Riverside
+                    </a>
+                  </li>
+                </ul>
+              </nav>
 
-            <!-- Company -->
-            <nav
-              class="flex flex-col items-start gap-[13px] relative flex-1 grow"
-              aria-labelledby="company-heading"
-            >
-              <h3
-                id="company-heading"
-                class="relative self-stretch mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]"
-              >
-                Company
-              </h3>
+              <!-- Company -->
+              <nav class="flex flex-col items-start gap-[13px]" aria-labelledby="company-heading">
+                <h3 id="company-heading" class="[font-family:'Montserrat',Helvetica] font-medium text-[#fedf41] text-base tracking-[0] leading-[26px]">
+                  Company
+                </h3>
 
-              <ul class="flex flex-col items-start justify-center gap-1 relative self-stretch w-full flex-[0_0_auto] opacity-80">
-                <li class="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="/" class="hover:text-[#fedf41] transition-colors">
-                    Home
-                  </a>
-                </li>
-                <li class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="#" class="hover:text-[#fedf41] transition-colors">
-                    Blog
-                  </a>
-                </li>
-                <li class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px] whitespace-nowrap">
-                  <a href="/contact" class="hover:text-[#fedf41] transition-colors">
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </nav>
+                <ul class="flex flex-col items-start justify-center gap-1 opacity-80">
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="/" class="hover:text-[#fedf41] transition-colors">
+                      Home
+                    </a>
+                  </li>
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="#" class="hover:text-[#fedf41] transition-colors">
+                      Blog
+                    </a>
+                  </li>
+                  <li class="[font-family:'Montserrat',Helvetica] font-normal text-white text-sm tracking-[0] leading-[26px]">
+                    <a href="/contact" class="hover:text-[#fedf41] transition-colors">
+                      Contact Us
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
 
-          <hr
-            class="relative self-stretch w-full h-px object-cover border-0 bg-white opacity-20"
-            aria-hidden="true"
-          />
+          <hr class="w-full h-px border-0 bg-white opacity-20" aria-hidden="true" />
         </div>
 
-        <div class="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
-          <p class="relative w-fit [font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base text-center tracking-[0] leading-[normal]">
-            Copyright © 2025 Ambition Fitness - All Rights Reserved.
+        <div class="flex items-center justify-between w-full">
+          <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#919191] md:text-[#e4e4e4] text-sm md:text-base tracking-[0] leading-[normal]">
+            © 2025 Ambition Fitness · All rights reserved.
           </p>
 
           <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
@@ -822,5 +561,135 @@ import '../styles/global.css';
         </div>
       </footer>
     </div>
+
+    <script>
+      // Mobile Menu Toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', function() {
+            const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+
+            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+
+            // Animate hamburger to X
+            if (!isExpanded) {
+              hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+              hamburgerLines[1].style.opacity = '0';
+              hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+            }
+          });
+        }
+
+        // Carousel functionality
+        const track = document.getElementById('carousel-track');
+        const slides = track?.querySelectorAll('.carousel-slide');
+        const prevButton = document.getElementById('carousel-prev');
+        const nextButton = document.getElementById('carousel-next');
+        const thumbnails = document.querySelectorAll('.thumbnail-item');
+
+        let currentIndex = 0;
+        const totalSlides = slides?.length || 0;
+        let autoPlayInterval;
+
+        function updateCarousel() {
+          if (track) {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+          }
+
+          // Update thumbnail active states
+          thumbnails.forEach((thumb, index) => {
+            const img = thumb.querySelector('img');
+            if (index === currentIndex) {
+              thumb.classList.remove('opacity-60');
+              thumb.classList.add('opacity-100');
+              img?.classList.remove('border-transparent', 'border-white/20');
+              img?.classList.add('border-[#fedf41]', 'scale-105');
+              if (img) img.style.transition = 'all 0.3s ease';
+            } else {
+              thumb.classList.add('opacity-60');
+              thumb.classList.remove('opacity-100');
+              img?.classList.add('border-transparent');
+              img?.classList.remove('border-[#fedf41]', 'scale-105');
+              img?.classList.add('border-white/20');
+              if (img) img.style.transition = 'all 0.3s ease';
+            }
+          });
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          updateCarousel();
+        }
+
+        function resetAutoPlay() {
+          if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+          }
+          autoPlayInterval = setInterval(nextSlide, 11000);
+        }
+
+        // Event listeners
+        nextButton?.addEventListener('click', () => {
+          nextSlide();
+          resetAutoPlay();
+        });
+
+        prevButton?.addEventListener('click', () => {
+          prevSlide();
+          resetAutoPlay();
+        });
+
+        // Thumbnail click handlers
+        thumbnails.forEach((thumb, index) => {
+          thumb.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+            resetAutoPlay();
+          });
+
+          thumb.addEventListener('mouseenter', () => {
+            if (index !== currentIndex) {
+              thumb.classList.remove('opacity-60');
+              thumb.classList.add('opacity-80');
+            }
+          });
+
+          thumb.addEventListener('mouseleave', () => {
+            if (index !== currentIndex) {
+              thumb.classList.remove('opacity-80');
+              thumb.classList.add('opacity-60');
+            }
+          });
+        });
+
+        // Initialize carousel
+        updateCarousel();
+        resetAutoPlay();
+
+        // Pause auto-play on hover
+        const carouselContainer = document.querySelector('.carousel-viewport');
+        carouselContainer?.addEventListener('mouseenter', () => {
+          clearInterval(autoPlayInterval);
+        });
+
+        carouselContainer?.addEventListener('mouseleave', () => {
+          resetAutoPlay();
+        });
+      });
+    </script>
   </body>
 </html>
