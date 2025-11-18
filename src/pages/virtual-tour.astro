@@ -288,7 +288,6 @@ const galleryImages = [
             scrolling="no"
             allowfullscreen="true"
             src="https://kuula.co/share/collection/7Y3kG?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
-            <p>Your browser doesn't support iframes. <a href="https://kuula.co/share/collection/7Y3kG?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" target="_blank" rel="noopener noreferrer">View the virtual tour directly on Kuula</a></p>
           </iframe>
         </div>
       </section>
@@ -565,13 +564,13 @@ const galleryImages = [
       document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
 
         if (mobileMenuBtn && mobileMenu) {
           mobileMenuBtn.addEventListener('click', function() {
             const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
 
-            mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
             mobileMenu.classList.toggle('hidden');
 
             // Animate hamburger to X
@@ -596,7 +595,7 @@ const galleryImages = [
 
         let currentIndex = 0;
         const totalSlides = slides?.length || 0;
-        let autoPlayInterval;
+        let autoPlayInterval: ReturnType<typeof setInterval> | undefined;
 
         function updateCarousel() {
           if (track) {

@@ -494,7 +494,7 @@ const membershipIncludes = [
     <script>
       const menuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
-      const hamburgerLines = document.querySelectorAll('.hamburger-line');
+      const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
 
       if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
@@ -525,7 +525,8 @@ const membershipIncludes = [
 
         // Close menu when clicking a link
         mobileMenu.addEventListener('click', (e) => {
-          if (e.target.tagName === 'A') {
+          const target = e.target as HTMLElement;
+          if (target.tagName === 'A') {
             mobileMenu.classList.add('hidden');
             document.body.style.overflow = 'auto';
             menuBtn.setAttribute('aria-expanded', 'false');

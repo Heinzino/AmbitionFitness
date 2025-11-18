@@ -492,9 +492,8 @@ const scheduleData = {
           {whyChooseBenefits.map((benefit, index) => (
             <article class="flex flex-col items-center gap-4 md:gap-[26px] relative flex-1">
               <div class="relative w-20 h-20 overflow-visible" role="img" aria-label={benefit.title}>
-                {benefit.icon.images.map((image, imgIndex) => (
+                {benefit.icon.images.map((image) => (
                   <img
-                    key={imgIndex}
                     class={image.className}
                     alt={image.alt}
                     src={image.src}
@@ -603,7 +602,7 @@ const scheduleData = {
       document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
         let isMenuOpen = false;
 
         if (mobileMenuBtn && mobileMenu) {
