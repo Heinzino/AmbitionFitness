@@ -114,7 +114,7 @@ export const ClientTransformationsSection = (): JSX.Element => {
         ))}
       </div>
 
-      <button className="h-12 md:h-14 bg-variable-collection-colorpriamry inline-flex items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] cursor-pointer transition-transform hover:scale-105 active:scale-95">
+      <a href="/personal-training" className="h-12 md:h-14 bg-variable-collection-colorpriamry inline-flex items-center justify-center gap-2.5 px-6 md:px-[35px] py-3 md:py-[15px] rounded-[1000px] cursor-pointer transition-transform hover:scale-105 active:scale-95">
         <span className="w-fit [font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
           See More
         </span>
@@ -125,7 +125,7 @@ export const ClientTransformationsSection = (): JSX.Element => {
           src="/img/line-108-5.svg"
           aria-hidden="true"
         />
-      </button>
+      </a>
     </section>
   );
 };

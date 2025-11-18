@@ -30,6 +30,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       image: "/img/rectangle-6538.png",
       imageAlt: "Memberships",
       imagePosition: "right",
+      link: "/membership",
     },
     {
       id: 3,
@@ -39,6 +40,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       image: "/img/rectangle-6538-1.png",
       imageAlt: "Group Sessions",
       imagePosition: "left",
+      link: "/group-session",
     },
   ];
 
