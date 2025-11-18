@@ -4,7 +4,10 @@
       "Bash(cat:*)",
       "Bash(npm run dev:*)",
       "Bash(xargs:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(dir \"C:\\Users\\heinz\\OneDrive\\Desktop\\REPO\\AmbitionFitness\\public\\img\")",
+      "Bash(findstr:*)",
+      "Bash(dir \"C:\\Users\\heinz\\OneDrive\\Desktop\\REPO\\AmbitionFitness\\public\\img\\*.svg\")"
     ],
     "deny": [],
     "ask": []

@@ -12,36 +12,30 @@ const navigationLinks = [
 // Membership Benefits Data
 const membershipBenefitsRow1 = [
   {
-    icon: {
-      images: [
-        { src: "/img/vector-6.svg", alt: "Clock icon", className: "absolute w-[83.33%] h-[83.33%] top-[4.17%] left-[4.17%]" },
-        { src: "/img/vector-1.svg", alt: "Clock hand", className: "absolute w-[16.67%] h-[33.33%] top-[20.83%] left-[45.83%]" },
-      ],
-    },
+    iconSvg: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="20" stroke="#fedf41" stroke-width="2.5"/>
+      <path d="M24 12V24L30 30" stroke="#fedf41" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
     title: "24/7 Access",
     description: "Train whenever it fits your schedule, day or night",
   },
   {
-    icon: {
-      images: [
-        { src: "/img/vector-2.svg", alt: "People base", className: "absolute w-[58.33%] h-[25.00%] top-[58.33%] left-[4.17%]" },
-        { src: "/img/vector-3.svg", alt: "Person left", className: "absolute w-[33.33%] h-[33.33%] top-[8.33%] left-[16.67%]" },
-        { src: "/img/vector-4.svg", alt: "Person right small", className: "absolute w-[12.50%] h-[24.46%] top-[58.87%] left-[75.00%]" },
-        { src: "/img/vector-5.svg", alt: "Person right large", className: "absolute w-[12.53%] h-[32.29%] top-[8.87%] left-[62.50%]" },
-      ],
-    },
+    iconSvg: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="18" r="5" stroke="#fedf41" stroke-width="2.5"/>
+      <path d="M4 35C4 31 8 28 12 28C16 28 20 31 20 35" stroke="#fedf41" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="36" cy="18" r="5" stroke="#fedf41" stroke-width="2.5"/>
+      <path d="M28 35C28 31 32 28 36 28C40 28 44 31 44 35" stroke="#fedf41" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
     title: "Limited Spots",
     description: "Exclusive membership ensures it's never crowded",
   },
   {
-    icon: {
-      images: [
-        { src: "/img/vector-6.svg", alt: "Face circle", className: "absolute w-[83.33%] h-[83.33%] top-[4.17%] left-[4.17%]" },
-        { src: "/img/vector-7.svg", alt: "Smile", className: "absolute w-[33.33%] h-[8.33%] top-[54.17%] left-[29.17%]" },
-        { src: "/img/vector-9.svg", alt: "Eye left", className: "absolute w-[4.55%] h-[3.64%] top-[33.33%] left-[33.33%]" },
-        { src: "/img/vector-9.svg", alt: "Eye right", className: "absolute w-[4.55%] h-[3.64%] top-[33.33%] left-[58.33%]" },
-      ],
-    },
+    iconSvg: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="20" stroke="#fedf41" stroke-width="2.5"/>
+      <circle cx="16" cy="20" r="2" fill="#fedf41"/>
+      <circle cx="32" cy="20" r="2" fill="#fedf41"/>
+      <path d="M16 30C16 30 19 34 24 34C29 34 32 30 32 30" stroke="#fedf41" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
     title: "Non-Intimidating",
     description: "Welcoming environment for all fitness levels",
   },
@@ -49,32 +43,28 @@ const membershipBenefitsRow1 = [
 
 const membershipBenefitsRow2 = [
   {
-    icon: {
-      images: [
-        { src: "/img/vector-10.svg", alt: "Document with X", className: "absolute w-[66.67%] h-[83.35%] top-[4.16%] left-[12.50%]" },
-      ],
-    },
+    iconSvg: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="8" width="28" height="32" rx="2" stroke="#fedf41" stroke-width="2.5"/>
+      <path d="M18 18L30 30M30 18L18 30" stroke="#fedf41" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
     title: "No Contracts",
     description: "Month-to-month flexibility, cancel anytime",
   },
   {
-    icon: {
-      images: [
-        { src: "/img/vector-12.svg", alt: "Dollar sign S", className: "absolute w-[50.00%] h-[58.33%] top-[16.67%] left-[20.83%]" },
-        { src: "/img/vector-11.svg", alt: "Dollar sign line", className: "absolute w-[8.33%] h-[83.33%] top-[4.17%] left-[45.83%]" },
-      ],
-    },
+    iconSvg: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="20" stroke="#fedf41" stroke-width="2.5"/>
+      <path d="M24 10V14M24 34V38" stroke="#fedf41" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M28 18C28 16 27 14 24 14C21 14 20 16 20 18C20 20 21 21 24 22C27 23 28 24 28 26C28 28 27 30 24 30C21 30 20 28 20 26" stroke="#fedf41" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
     title: "No Hidden Fees",
     description: "Simple, transparent pricing with everything included",
   },
   {
-    icon: {
-      images: [
-        { src: "/img/vector-13.svg", alt: "Star decoration", className: "absolute w-[25.36%] h-[25.36%] top-[12.50%] left-[60.42%]" },
-        { src: "/img/vector-14.svg", alt: "Key head", className: "absolute w-[40.00%] h-[40.00%] top-[4.17%] left-[43.33%]" },
-        { src: "/img/vector-15.svg", alt: "Key body", className: "absolute w-[45.83%] h-[45.83%] top-[37.50%] left-[4.17%]" },
-      ],
-    },
+    iconSvg: `<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 36C17.9706 36 22 31.9706 22 27C22 22.0294 17.9706 18 13 18C8.02944 18 4 22.0294 4 27C4 31.9706 8.02944 36 13 36Z" stroke="#fedf41" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M19.5 20.5L38 2" stroke="#fedf41" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M28 12L32 16C32.3739 16.3665 32.8765 16.5717 33.4 16.5717C33.9235 16.5717 34.4261 16.3665 34.8 16L38 12.8C38.3665 12.4261 38.5717 11.9235 38.5717 11.4C38.5717 10.8765 38.3665 10.3739 38 10L34 6" stroke="#fedf41" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
     title: "Private Facility",
     description: "Secure access to a clean, well-maintained space",
   },
@@ -124,7 +114,7 @@ const membershipIncludes = [
     </style>
   </head>
   <body class="bg-black min-h-screen">
-    <div class="relative w-full min-h-[3600px]">
+    <div class="relative w-full lg:min-h-[3600px]">
 
       <!-- Hero/Header Section with Background -->
       <div class="relative w-full h-[400px] md:h-[450px] lg:h-[458px] bg-[#14181f]">
@@ -281,15 +271,7 @@ const membershipIncludes = [
             <article
               class="flex flex-col items-center gap-4 md:gap-[22px] p-6 md:p-8 lg:p-[33px] bg-[#191919] rounded-xl shadow-[0px_1px_2px_#0000000d]"
             >
-              <div class="relative w-12 h-12" role="img" aria-label={benefit.title}>
-                {benefit.icon.images.map((image) => (
-                  <img
-                    class={image.className}
-                    alt={image.alt}
-                    src={image.src}
-                  />
-                ))}
-              </div>
+              <div class="w-12 h-12 flex items-center justify-center" set:html={benefit.iconSvg} />
 
               <h3 class="font-montserrat font-medium text-neutral-50 text-xl md:text-2xl text-center tracking-[0] leading-6 whitespace-nowrap">
                 {benefit.title}
@@ -308,15 +290,7 @@ const membershipIncludes = [
             <article
               class="flex flex-col items-center gap-4 md:gap-[22px] p-6 md:p-8 lg:p-[33px] bg-[#191919] rounded-xl shadow-[0px_1px_2px_#0000000d]"
             >
-              <div class="relative w-12 h-12" role="img" aria-label={benefit.title}>
-                {benefit.icon.images.map((image) => (
-                  <img
-                    class={image.className}
-                    alt={image.alt}
-                    src={image.src}
-                  />
-                ))}
-              </div>
+              <div class="w-12 h-12 flex items-center justify-center" set:html={benefit.iconSvg} />
 
               <h3 class="font-montserrat font-medium text-neutral-50 text-xl md:text-2xl text-center tracking-[0] leading-6 whitespace-nowrap">
                 {benefit.title}
@@ -433,7 +407,7 @@ const membershipIncludes = [
       />
 
       <!-- Get Started Today Section -->
-      <section class="flex flex-col items-center justify-center gap-6 md:gap-10 p-8 md:p-12 lg:p-[60px] mx-4 md:mx-8 lg:mx-auto lg:absolute lg:top-[3086px] lg:left-[calc(50%_-_505px)] lg:w-[1010px] bg-[#fedf41] rounded-xl mt-12 lg:mt-0">
+      <section class="flex flex-col items-center justify-center gap-6 md:gap-10 p-8 md:p-12 lg:p-[60px] mx-4 md:mx-8 lg:mx-auto lg:absolute lg:top-[3086px] lg:left-[calc(50%_-_505px)] lg:w-[1010px] bg-[#fedf41] rounded-xl mt-4 lg:mt-0 mb-8 md:mb-12">
         <div class="flex flex-col items-center justify-center gap-4 md:gap-5 w-full">
           <h2 class="font-prompt font-medium text-[#14181f] text-2xl md:text-3xl lg:text-5xl text-center tracking-[0] leading-[1.2] lg:leading-[53.3px]">
             Get Started Today!
@@ -467,7 +441,7 @@ const membershipIncludes = [
     </div>
 
     <!-- Footer -->
-    <footer class="w-full pt-12 pb-8 px-4 md:px-8 bg-black relative z-10">
+    <footer class="w-full mt-12 pt-4 pb-8 px-4 md:px-8 bg-black relative z-10">
       <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <!-- Logo and description -->
@@ -507,8 +481,8 @@ const membershipIncludes = [
           </div>
         </div>
         <!-- Copyright -->
-        <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-[#919191] text-sm text-center md:text-left">© 2025 Ambition Fitness · All rights reserved.</p>
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
           <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
             <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
           </a>
