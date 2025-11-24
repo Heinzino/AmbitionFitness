@@ -17,7 +17,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Personal Training",
       description:
         "Unlock customized 1-on-1 training built around your goals, schedule, and fitness level. Real results, no guesswork.",
-      image: "/img/image-1.png",
+      image: "/img/personal-training-photo.jpg",
       imageAlt: "Personal Training",
       imagePosition: "left",
       link: "/personal-training",
@@ -27,7 +27,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Memberships",
       description:
         "Choose the plan that fits your lifestyle and stay consistent with full access, support, and a community that keeps you motivated.",
-      image: "/img/rectangle-6538.png",
+      image: "/img/memberships-photo.jpg",
       imageAlt: "Memberships",
       imagePosition: "right",
       link: "/membership",
@@ -37,10 +37,10 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Group Sessions",
       description:
         "Train with others, stay energized, and push harder with fun, instructor-led group workouts for every fitness level.",
-      image: "/img/rectangle-6538-1.png",
+      image: "/img/group-sessions-photo.jpg",
       imageAlt: "Group Sessions",
       imagePosition: "left",
-      link: "/group-session",
+      link: "/group-sessions",
     },
   ];
 

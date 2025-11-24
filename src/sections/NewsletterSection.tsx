@@ -16,7 +16,7 @@ export const NewsletterSection = (): JSX.Element => {
       label: "Clients Transformed",
     },
     {
-      value: "95%",
+      value: "99%",
       label: "Success Rate",
     },
     {
