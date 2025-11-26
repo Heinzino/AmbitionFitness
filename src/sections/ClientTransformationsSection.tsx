@@ -8,30 +8,30 @@ interface TransformationCard {
 
 const transformationData: TransformationCard[] = [
   {
-    name: "Justin",
+    name: "Jameela",
     backgroundImage: "/img/frame-1984077586-1.png",
   },
   {
-    name: "Sara",
+    name: "Bianca",
     image: "/img/image-11.png",
     backgroundImage: "/img/frame-1984077586-1.png",
   },
   {
-    name: "Jennifer",
+    name: "Sarah",
     image: "/img/image-11-1.png",
     backgroundImage: "/img/frame-1984077586-1.png",
   },
   {
-    name: "James",
+    name: "Nico",
     backgroundImage: "/img/frame-1984077583-1.png",
   },
   {
-    name: "Hong",
+    name: "Dane",
     image: "/img/image-11-2.png",
     backgroundImage: "/img/frame-1984077586-1.png",
   },
   {
-    name: "Rachael",
+    name: "Kayla",
     image: "/img/image-11-3.png",
     backgroundImage: "/img/frame-1984077586-1.png",
   },
