@@ -70,7 +70,7 @@ const reviews: Review[] = [
 
 const StarRating = ({ rating }: { rating: number }) => {
   return (
-    <div className="flex gap-1" aria-label={`${rating} out of 5 stars`}>
+    <div className="flex gap-1" role="img" aria-label={`${rating} out of 5 stars`}>
       {[...Array(5)].map((_, i) => (
         <svg
           key={i}
@@ -247,19 +247,25 @@ export const TestimonialsSection = (): JSX.Element => {
         </button>
       </div>
 
-      {/* Dots Navigation */}
-      <div className="flex gap-2 flex-wrap justify-center">
+      {/* Dots Navigation - Using min 44x44px touch targets for accessibility */}
+      <div className="flex gap-1 flex-wrap justify-center" role="tablist" aria-label="Review navigation">
         {reviews.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
-              index === currentIndex
-                ? 'bg-variable-collection-coloryellow w-6 md:w-8'
-                : 'bg-white/30 hover:bg-white/50'
-            }`}
-            aria-label={`Go to review ${index + 1}`}
-          />
+            className="w-11 h-11 flex items-center justify-center cursor-pointer"
+            aria-label={`Go to review ${index + 1} of ${reviews.length}`}
+            role="tab"
+            aria-selected={index === currentIndex}
+          >
+            <span
+              className={`block rounded-full transition-all ${
+                index === currentIndex
+                  ? 'bg-variable-collection-coloryellow w-6 h-2 md:w-8'
+                  : 'bg-white/30 hover:bg-white/50 w-2 h-2'
+              }`}
+            />
+          </button>
         ))}
       </div>
 
