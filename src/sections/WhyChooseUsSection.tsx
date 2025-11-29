@@ -30,7 +30,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       image: "/img/memberships-photo.jpg",
       imageAlt: "Memberships",
       imagePosition: "right",
-      link: "/membership",
+      link: "/memberships",
     },
     {
       id: 3,
