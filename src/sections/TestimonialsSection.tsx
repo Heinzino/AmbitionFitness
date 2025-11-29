@@ -194,6 +194,7 @@ export const TestimonialsSection = (): JSX.Element => {
                       alt={review.name}
                       className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover"
                       itemProp="author"
+                      loading="lazy"
                     />
                   )}
                   <div className="flex flex-col items-center gap-2">

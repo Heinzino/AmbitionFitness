@@ -12,7 +12,7 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.includes('/clients') && !page.includes('/contact-us') && !page.includes('/private-facility'),
+      filter: (page) => !page.includes('/clients') && !page.includes('/contact-us') && !page.includes('/private-facility') && !page.includes('/get-in-touch'),
     }),
   ],
 });

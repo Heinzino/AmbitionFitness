@@ -4,12 +4,12 @@
 
 | Category | Score | Priority |
 |----------|-------|----------|
-| **Overall SEO Health** | **7/10** | Improved |
-| Technical SEO | 8/10 | Good |
-| On-Page SEO | 8/10 | Good |
-| Content Structure | 5/10 | High |
-| Performance | 4/10 | High |
-| Local SEO | 8/10 | Good |
+| **Overall SEO Health** | **8.5/10** | Good |
+| Technical SEO | 9/10 | Good |
+| On-Page SEO | 9/10 | Good |
+| Content Structure | 8/10 | Good |
+| Performance | 7/10 | Medium |
+| Local SEO | 9/10 | Good |
 
 **Last Updated:** 2025-11-29
 
@@ -62,36 +62,43 @@
 
 ---
 
-## High Priority Issues (PENDING)
+## High Priority Issues (COMPLETED)
 
-### 7. Contact Page Missing H1 Tag
-- [ ] Add proper H1 to `contact.astro`
-- **Impact:** Poor heading hierarchy for SEO
+### 7. Contact Page H1 Tag
+- [x] Add proper H1 to `contact.astro`
+- [x] Add proper H1 to `get-in-touch.astro`
+- **Status:** COMPLETED
 
-### 8. No Analytics Integration
-- [ ] Add Google Analytics 4
-- [ ] Add Google Search Console verification meta tag
-- **Impact:** Cannot measure SEO performance or track conversions
-- **Effort:** 15 min each
+### 8. Analytics Integration
+- [x] Create `Analytics.astro` component
+- [x] Add Google Analytics 4 support (via environment variable)
+- [x] Add Google Search Console verification support (via environment variable)
+- [x] Update `.env` with placeholder variables
+- **Status:** COMPLETED
+- **Note:** Add your GA4 Measurement ID and GSC verification code to `.env`
 
-### 9. Images Missing Lazy Loading
-- [ ] Add `loading="lazy"` to below-fold images across all pages
-- **Impact:** Slower page loads, poor Core Web Vitals
-- **Effort:** 30 min
+### 9. Images Lazy Loading
+- [x] Add `loading="lazy"` to decorative images on index page
+- [x] Add `loading="lazy"` to ClientTransformationsSection
+- [x] Add `loading="lazy"` to TestimonialsSection
+- [x] Add `loading="lazy"` to personal-training testimonials
+- [x] Add `loading="lazy"` to personal-training transformations gallery
+- [x] Add `loading="lazy"` to virtual-tour carousel (except first image)
+- [x] Add `loading="lazy"` to virtual-tour thumbnails
+- **Status:** COMPLETED
 
-### 10. No Astro Image Optimization
+### 10. Astro Image Optimization
 - [ ] Migrate to `<Image>` component from `astro:assets`
 - **Impact:** Serving unoptimized images
 - **Effort:** 2 hrs
+- **Status:** PENDING (future optimization)
 
-### 11. Duplicate/Redirect Pages
-- [ ] Review and consolidate redirect pages
-- [ ] Ensure proper 301 redirects
-- **Pages:**
-  - `clients.astro` → redirects to `/personal-training`
-  - `contact-us.astro` → redirect page
-  - `get-in-touch.astro` → duplicate contact page
-  - `private-facility.astro` → redirect page
+### 11. Redirect Pages Review
+- [x] Verified `clients.astro` → 301 redirect to `/personal-training`
+- [x] Verified `contact-us.astro` → 301 redirect to `/contact`
+- [x] Verified `private-facility.astro` → 301 redirect to `/virtual-tour`
+- [x] Converted `get-in-touch.astro` → 301 redirect to `/contact`
+- **Status:** COMPLETED - All redirects properly configured
 
 ---
 
@@ -157,6 +164,7 @@
 - [x] `public/robots.txt` - Search engine crawler instructions
 - [x] `src/components/SEO.astro` - Reusable SEO meta tags component
 - [x] `src/components/LocalBusinessSchema.astro` - JSON-LD structured data
+- [x] `src/components/Analytics.astro` - Google Analytics & Search Console integration
 
 ## Files Modified
 
@@ -184,6 +192,10 @@
 | 2025-11-29 | Added Twitter Card tags to all pages | Completed |
 | 2025-11-29 | Added canonical URLs to all pages | Completed |
 | 2025-11-29 | Added LocalBusiness JSON-LD schema | Completed |
+| 2025-11-29 | Created Analytics.astro component | Completed |
+| 2025-11-29 | Added H1 tags to contact and get-in-touch pages | Completed |
+| 2025-11-29 | Added lazy loading to images across site | Completed |
+| 2025-11-29 | Verified redirect pages are properly configured | Completed |
 | 2025-11-29 | Verified build succeeds | Completed |
 
 ---
@@ -216,7 +228,7 @@
 ## Next Steps
 
 1. **Create OG Image** - Design a 1200x630px image for social sharing at `public/img/og-image.png`
-2. **Add Google Analytics** - Set up GA4 for tracking
-3. **Add Google Search Console** - Verify site ownership and monitor search performance
-4. **Add lazy loading** - Improve Core Web Vitals
-5. **Optimize images** - Use Astro's Image component for automatic optimization
+2. **Configure Google Analytics** - Add your GA4 Measurement ID to `.env` (`PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX`)
+3. **Configure Google Search Console** - Add your verification code to `.env` (`PUBLIC_GSC_VERIFICATION=your-code`)
+4. **Optimize images** - Migrate to Astro's `<Image>` component for automatic WebP/AVIF conversion (future)
+5. **Consider removing Meyer Reset** - Tailwind already includes a CSS reset

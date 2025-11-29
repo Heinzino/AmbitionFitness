@@ -78,6 +78,7 @@ export const ClientTransformationsSection = (): JSX.Element => {
                 className="absolute inset-0 w-full h-full object-cover z-0"
                 alt={`${client.name} transformation`}
                 src={client.image}
+                loading="lazy"
               />
             )}
 
