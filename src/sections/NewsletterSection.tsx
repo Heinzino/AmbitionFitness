@@ -35,9 +35,9 @@ export const NewsletterSection = (): JSX.Element => {
           <div className="flex flex-col items-center gap-4 md:gap-[30px] flex-1">
             <div className="inline-flex flex-col items-center gap-4 md:gap-[25px]">
               <div className="inline-flex items-start gap-2.5">
-                <h3 className="[font-family:'Montserrat',Helvetica] font-bold text-variable-collection-colorpriamry text-3xl md:text-4xl lg:text-[45px] tracking-[0] leading-tight whitespace-nowrap">
+                <span className="[font-family:'Montserrat',Helvetica] font-bold text-variable-collection-colorpriamry text-3xl md:text-4xl lg:text-[45px] tracking-[0] leading-tight whitespace-nowrap" aria-hidden="true">
                   {stat.value}
-                </h3>
+                </span>
               </div>
 
               <img
