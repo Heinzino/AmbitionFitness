@@ -5,14 +5,14 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.ambitionfitness.ca',
+  site: 'https://ambitionfitness.ca',
   integrations: [
     react(),
     tailwind({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.includes('/clients') && !page.includes('/contact-us') && !page.includes('/private-facility'),
+      filter: (page) => !page.includes('/clients') && !page.includes('/contact-us') && !page.includes('/private-facility') && !page.includes('/get-in-touch'),
     }),
   ],
 });

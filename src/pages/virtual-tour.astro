@@ -350,9 +350,9 @@ const galleryImages = [
             <!-- Main Image Display -->
             <div class="carousel-viewport relative w-full h-[350px] md:h-[400px] lg:h-[600px] bg-black rounded-xl overflow-hidden">
               <ul id="carousel-track" class="carousel-track flex transition-transform duration-500 ease-in-out h-full" style={`width: ${galleryImages.length * 100}%`}>
-                {galleryImages.map((image) => (
+                {galleryImages.map((image, index) => (
                   <li class="carousel-slide h-full flex-shrink-0" style={`width: ${100 / galleryImages.length}%`}>
-                    <img src={image.src} alt={image.alt} class="w-full h-full object-cover" />
+                    <img src={image.src} alt={image.alt} class="w-full h-full object-cover" loading={index === 0 ? "eager" : "lazy"} />
                   </li>
                 ))}
               </ul>
@@ -375,7 +375,7 @@ const galleryImages = [
               <ul id="thumbnail-nav" class="flex gap-2 justify-start md:justify-center pb-2">
                 {galleryImages.map((image, index) => (
                   <li class={`thumbnail-item ${index === 0 ? 'opacity-100' : 'opacity-60 hover:opacity-100'} transition-opacity cursor-pointer flex-shrink-0`}>
-                    <img src={image.thumb} alt={`Thumbnail ${index + 1}`} class={`w-[50px] h-[50px] md:w-[70px] md:h-[70px] object-cover rounded border-2 ${index === 0 ? 'border-[#fedf41]' : 'border-transparent hover:border-[#fedf41]'}`} />
+                    <img src={image.thumb} alt={`Thumbnail ${index + 1}`} class={`w-[50px] h-[50px] md:w-[70px] md:h-[70px] object-cover rounded border-2 ${index === 0 ? 'border-[#fedf41]' : 'border-transparent hover:border-[#fedf41]'}`} loading="lazy" />
                   </li>
                 ))}
               </ul>

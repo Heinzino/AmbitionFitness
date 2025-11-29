@@ -17,7 +17,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Personal Training",
       description:
         "Unlock customized 1-on-1 training built around your goals, schedule, and fitness level. Real results, no guesswork.",
-      image: "/img/personal-training-photo.jpg",
+      image: "/img/personal-training-photo.webp",
       imageAlt: "Personal Training",
       imagePosition: "left",
       link: "/personal-training",
@@ -27,7 +27,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Memberships",
       description:
         "Choose the plan that fits your lifestyle and stay consistent with full access, support, and a community that keeps you motivated.",
-      image: "/img/memberships-photo.jpg",
+      image: "/img/memberships-photo.webp",
       imageAlt: "Memberships",
       imagePosition: "right",
       link: "/memberships",
@@ -37,7 +37,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Group Sessions",
       description:
         "Train with others, stay energized, and push harder with fun, instructor-led group workouts for every fitness level.",
-      image: "/img/group-sessions-photo.jpg",
+      image: "/img/group-sessions-photo.webp",
       imageAlt: "Group Sessions",
       imagePosition: "left",
       link: "/group-sessions",
@@ -76,6 +76,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 className="w-full lg:flex-1 h-[250px] md:h-[350px] lg:h-[395.85px] object-cover"
                 alt={service.imageAlt}
                 src={service.image}
+                loading="lazy"
               />
             )}
 
@@ -131,6 +132,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 className="w-full lg:flex-1 h-[250px] md:h-[350px] lg:h-[395.85px] object-cover order-first lg:order-last"
                 alt={service.imageAlt}
                 src={service.image}
+                loading="lazy"
               />
             )}
           </article>
