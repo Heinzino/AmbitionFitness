@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 import { HeroSection } from '../sections/HeroSection';
 import { NewsletterSection } from '../sections/NewsletterSection';
 import { HeaderSection } from '../sections/HeaderSection';
@@ -8,6 +10,9 @@ import { ClientTransformationsSection } from '../sections/ClientTransformationsS
 import { FeatureProductsSection } from '../sections/FeatureProductsSection';
 import { TestimonialsSection } from '../sections/TestimonialsSection';
 import { FindUsNearYouSection } from '../sections/FindUsNearYouSection';
+
+const pageTitle = "Ambition Fitness - Calgary's Elite Personal Training Services";
+const pageDescription = "Calgary's elite personal training facility. Private 1-on-1 coaching, proven transformations, and state-of-the-art equipment. Book your free consultation today!";
 
 const whyChooseUsFeatures = [
   {
@@ -53,9 +58,11 @@ const navigationLinks = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Ambition Fitness - Calgary's Elite Personal Training Services</title>
+    <title>{pageTitle}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/" />
+    <LocalBusinessSchema />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:500,var(--16-medium-font-weight)|Montserrat:400,500,700,600|Prompt:500" rel="stylesheet" />

@@ -1,0 +1,52 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  image = '/img/og-image.png',
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://www.ambitionfitness.ca';
+const siteName = 'Ambition Fitness';
+const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+const canonicalUrl = canonical.startsWith('http') ? canonical : `${siteUrl}${canonical}`;
+---
+
+<!-- Primary Meta Tags -->
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImageUrl} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="en_CA" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImageUrl} />
+
+<!-- Additional SEO -->
+<meta name="author" content={siteName} />
+<meta name="geo.region" content="CA-AB" />
+<meta name="geo.placename" content="Calgary" />
