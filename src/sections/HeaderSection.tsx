@@ -23,7 +23,7 @@ export const HeaderSection = (): JSX.Element => {
         <img
           className="relative w-[520px] h-[688px] object-cover"
           alt="Fitness trainer working with client"
-          src="/img/rectangle-6540.png"
+          src="/img/rectangle-6540.webp"
         />
 
         <div className="flex flex-col w-[631px] items-start gap-[30px] relative">
@@ -109,7 +109,7 @@ export const HeaderSection = (): JSX.Element => {
         <img
           className="w-full max-w-[520px] h-auto object-cover rounded-lg"
           alt="Fitness trainer working with client"
-          src="/img/rectangle-6540.png"
+          src="/img/rectangle-6540.webp"
         />
 
         <div className="flex flex-col w-full max-w-[631px] items-start gap-6">

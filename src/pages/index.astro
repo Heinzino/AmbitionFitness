@@ -65,14 +65,26 @@ const navigationLinks = [
     <LocalBusinessSchema />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Preload critical fonts for faster rendering -->
+    <!-- Preload the critical Montserrat font file for LCP text -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Load fonts asynchronously -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" /></noscript>
     <!-- Meyer reset CSS is now inlined in global.css -->
     <style>
+      /* Critical CSS for LCP - ensures text renders immediately with fallback fonts */
       body {
         overflow-x: hidden;
         overflow-y: auto;
+      }
+      /* Font fallbacks to prevent render delay while web fonts load */
+      .font-montserrat, [class*="font-family:'Montserrat'"], [style*="Montserrat"] {
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      }
+      /* Ensure hero text is visible immediately */
+      h1, .hero-heading {
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-display: swap;
       }
     </style>
   </head>
