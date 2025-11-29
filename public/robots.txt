@@ -1,11 +1,11 @@
 # Robots.txt for Ambition Fitness
-# https://www.ambitionfitness.ca
+# https://ambitionfitness.ca
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.ambitionfitness.ca/sitemap-index.xml
+Sitemap: https://ambitionfitness.ca/sitemap-index.xml
 
 # Disallow admin or private paths (if any)
 # Disallow: /admin/

@@ -9,31 +9,31 @@ interface TransformationCard {
 const transformationData: TransformationCard[] = [
   {
     name: "Jameela",
-    backgroundImage: "/img/frame-1984077586-1.png",
+    backgroundImage: "/img/frame-1984077586-1.webp",
   },
   {
     name: "Bianca",
-    image: "/img/image-11.png",
-    backgroundImage: "/img/frame-1984077586-1.png",
+    image: "/img/image-11.webp",
+    backgroundImage: "/img/frame-1984077586-1.webp",
   },
   {
     name: "Sarah",
-    image: "/img/image-11-1.png",
-    backgroundImage: "/img/frame-1984077586-1.png",
+    image: "/img/image-11-1.webp",
+    backgroundImage: "/img/frame-1984077586-1.webp",
   },
   {
     name: "Nico",
-    backgroundImage: "/img/frame-1984077583-1.png",
+    backgroundImage: "/img/frame-1984077583-1.webp",
   },
   {
     name: "Dane",
-    image: "/img/image-11-2.png",
-    backgroundImage: "/img/frame-1984077586-1.png",
+    image: "/img/image-11-2.webp",
+    backgroundImage: "/img/frame-1984077586-1.webp",
   },
   {
     name: "Kayla",
-    image: "/img/image-11-3.png",
-    backgroundImage: "/img/frame-1984077586-1.png",
+    image: "/img/image-11-3.webp",
+    backgroundImage: "/img/frame-1984077586-1.webp",
   },
 ];
 

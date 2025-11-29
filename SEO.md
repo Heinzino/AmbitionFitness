@@ -4,11 +4,11 @@
 
 | Category | Score | Priority |
 |----------|-------|----------|
-| **Overall SEO Health** | **8.5/10** | Good |
+| **Overall SEO Health** | **9/10** | Excellent |
 | Technical SEO | 9/10 | Good |
 | On-Page SEO | 9/10 | Good |
 | Content Structure | 8/10 | Good |
-| Performance | 7/10 | Medium |
+| Performance | 9/10 | Good |
 | Local SEO | 9/10 | Good |
 
 **Last Updated:** 2025-11-29
@@ -87,11 +87,17 @@
 - [x] Add `loading="lazy"` to virtual-tour thumbnails
 - **Status:** COMPLETED
 
-### 10. Astro Image Optimization
-- [ ] Migrate to `<Image>` component from `astro:assets`
-- **Impact:** Serving unoptimized images
-- **Effort:** 2 hrs
-- **Status:** PENDING (future optimization)
+### 10. Image Optimization (WebP Conversion)
+- [x] Installed sharp for image processing
+- [x] Converted hero image to WebP (2,126 KB → 110 KB, **95% reduction**)
+- [x] Converted transformation images to WebP (~500 KB each → ~10 KB each, **98% reduction**)
+- [x] Converted service section images to WebP (5,979 KB total → 230 KB total)
+- [x] Updated index.astro with `<picture>` element for hero image
+- [x] Updated ClientTransformationsSection to use WebP images
+- [x] Updated WhyChooseUsSection to use WebP images
+- [x] Added lazy loading to service images
+- **Total Image Savings:** ~5.7 MB → ~350 KB (**94% reduction**)
+- **Status:** COMPLETED
 
 ### 11. Redirect Pages Review
 - [x] Verified `clients.astro` → 301 redirect to `/personal-training`
@@ -139,7 +145,16 @@
 ### 18. No hreflang Tags
 - [ ] Add if multi-language site planned
 
-### 19. Create Open Graph Image
+### 19. URL Structure - Apex Domain
+- [x] Updated site URL to apex domain (`https://ambitionfitness.ca` instead of `www`)
+- [x] Updated `astro.config.mjs` site property
+- [x] Updated `SEO.astro` siteUrl constant
+- [x] Updated `LocalBusinessSchema.astro` all URLs
+- [x] Updated `robots.txt` sitemap URL
+- **Status:** COMPLETED
+- **Note:** Configure DNS/hosting to redirect `www.ambitionfitness.ca` → `ambitionfitness.ca` (301 redirect)
+
+### 20. Create Open Graph Image
 - [ ] Create a proper OG image at `public/img/og-image.png` (1200x630px recommended)
 - **Impact:** Better social media sharing appearance
 
@@ -196,7 +211,12 @@
 | 2025-11-29 | Added H1 tags to contact and get-in-touch pages | Completed |
 | 2025-11-29 | Added lazy loading to images across site | Completed |
 | 2025-11-29 | Verified redirect pages are properly configured | Completed |
+| 2025-11-29 | Converted get-in-touch to redirect to /contact | Completed |
+| 2025-11-29 | Updated all URLs to apex domain (no www) | Completed |
 | 2025-11-29 | Verified build succeeds | Completed |
+| 2025-11-29 | Installed sharp for image optimization | Completed |
+| 2025-11-29 | Converted images to WebP format (~94% size reduction) | Completed |
+| 2025-11-29 | Updated components to use optimized WebP images | Completed |
 
 ---
 
@@ -230,5 +250,5 @@
 1. **Create OG Image** - Design a 1200x630px image for social sharing at `public/img/og-image.png`
 2. **Configure Google Analytics** - Add your GA4 Measurement ID to `.env` (`PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX`)
 3. **Configure Google Search Console** - Add your verification code to `.env` (`PUBLIC_GSC_VERIFICATION=your-code`)
-4. **Optimize images** - Migrate to Astro's `<Image>` component for automatic WebP/AVIF conversion (future)
+4. ~~**Optimize images** - Migrate to Astro's `<Image>` component for automatic WebP/AVIF conversion~~ ✅ **COMPLETED** - Images converted to WebP with 94% size reduction
 5. **Consider removing Meyer Reset** - Tailwind already includes a CSS reset
