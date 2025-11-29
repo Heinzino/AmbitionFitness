@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
+
+const pageTitle = "Contact - Ambition Fitness Calgary";
+const pageDescription = "Get in touch with Ambition Fitness Calgary. Book a consultation, schedule a tour, or ask questions. Located in NE Calgary, serving Bridgeland and surrounding areas.";
 
 const navigationLinks = [
   { label: "Home", path: "/", isActive: false },
@@ -17,9 +22,11 @@ const placeId = "ChIJkVH-mdV6cVMR4AVhyOPuTYw";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Contact - Ambition Fitness Calgary</title>
+    <title>{pageTitle}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/contact" />
+    <LocalBusinessSchema />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:500,var(--16-medium-font-weight)|Montserrat:400,500,700,600|Prompt:500" rel="stylesheet" />

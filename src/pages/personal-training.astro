@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
+
+const pageTitle = "Personal Training - Ambition Fitness Calgary";
+const pageDescription = "Transform your body with Calgary's top personal trainers. Customized programs, dedicated coaching, and real results. See our client success stories.";
 
 const navigationLinks = [
   { label: "Home", path: "/", isActive: false },
@@ -153,9 +158,11 @@ const rows = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Personal Training - Ambition Fitness Calgary</title>
+    <title>{pageTitle}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/personal-training" />
+    <LocalBusinessSchema />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Inter:500,var(--16-medium-font-weight)|Montserrat:400,500,700,600|Prompt:500" rel="stylesheet" />

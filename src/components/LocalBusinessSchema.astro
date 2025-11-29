@@ -1,0 +1,127 @@
+---
+export interface Props {
+  includeBreadcrumbs?: boolean;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const { includeBreadcrumbs = false, breadcrumbs = [] } = Astro.props;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.ambitionfitness.ca/#localbusiness",
+  "name": "Ambition Fitness",
+  "description": "Calgary's elite personal training facility offering private 1-on-1 coaching, group sessions, and customized fitness programs.",
+  "url": "https://www.ambitionfitness.ca",
+  "telephone": "+1-403-507-3099",
+  "email": "info@ambitionfitness.ca",
+  "image": "https://www.ambitionfitness.ca/img/AF_Logo_White.png",
+  "logo": "https://www.ambitionfitness.ca/img/AF_Logo_White.png",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Calgary",
+    "addressRegion": "AB",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.0647,
+    "longitude": -114.0419
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Calgary",
+      "sameAs": "https://en.wikipedia.org/wiki/Calgary"
+    },
+    { "@type": "Neighborhood", "name": "Mayland Heights" },
+    { "@type": "Neighborhood", "name": "Meridian" },
+    { "@type": "Neighborhood", "name": "Raddison Heights" },
+    { "@type": "Neighborhood", "name": "Bridgeland-Riverside" }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/ambitionfitness.ca"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "06:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "08:00",
+      "closes": "16:00"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Fitness Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Personal Training",
+          "description": "One-on-one personal training sessions with expert coaches"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Group Sessions",
+          "description": "Group fitness classes including boot camps and senior fitness"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gym Membership",
+          "description": "Access to state-of-the-art training equipment and facilities"
+        }
+      }
+    ]
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Ambition Fitness",
+  "url": "https://www.ambitionfitness.ca",
+  "logo": "https://www.ambitionfitness.ca/img/AF_Logo_White.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-403-507-3099",
+    "contactType": "customer service",
+    "email": "info@ambitionfitness.ca",
+    "areaServed": "CA",
+    "availableLanguage": "English"
+  },
+  "sameAs": [
+    "https://www.instagram.com/ambitionfitness.ca"
+  ]
+};
+
+const breadcrumbSchema = includeBreadcrumbs && breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+} : null;
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+<script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+{breadcrumbSchema && (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}
