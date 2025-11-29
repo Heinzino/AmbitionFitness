@@ -346,7 +346,7 @@ const galleryImages = [
               <ul id="carousel-track" class="carousel-track flex transition-transform duration-500 ease-in-out h-full">
                 {galleryImages.map((image) => (
                   <li class="carousel-slide min-w-full h-full flex-shrink-0">
-                    <img src={image.src} alt={image.alt} class="w-full h-full object-cover" />
+                    <img src={image.src} alt={image.alt} class="w-full h-full object-contain md:object-cover" />
                   </li>
                 ))}
               </ul>

@@ -538,7 +538,7 @@ const rows = [
                 >
                   {testimonial.hasOverlay && testimonial.image && (
                     <img
-                      class="absolute inset-0 w-full h-full object-cover"
+                      class="absolute inset-0 w-full h-full object-contain md:object-cover"
                       alt=""
                       src={testimonial.image}
                       role="presentation"
@@ -595,7 +595,7 @@ const rows = [
                   >
                     {card.hasImage && card.image && (
                       <img
-                        class="absolute inset-0 w-full h-full object-cover"
+                        class="absolute inset-0 w-full h-full object-contain md:object-cover"
                         alt={`${card.name} transformation`}
                         src={card.image}
                       />
