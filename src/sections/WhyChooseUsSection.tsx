@@ -5,6 +5,7 @@ interface ServiceItem {
   title: string;
   description: string;
   image: string;
+  imageSrcSet: string;
   imageAlt: string;
   imagePosition: "left" | "right";
   link?: string;
@@ -17,7 +18,8 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Personal Training",
       description:
         "Unlock customized 1-on-1 training built around your goals, schedule, and fitness level. Real results, no guesswork.",
-      image: "/img/personal-training-photo.webp",
+      image: "/img/personal-training-photo-md.webp",
+      imageSrcSet: "/img/personal-training-photo-sm.webp 480w, /img/personal-training-photo-md.webp 768w, /img/personal-training-photo-lg.webp 1200w",
       imageAlt: "Personal Training",
       imagePosition: "left",
       link: "/personal-training",
@@ -27,7 +29,8 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Memberships",
       description:
         "Choose the plan that fits your lifestyle and stay consistent with full access, support, and a community that keeps you motivated.",
-      image: "/img/memberships-photo.webp",
+      image: "/img/memberships-photo-md.webp",
+      imageSrcSet: "/img/memberships-photo-sm.webp 480w, /img/memberships-photo-md.webp 768w, /img/memberships-photo-lg.webp 1200w",
       imageAlt: "Memberships",
       imagePosition: "right",
       link: "/memberships",
@@ -37,7 +40,8 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Group Sessions",
       description:
         "Train with others, stay energized, and push harder with fun, instructor-led group workouts for every fitness level.",
-      image: "/img/group-sessions-photo.webp",
+      image: "/img/group-sessions-photo-md.webp",
+      imageSrcSet: "/img/group-sessions-photo-sm.webp 480w, /img/group-sessions-photo-md.webp 768w, /img/group-sessions-photo-lg.webp 1200w",
       imageAlt: "Group Sessions",
       imagePosition: "left",
       link: "/group-sessions",
@@ -76,6 +80,10 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 className="w-full lg:flex-1 h-[250px] md:h-[350px] lg:h-[395.85px] object-cover"
                 alt={service.imageAlt}
                 src={service.image}
+                srcSet={service.imageSrcSet}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                width={768}
+                height={505}
                 loading="lazy"
               />
             )}
@@ -115,6 +123,10 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 className="w-full lg:flex-1 h-[250px] md:h-[350px] lg:h-[395.85px] object-cover order-first lg:order-last"
                 alt={service.imageAlt}
                 src={service.image}
+                srcSet={service.imageSrcSet}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                width={768}
+                height={505}
                 loading="lazy"
               />
             )}
