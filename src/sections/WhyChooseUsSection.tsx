@@ -81,7 +81,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 alt={service.imageAlt}
                 src={service.image}
                 srcSet={service.imageSrcSet}
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 480px) 380px, (max-width: 768px) 480px, (max-width: 1024px) 768px, 600px"
                 width={768}
                 height={505}
                 loading="lazy"
@@ -124,7 +124,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 alt={service.imageAlt}
                 src={service.image}
                 srcSet={service.imageSrcSet}
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 480px) 380px, (max-width: 768px) 480px, (max-width: 1024px) 768px, 600px"
                 width={768}
                 height={505}
                 loading="lazy"
