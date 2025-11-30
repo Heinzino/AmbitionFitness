@@ -18,8 +18,8 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Personal Training",
       description:
         "Unlock customized 1-on-1 training built around your goals, schedule, and fitness level. Real results, no guesswork.",
-      image: "/img/personal-training-photo-md.webp",
-      imageSrcSet: "/img/personal-training-photo-sm.webp 480w, /img/personal-training-photo-md.webp 768w, /img/personal-training-photo-lg.webp 1200w",
+      image: "/img/personal-training-photo-sm.webp",
+      imageSrcSet: "/img/personal-training-photo-xs.webp 380w, /img/personal-training-photo-sm.webp 480w, /img/personal-training-photo-md.webp 768w, /img/personal-training-photo-lg.webp 1200w",
       imageAlt: "Personal Training",
       imagePosition: "left",
       link: "/personal-training",
@@ -29,8 +29,8 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Memberships",
       description:
         "Choose the plan that fits your lifestyle and stay consistent with full access, support, and a community that keeps you motivated.",
-      image: "/img/memberships-photo-md.webp",
-      imageSrcSet: "/img/memberships-photo-sm.webp 480w, /img/memberships-photo-md.webp 768w, /img/memberships-photo-lg.webp 1200w",
+      image: "/img/memberships-photo-sm.webp",
+      imageSrcSet: "/img/memberships-photo-xs.webp 380w, /img/memberships-photo-sm.webp 480w, /img/memberships-photo-md.webp 768w, /img/memberships-photo-lg.webp 1200w",
       imageAlt: "Memberships",
       imagePosition: "right",
       link: "/memberships",
@@ -40,8 +40,8 @@ export const WhyChooseUsSection = (): JSX.Element => {
       title: "Group Sessions",
       description:
         "Train with others, stay energized, and push harder with fun, instructor-led group workouts for every fitness level.",
-      image: "/img/group-sessions-photo-md.webp",
-      imageSrcSet: "/img/group-sessions-photo-sm.webp 480w, /img/group-sessions-photo-md.webp 768w, /img/group-sessions-photo-lg.webp 1200w",
+      image: "/img/group-sessions-photo-sm.webp",
+      imageSrcSet: "/img/group-sessions-photo-xs.webp 380w, /img/group-sessions-photo-sm.webp 480w, /img/group-sessions-photo-md.webp 768w, /img/group-sessions-photo-lg.webp 1200w",
       imageAlt: "Group Sessions",
       imagePosition: "left",
       link: "/group-sessions",

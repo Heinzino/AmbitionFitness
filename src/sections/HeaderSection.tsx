@@ -24,6 +24,9 @@ export const HeaderSection = (): JSX.Element => {
           className="relative w-[520px] h-[688px] object-cover"
           alt="Fitness trainer working with client"
           src="/img/rectangle-6540.webp"
+          width={520}
+          height={688}
+          loading="lazy"
         />
 
         <div className="flex flex-col w-[631px] items-start gap-[30px] relative">
@@ -109,7 +112,12 @@ export const HeaderSection = (): JSX.Element => {
         <img
           className="w-full max-w-[520px] h-auto object-cover rounded-lg"
           alt="Fitness trainer working with client"
-          src="/img/rectangle-6540.webp"
+          src="/img/rectangle-6540-sm.webp"
+          srcSet="/img/rectangle-6540-sm.webp 380w, /img/rectangle-6540.webp 520w"
+          sizes="(max-width: 520px) 100vw, 520px"
+          width={520}
+          height={688}
+          loading="lazy"
         />
 
         <div className="flex flex-col w-full max-w-[631px] items-start gap-6">
