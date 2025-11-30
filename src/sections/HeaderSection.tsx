@@ -113,7 +113,7 @@ export const HeaderSection = (): JSX.Element => {
           className="w-full max-w-[520px] h-auto object-cover rounded-lg"
           alt="Fitness trainer working with client"
           src="/img/rectangle-6540-sm.webp"
-          srcSet="/img/rectangle-6540-sm.webp 380w, /img/rectangle-6540.webp 520w"
+          srcSet="/img/rectangle-6540-sm.webp 520w"
           sizes="(max-width: 520px) 100vw, 520px"
           width={520}
           height={688}
