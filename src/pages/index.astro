@@ -103,6 +103,31 @@ const navigationLinks = [
       .text-\[\#fedf41\], .text-variable-collection-coloryellow {
         font-family: 'Montserrat', 'Montserrat-fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       }
+      /* Critical above-the-fold styles to reduce render delay */
+      .bg-black { background-color: #000; }
+      .text-white { color: #fff; }
+      .text-\[\#f0f0f0\] { color: #f0f0f0; }
+      .text-\[\#fedf41\] { color: #fedf41; }
+      /* Optimize paint for hero image */
+      picture img {
+        content-visibility: auto;
+        contain-intrinsic-size: 100vw 400px;
+      }
+      @media (min-width: 768px) {
+        picture img { contain-intrinsic-size: 100vw 600px; }
+      }
+      @media (min-width: 1024px) {
+        picture img { contain-intrinsic-size: 100vw 1011px; }
+      }
+      /* Defer off-screen content rendering */
+      section:not(:first-of-type) {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 500px;
+      }
+      /* Hide blur effect on mobile for better performance */
+      @media (max-width: 1023px) {
+        .blur-\[107px\] { display: none !important; }
+      }
     </style>
   </head>
   <body>
@@ -136,7 +161,7 @@ const navigationLinks = [
         <img
           class="absolute top-0 left-0 w-full h-[400px] md:h-[600px] lg:h-[1011px] object-cover"
           alt="Ambition Fitness gym interior"
-          src="/img/hero-bg-sm.webp"
+          src="/img/hero-bg-xs.webp"
           srcset="/img/hero-bg-xs.webp 480w, /img/hero-bg-sm.webp 640w, /img/hero-bg-md.webp 1024w, /img/hero-bg-lg.webp 1920w"
           sizes="100vw"
           width="1920"
@@ -371,12 +396,12 @@ const navigationLinks = [
       </div>
     </footer>
 
-    <script>
-      // Mobile Menu Toggle
+    <script is:inline defer>
+      // Mobile Menu Toggle - deferred for better LCP
       document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
         let isMenuOpen = false;
 
         if (mobileMenuBtn && mobileMenu) {
