@@ -65,6 +65,9 @@ const navigationLinks = [
     <LocalBusinessSchema />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload LCP hero image for mobile -->
+    <link rel="preload" as="image" href="/img/hero-bg-xs.webp" type="image/webp" media="(max-width: 480px)" />
+    <link rel="preload" as="image" href="/img/hero-bg-sm.webp" type="image/webp" media="(min-width: 481px) and (max-width: 640px)" />
     <!-- Preload the critical Montserrat font files for LCP text -->
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXp-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin />
@@ -126,19 +129,20 @@ const navigationLinks = [
 
       <picture>
         <source
-          srcset="/img/hero-bg-sm.webp 640w, /img/hero-bg-md.webp 1024w, /img/hero-bg-lg.webp 1920w"
+          srcset="/img/hero-bg-xs.webp 480w, /img/hero-bg-sm.webp 640w, /img/hero-bg-md.webp 1024w, /img/hero-bg-lg.webp 1920w"
           sizes="100vw"
           type="image/webp"
         />
         <img
           class="absolute top-0 left-0 w-full h-[400px] md:h-[600px] lg:h-[1011px] object-cover"
           alt="Ambition Fitness gym interior"
-          src="/img/hero-bg-md.webp"
-          srcset="/img/hero-bg-sm.webp 640w, /img/hero-bg-md.webp 1024w, /img/hero-bg-lg.webp 1920w"
+          src="/img/hero-bg-sm.webp"
+          srcset="/img/hero-bg-xs.webp 480w, /img/hero-bg-sm.webp 640w, /img/hero-bg-md.webp 1024w, /img/hero-bg-lg.webp 1920w"
           sizes="100vw"
           width="1920"
           height="1010"
           fetchpriority="high"
+          decoding="async"
         />
       </picture>
 
@@ -323,7 +327,7 @@ const navigationLinks = [
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <!-- Logo and description -->
           <div class="md:col-span-1">
-            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" width="63" height="68" loading="lazy" />
             <p class="text-[#e4e4e4] text-sm">
               Join a community that's transforming lives through evidence-based fitness strategies.
             </p>
