@@ -286,18 +286,24 @@ const galleryImages = [
         </header>
 
         <div class="w-full bg-[#191919] overflow-hidden rounded-xl shadow-[0px_1px_2px_#0000000d]">
-          <!-- Kuula 360° Virtual Tour Embed -->
-          <iframe
-            title="Ambition Fitness 360° Virtual Tour"
-            width="100%"
-            height="400"
-            class="w-full h-[300px] md:h-[450px] lg:h-[575px] border-none rounded-xl"
-            frameborder="0"
-            allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
-            scrolling="no"
-            allowfullscreen="true"
-            src="https://kuula.co/share/collection/7Y3kG?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1">
-          </iframe>
+          <!-- Kuula 360° Virtual Tour Embed - Lazy loaded for performance -->
+          <div
+            id="kuula-container"
+            class="w-full h-[300px] md:h-[450px] lg:h-[575px] relative cursor-pointer group"
+            data-kuula-src="https://kuula.co/share/collection/7Y3kG?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+          >
+            <!-- Placeholder with play button -->
+            <div id="kuula-placeholder" class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-xl">
+              <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#fedf41] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg class="w-10 h-10 md:w-12 md:h-12 text-black ml-1" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <p class="text-white text-lg md:text-xl font-medium [font-family:'Montserrat',Helvetica]">Click to Load 360° Tour</p>
+              <p class="text-white/60 text-sm mt-2 [font-family:'Montserrat',Helvetica]">Interactive virtual walkthrough</p>
+            </div>
+            <!-- Iframe will be inserted here when clicked -->
+          </div>
         </div>
       </section>
 
@@ -696,6 +702,44 @@ const galleryImages = [
         carouselContainer?.addEventListener('mouseleave', () => {
           resetAutoPlay();
         });
+
+        // Lazy load Kuula virtual tour iframe on click
+        const kuulaContainer = document.getElementById('kuula-container');
+        const kuulaPlaceholder = document.getElementById('kuula-placeholder');
+
+        if (kuulaContainer && kuulaPlaceholder) {
+          kuulaContainer.addEventListener('click', function() {
+            const kuulaSrc = kuulaContainer.getAttribute('data-kuula-src');
+            if (kuulaSrc) {
+              // Create and insert iframe
+              const iframe = document.createElement('iframe');
+              iframe.title = 'Ambition Fitness 360° Virtual Tour';
+              iframe.width = '100%';
+              iframe.height = '100%';
+              iframe.className = 'w-full h-full border-none rounded-xl absolute inset-0';
+              iframe.frameBorder = '0';
+              iframe.allow = 'xr-spatial-tracking; gyroscope; accelerometer; fullscreen';
+              iframe.scrolling = 'no';
+              iframe.allowFullscreen = true;
+              iframe.src = kuulaSrc;
+
+              // Show loading state
+              kuulaPlaceholder.innerHTML = '<div class="flex items-center justify-center h-full"><div class="animate-spin rounded-full h-12 w-12 border-4 border-[#fedf41] border-t-transparent"></div></div>';
+
+              // Insert iframe
+              kuulaContainer.appendChild(iframe);
+
+              // Hide placeholder when iframe loads
+              iframe.onload = function() {
+                kuulaPlaceholder.style.display = 'none';
+              };
+
+              // Remove click handler
+              kuulaContainer.style.cursor = 'default';
+              kuulaContainer.classList.remove('group');
+            }
+          });
+        }
       });
     </script>
   </body>
