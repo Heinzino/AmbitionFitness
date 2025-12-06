@@ -1,0 +1,539 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
+
+const pageTitle = "Online Personal Training Calgary | Virtual Fitness Coaching | Ambition Fitness";
+const pageDescription = "Online personal training from Calgary's trusted fitness experts. Custom workout programs, nutrition coaching, and accountability—all from home. Flexible scheduling for busy lifestyles. Start your virtual fitness journey.";
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: false },
+  { label: "Group Sessions", path: "/group-sessions", isActive: false },
+  { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+];
+
+// Online training benefits
+const onlineBenefits = [
+  {
+    icon: "/img/vector-yellow.svg",
+    title: "Train Anywhere, Anytime",
+    description: "Work out from home, at a gym, or while traveling. Your program is accessible wherever you have internet access, fitting seamlessly into your lifestyle.",
+  },
+  {
+    icon: "/img/vector-1-yellow.svg",
+    title: "Customized Programming",
+    description: "Receive a workout plan designed specifically for your goals, equipment access, and fitness level—not generic cookie-cutter templates.",
+  },
+  {
+    icon: "/img/vector-3-yellow.svg",
+    title: "Expert Coaching Support",
+    description: "Regular video check-ins, form feedback via video, and ongoing messaging support. Get the accountability and guidance you need to succeed.",
+  },
+  {
+    icon: "/img/vector-yellow.svg",
+    title: "Cost-Effective Option",
+    description: "Quality personal training at a more accessible price point than in-person sessions, without sacrificing personalization or results.",
+  },
+];
+
+// What's included
+const programIncludes = [
+  {
+    title: "Custom Workout Programs",
+    description: "Weekly workouts tailored to your goals and available equipment, delivered through an easy-to-use app or platform.",
+  },
+  {
+    title: "Video Exercise Library",
+    description: "Access to demonstration videos for every exercise in your program so you know exactly how to perform each movement.",
+  },
+  {
+    title: "Nutrition Guidance",
+    description: "Personalized nutrition recommendations to support your fitness goals, including macro targets and meal suggestions.",
+  },
+  {
+    title: "Weekly Video Check-ins",
+    description: "Regular video calls with your coach to discuss progress, adjust programming, and stay accountable.",
+  },
+  {
+    title: "Form Review & Feedback",
+    description: "Submit videos of your lifts for detailed feedback on form and technique to ensure you're training safely and effectively.",
+  },
+  {
+    title: "Messaging Support",
+    description: "Direct access to your coach for questions, concerns, and motivation throughout your program.",
+  },
+];
+
+// Who online training is for
+const idealFor = [
+  {
+    title: "Busy Professionals",
+    description: "Fit workouts around your schedule without commuting to a gym. Train early mornings, lunch breaks, or late evenings.",
+  },
+  {
+    title: "Frequent Travelers",
+    description: "Keep your fitness routine consistent whether you're at home, in a hotel gym, or traveling for work.",
+  },
+  {
+    title: "Home Gym Owners",
+    description: "Get expert programming for your home setup. We'll design workouts that maximize your equipment.",
+  },
+  {
+    title: "Self-Motivated Individuals",
+    description: "If you can follow a program independently but want expert guidance on what to do, online training is ideal.",
+  },
+];
+
+// FAQ Data
+const faqData = [
+  {
+    question: "How does online personal training work?",
+    answer: "After an initial consultation, we design a customized program based on your goals and available equipment. You receive weekly workouts through our app, have regular video check-ins with your coach, and can message anytime for support. You submit form videos for feedback and we adjust your program as you progress.",
+  },
+  {
+    question: "What equipment do I need?",
+    answer: "We can design effective programs for any equipment setup—from bodyweight only to a fully equipped home gym. During your consultation, we'll discuss what you have access to and create a program that works with your situation.",
+  },
+  {
+    question: "Is online training as effective as in-person training?",
+    answer: "For self-motivated individuals, online training can be equally effective. You get the same expert programming and coaching, just delivered differently. The main difference is you execute workouts independently. Many clients prefer online training for its flexibility and convenience.",
+  },
+  {
+    question: "How often will I communicate with my coach?",
+    answer: "You'll have weekly scheduled video check-ins (typically 15-30 minutes) plus unlimited messaging support throughout the week. Most clients message their coach several times per week with questions, progress updates, and form videos.",
+  },
+  {
+    question: "Can I switch from online to in-person training?",
+    answer: "Absolutely. If you're in the Calgary area and decide you'd prefer in-person sessions, we can transition you to our studio. Some clients do a hybrid approach—combining occasional in-person sessions with online programming.",
+  },
+  {
+    question: "What if I'm a complete beginner?",
+    answer: "Online training can work for beginners, though we recommend starting with a few in-person sessions if possible to establish proper form foundations. If that's not feasible, we spend extra time on form instruction through video and provide detailed exercise demonstrations.",
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/online-personal-training-calgary" />
+    <LocalBusinessSchema />
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    })} />
+    <!-- Service Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Online Personal Training",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Ambition Fitness",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1440 52 St NE #130",
+          "addressLocality": "Calgary",
+          "addressRegion": "AB",
+          "postalCode": "T2A 4T8",
+          "addressCountry": "CA"
+        }
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Calgary"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        }
+      ],
+      "description": "Online personal training and virtual fitness coaching from Calgary-based certified trainers. Custom programs, nutrition guidance, and ongoing support."
+    })} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" /></noscript>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { overflow-x: hidden; overflow-y: auto; }
+    </style>
+  </head>
+  <body class="bg-black min-h-screen">
+    <!-- Hero Section -->
+    <div class="relative w-full h-[500px] md:h-[650px] lg:h-[700px]">
+      <img
+        class="absolute top-0 left-0 w-full h-full object-cover"
+        alt="Online Personal Training Calgary"
+        src="/img/rectangle-6542.png"
+      />
+
+      <!-- Navigation -->
+      <nav class="absolute top-0 left-0 w-full z-50">
+        <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto">
+          <a href="/">
+            <img
+              class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50"
+              alt="Ambition Fitness Logo"
+              src="/img/image-3-2.png"
+            />
+          </a>
+
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+          </button>
+
+          <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+              {navigationLinks.map((link) => (
+                <a
+                  class={`relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`}
+                  href={link.path}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto hover:opacity-90 transition-opacity">
+              <span class="relative flex items-center justify-center w-fit font-16-medium font-[number:var(--16-medium-font-weight)] text-variable-collection-colorpriamry text-[length:var(--16-medium-font-size)] text-center tracking-[var(--16-medium-letter-spacing)] leading-[var(--16-medium-line-height)] whitespace-nowrap [font-style:var(--16-medium-font-style)]">
+                Get in Touch
+              </span>
+              <img class="relative w-[18.33px] h-[11.41px]" alt="Arrow" src="/img/line-108-3.svg" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden md:hidden">
+          <div class="flex flex-col items-center justify-center h-full px-4">
+            <div class="flex flex-col items-center gap-8 w-full max-w-sm">
+              {navigationLinks.map((link) => (
+                <a
+                  class={`text-2xl font-semibold [font-family:'Inter',Helvetica] ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`}
+                  href={link.path}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-variable-collection-coloryellow rounded-[12.39px] mt-4 hover:opacity-90 transition-opacity">
+                <span class="font-semibold text-variable-collection-colorpriamry text-lg [font-family:'Inter',Helvetica]">
+                  Get in Touch
+                </span>
+                <img class="w-[18.33px] h-[11.41px]" alt="Arrow" src="/img/line-108-3.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <section class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col w-full max-w-[90%] md:max-w-[800px] items-center justify-center gap-6 md:gap-8 px-6 md:px-[60px] py-8 md:py-[50px] bg-[#0000000f] rounded-xl backdrop-blur-[17px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(17px)_brightness(100%)]">
+        <h1 class="[font-family:'Montserrat',Helvetica] font-semibold text-transparent text-3xl md:text-5xl lg:text-[55px] text-center tracking-[0] leading-tight md:leading-[1.2]">
+          <span class="text-[#fedf41]">Online Personal Training</span>
+          <span class="text-[#f0f0f0]"> from Calgary</span>
+        </h1>
+
+        <p class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-xl lg:text-[22px] text-center tracking-[0] leading-relaxed md:leading-[35px] max-w-2xl">
+          Expert coaching wherever you are. Custom workout programs, nutrition guidance, and ongoing support—all delivered virtually to fit your lifestyle.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-variable-collection-coloryellow rounded-full hover:opacity-90 transition-all hover:scale-105"
+          >
+            <span class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base">
+              Start Online Training
+            </span>
+            <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" />
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex flex-col w-full items-center">
+
+      <!-- Why Online Training -->
+      <section class="flex flex-col w-full max-w-[1194px] items-center gap-12 md:gap-16 px-4 md:px-8 py-16 md:py-24 mx-auto">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              Fitness on your terms
+            </p>
+            <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+          </div>
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] lg:text-[45px] tracking-[0] leading-tight">
+            Why Choose Online Training?
+          </h2>
+          <p class="max-w-2xl [font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base md:text-lg leading-relaxed">
+            Online personal training combines expert coaching with the flexibility to train on your schedule, from anywhere.
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full">
+          {onlineBenefits.map((benefit) => (
+            <article class="flex flex-col items-start gap-4 p-6 md:p-8 bg-[#191919] rounded-xl border border-[#2e2e2e]">
+              <div class="flex items-center gap-3">
+                <div class="w-[40px] h-[40px] flex items-center justify-center bg-[#2a2a2a] rounded-lg">
+                  <img src={benefit.icon} alt="" class="w-5 h-5" />
+                </div>
+                <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg md:text-xl">
+                  {benefit.title}
+                </h3>
+              </div>
+              <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base leading-relaxed">
+                {benefit.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- What's Included Section -->
+      <div class="relative w-full py-16 md:py-24">
+        <img class="absolute top-0 left-0 w-full h-full object-cover" alt="" src="/img/union-grey.svg" />
+
+        <section class="relative flex flex-col w-full max-w-[1194px] items-center gap-12 md:gap-16 px-4 md:px-8 mx-auto z-10">
+          <header class="flex flex-col items-center gap-4 text-center">
+            <div class="inline-flex items-center gap-1.5">
+              <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+                Everything you need
+              </p>
+              <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+            </div>
+            <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] lg:text-[45px] tracking-[0] leading-tight">
+              What's Included
+            </h2>
+          </header>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full">
+            {programIncludes.map((item) => (
+              <article class="flex items-start gap-4 p-6 bg-[#191919] bg-opacity-80 rounded-xl border border-[#2e2e2e]">
+                <div class="flex-shrink-0 w-3 h-3 mt-2 bg-variable-collection-coloryellow rounded-full" />
+                <div>
+                  <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg mb-2">
+                    {item.title}
+                  </h3>
+                  <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-variable-collection-coloryellow rounded-full hover:opacity-90 transition-opacity"
+          >
+            <span class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base">
+              Get Started Online
+            </span>
+            <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" />
+          </a>
+        </section>
+      </div>
+
+      <!-- Who It's For Section -->
+      <section class="flex flex-col w-full max-w-[1194px] items-center gap-12 px-4 md:px-8 py-16 md:py-24 mx-auto">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              Is online training right for you?
+            </p>
+            <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+          </div>
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] lg:text-[45px] tracking-[0] leading-tight">
+            Ideal For
+          </h2>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+          {idealFor.map((item) => (
+            <article class="flex items-start gap-4 p-6 bg-[#191919] rounded-xl border border-[#2e2e2e]">
+              <div class="flex-shrink-0 w-3 h-3 mt-2 bg-variable-collection-coloryellow rounded-full" />
+              <div>
+                <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg mb-2">
+                  {item.title}
+                </h3>
+                <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="flex flex-col w-full max-w-[900px] items-center gap-8 md:gap-12 px-4 md:px-8 py-16 md:py-20 mx-auto">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              Questions answered
+            </p>
+            <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+          </div>
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-tight">
+            Online Training FAQ
+          </h2>
+        </header>
+
+        <div class="flex flex-col gap-4 w-full">
+          {faqData.map((faq) => (
+            <details class="group bg-[#191919] rounded-xl border border-[#2e2e2e] overflow-hidden">
+              <summary class="flex items-center justify-between gap-4 p-5 md:p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-lg text-left">
+                  {faq.question}
+                </h3>
+                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-variable-collection-coloryellow transition-transform group-open:rotate-45">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-5 md:px-6 pb-5 md:pb-6">
+                <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-sm md:text-base leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="flex flex-col w-full max-w-[1010px] items-center justify-center gap-6 md:gap-10 p-8 md:p-[60px] mx-4 md:mx-auto mb-12 bg-variable-collection-coloryellow rounded-xl">
+        <h2 class="[font-family:'Prompt',Helvetica] font-medium text-variable-collection-colorpriamry text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[53px]">
+          Train From Anywhere
+        </h2>
+        <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#222222] text-base md:text-xl text-center tracking-[0] leading-relaxed max-w-2xl">
+          Don't let location or schedule limit your fitness. Start your online training journey with Calgary's trusted personal trainers today.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex h-12 md:h-14 items-center justify-center gap-3 px-6 py-4 bg-variable-collection-colorpriamry rounded-xl hover:opacity-90 transition-opacity"
+        >
+          <span class="[font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base">
+            Start Your Online Program
+          </span>
+          <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-white.svg" />
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm">
+              Calgary's trusted personal training facility. Transform your body and mind with personalized coaching.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="/memberships" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Memberships</a>
+              <a href="/group-sessions" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Sessions</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <a href="/personal-trainer-mayland-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Mayland Heights</a>
+              <a href="/personal-trainer-meridian-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Meridian</a>
+              <a href="/personal-trainer-raddison-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Raddison Heights</a>
+              <a href="/personal-trainer-bridgeland-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Bridgeland-Riverside</a>
+              <a href="/personal-trainer-renfrew-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Renfrew</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+              mobileMenu.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+              hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+              hamburgerLines[1].style.opacity = '0';
+              hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+              mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              isMenuOpen = false;
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

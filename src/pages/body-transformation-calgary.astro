@@ -1,0 +1,567 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
+
+const pageTitle = "Body Transformation Calgary | Complete Fitness Makeover | Ambition Fitness";
+const pageDescription = "Achieve a complete body transformation in Calgary. Expert personal trainers, customized programs for dramatic results. See real client before & after photos. Start your transformation journey today.";
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: false },
+  { label: "Group Sessions", path: "/group-sessions", isActive: false },
+  { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+];
+
+// Transformation program components
+const programComponents = [
+  {
+    icon: "/img/vector-yellow.svg",
+    title: "Personalized Training Program",
+    description: "Every workout designed specifically for your body, goals, and fitness level. Progressive programming that challenges you appropriately as you advance.",
+  },
+  {
+    icon: "/img/vector-1-yellow.svg",
+    title: "Comprehensive Nutrition Plan",
+    description: "Sustainable eating strategies that fuel your transformation without extreme restriction. Learn to eat for results while enjoying your food.",
+  },
+  {
+    icon: "/img/vector-3-yellow.svg",
+    title: "Lifestyle & Habit Coaching",
+    description: "Address sleep, stress, and daily habits that impact your results. True transformation goes beyond the gym—we help you change your lifestyle.",
+  },
+  {
+    icon: "/img/vector-yellow.svg",
+    title: "24/7 Accountability & Support",
+    description: "Your trainer is available around the clock for questions, motivation, and guidance. You're never alone on your transformation journey.",
+  },
+];
+
+// Transformation timeline
+const transformationPhases = [
+  {
+    week: "Weeks 1-4",
+    title: "Foundation Phase",
+    description: "Establish proper movement patterns, build initial fitness base, and implement nutrition changes. Most clients notice improved energy and sleep.",
+  },
+  {
+    week: "Weeks 5-8",
+    title: "Progression Phase",
+    description: "Increase training intensity, refine nutrition, and build momentum. This is when visible changes typically begin—clothes fit differently, muscles start showing.",
+  },
+  {
+    week: "Weeks 9-12",
+    title: "Transformation Phase",
+    description: "Peak training intensity and dial in all variables. Dramatic visual changes occur. This is when others start noticing your transformation.",
+  },
+  {
+    week: "Week 12+",
+    title: "Maintenance & Beyond",
+    description: "Learn to maintain your new physique long-term. Continue progressing toward new goals or focus on lifestyle maintenance.",
+  },
+];
+
+// Success stories
+const transformations = [
+  {
+    name: "Jameela D",
+    result: "Life-changing transformation",
+    text: "I've struggled with weight and diet for over a decade and being able to look at myself in the mirror and be happy has been a massive accomplishment. That being said none of this would've been possible without Guil. The results are priceless.",
+    image: "/img/frame-1984077583-4.png",
+  },
+  {
+    name: "Kelly Heath",
+    result: "Found the ideal fitness routine",
+    text: "Ambition Fitness has delivered outstanding results. To my surprise I found the Ideal Fitness Routine for my lifestyle. The progress that is visible on a weekly basis provides me great motivation to continue on.",
+    image: "/img/image-11-8.png",
+  },
+  {
+    name: "Rebecca R",
+    result: "Exceeded expectations",
+    text: "He helped me reach my goals and up my self esteem to the point I didn't know originally existed! If you want that dream body and are willing to do the work he will get you there!",
+    image: "/img/image-11-9.png",
+  },
+];
+
+// FAQ Data
+const faqData = [
+  {
+    question: "How long does a body transformation take?",
+    answer: "Most dramatic transformations occur over 12-16 weeks of consistent effort. However, you'll notice changes within the first few weeks—improved energy, better sleep, and clothes fitting differently. The timeline depends on your starting point and how much change you're seeking.",
+  },
+  {
+    question: "What results can I realistically expect?",
+    answer: "Results vary based on your starting point, consistency, and adherence to the program. Many clients lose 20-40+ pounds of fat while building muscle over a 12-week transformation. View our transformation gallery for realistic examples of what's achievable.",
+  },
+  {
+    question: "Do I need to follow a strict diet?",
+    answer: "No extreme diets required. We focus on sustainable nutrition changes that create results while fitting your lifestyle. You'll learn to make better choices without feeling deprived. The goal is to find an eating approach you can maintain long-term.",
+  },
+  {
+    question: "What if I've failed at transformations before?",
+    answer: "Many of our most successful clients came to us after failed attempts elsewhere. The difference is personalized programming, expert accountability, and addressing all factors that contribute to transformation—not just exercise. We work with your body and lifestyle, not against them.",
+  },
+  {
+    question: "How is this different from regular personal training?",
+    answer: "Our transformation program is a comprehensive approach that addresses training, nutrition, lifestyle, and mindset—not just workouts. You receive 24/7 support, detailed nutrition guidance, and progress tracking. It's designed for people who want significant, lasting change.",
+  },
+  {
+    question: "Do you guarantee results?",
+    answer: "We guarantee our commitment to your success—expert programming, comprehensive support, and everything you need to transform. Your results depend on your consistency and commitment to the program. Clients who follow the program consistently achieve remarkable results.",
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/body-transformation-calgary" />
+    <LocalBusinessSchema />
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    })} />
+    <!-- Service Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Body Transformation Program",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Ambition Fitness",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1440 52 St NE #130",
+          "addressLocality": "Calgary",
+          "addressRegion": "AB",
+          "postalCode": "T2A 4T8",
+          "addressCountry": "CA"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Calgary"
+      },
+      "description": "Complete body transformation programs in Calgary. Personalized training, nutrition coaching, and 24/7 support for dramatic, lasting results."
+    })} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" /></noscript>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { overflow-x: hidden; overflow-y: auto; }
+    </style>
+  </head>
+  <body class="bg-black min-h-screen">
+    <!-- Hero Section -->
+    <div class="relative w-full h-[500px] md:h-[650px] lg:h-[700px]">
+      <img
+        class="absolute top-0 left-0 w-full h-full object-cover"
+        alt="Body Transformation Calgary"
+        src="/img/rectangle-6542.png"
+      />
+
+      <!-- Navigation -->
+      <nav class="absolute top-0 left-0 w-full z-50">
+        <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto">
+          <a href="/">
+            <img
+              class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50"
+              alt="Ambition Fitness Logo"
+              src="/img/image-3-2.png"
+            />
+          </a>
+
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+          >
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+            <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+          </button>
+
+          <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+              {navigationLinks.map((link) => (
+                <a
+                  class={`relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`}
+                  href={link.path}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto hover:opacity-90 transition-opacity">
+              <span class="relative flex items-center justify-center w-fit font-16-medium font-[number:var(--16-medium-font-weight)] text-variable-collection-colorpriamry text-[length:var(--16-medium-font-size)] text-center tracking-[var(--16-medium-letter-spacing)] leading-[var(--16-medium-line-height)] whitespace-nowrap [font-style:var(--16-medium-font-style)]">
+                Get in Touch
+              </span>
+              <img class="relative w-[18.33px] h-[11.41px]" alt="Arrow" src="/img/line-108-3.svg" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden md:hidden">
+          <div class="flex flex-col items-center justify-center h-full px-4">
+            <div class="flex flex-col items-center gap-8 w-full max-w-sm">
+              {navigationLinks.map((link) => (
+                <a
+                  class={`text-2xl font-semibold [font-family:'Inter',Helvetica] ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`}
+                  href={link.path}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-variable-collection-coloryellow rounded-[12.39px] mt-4 hover:opacity-90 transition-opacity">
+                <span class="font-semibold text-variable-collection-colorpriamry text-lg [font-family:'Inter',Helvetica]">
+                  Get in Touch
+                </span>
+                <img class="w-[18.33px] h-[11.41px]" alt="Arrow" src="/img/line-108-3.svg" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <section class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col w-full max-w-[90%] md:max-w-[800px] items-center justify-center gap-6 md:gap-8 px-6 md:px-[60px] py-8 md:py-[50px] bg-[#0000000f] rounded-xl backdrop-blur-[17px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(17px)_brightness(100%)]">
+        <h1 class="[font-family:'Montserrat',Helvetica] font-semibold text-transparent text-3xl md:text-5xl lg:text-[58px] text-center tracking-[0] leading-tight md:leading-[1.2]">
+          <span class="text-[#fedf41]">Body Transformation</span>
+          <span class="text-[#f0f0f0]"> in Calgary</span>
+        </h1>
+
+        <p class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-xl lg:text-[22px] text-center tracking-[0] leading-relaxed md:leading-[35px] max-w-2xl">
+          Ready for a complete fitness makeover? Our transformation programs combine expert training, nutrition coaching, and 24/7 support for dramatic, lasting results.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-variable-collection-coloryellow rounded-full hover:opacity-90 transition-all hover:scale-105"
+          >
+            <span class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base">
+              Start Your Transformation
+            </span>
+            <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" />
+          </a>
+          <a
+            href="/personal-training"
+            class="inline-flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 border-2 border-white rounded-full hover:bg-white hover:text-black transition-all"
+          >
+            <span class="[font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base">
+              See Transformations
+            </span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex flex-col w-full items-center">
+
+      <!-- What's Included -->
+      <section class="flex flex-col w-full max-w-[1194px] items-center gap-12 md:gap-16 px-4 md:px-8 py-16 md:py-24 mx-auto">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              A complete approach
+            </p>
+            <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+          </div>
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] lg:text-[45px] tracking-[0] leading-tight">
+            What's Included in Your Transformation
+          </h2>
+          <p class="max-w-2xl [font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base md:text-lg leading-relaxed">
+            True transformation requires more than just workouts. Our comprehensive program addresses every factor that contributes to lasting change.
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full">
+          {programComponents.map((component) => (
+            <article class="flex flex-col items-start gap-4 p-6 md:p-8 bg-[#191919] rounded-xl border border-[#2e2e2e]">
+              <div class="flex items-center gap-3">
+                <div class="w-[40px] h-[40px] flex items-center justify-center bg-[#2a2a2a] rounded-lg">
+                  <img src={component.icon} alt="" class="w-5 h-5" />
+                </div>
+                <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg md:text-xl">
+                  {component.title}
+                </h3>
+              </div>
+              <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base leading-relaxed">
+                {component.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- Transformation Timeline -->
+      <div class="relative w-full py-16 md:py-24">
+        <img class="absolute top-0 left-0 w-full h-full object-cover" alt="" src="/img/union-grey.svg" />
+
+        <section class="relative flex flex-col w-full max-w-[1194px] items-center gap-12 md:gap-16 px-4 md:px-8 mx-auto z-10">
+          <header class="flex flex-col items-center gap-4 text-center">
+            <div class="inline-flex items-center gap-1.5">
+              <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+                Your journey
+              </p>
+              <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+            </div>
+            <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] lg:text-[45px] tracking-[0] leading-tight">
+              12-Week Transformation Timeline
+            </h2>
+          </header>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 w-full">
+            {transformationPhases.map((phase, index) => (
+              <article class="flex flex-col gap-4 p-6 bg-[#191919] bg-opacity-80 rounded-xl border border-[#2e2e2e]">
+                <div class="flex items-center gap-3">
+                  <span class="[font-family:'Montserrat',Helvetica] font-bold text-variable-collection-coloryellow text-2xl">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <div>
+                  <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm mb-1">
+                    {phase.week}
+                  </p>
+                  <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg mb-2">
+                    {phase.title}
+                  </h3>
+                  <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-sm leading-relaxed">
+                    {phase.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-variable-collection-coloryellow rounded-full hover:opacity-90 transition-opacity"
+          >
+            <span class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base">
+              Begin Your 12-Week Journey
+            </span>
+            <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" />
+          </a>
+        </section>
+      </div>
+
+      <!-- Success Stories Section -->
+      <section class="flex flex-col w-full max-w-[1194px] items-center gap-12 px-4 md:px-8 py-16 md:py-24 mx-auto">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              Real transformations
+            </p>
+            <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+          </div>
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] lg:text-[45px] tracking-[0] leading-tight">
+            Calgary Transformation Success Stories
+          </h2>
+          <p class="max-w-2xl [font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base md:text-lg leading-relaxed">
+            These Calgary clients committed to their transformation and achieved remarkable results. Your transformation story could be next.
+          </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full">
+          {transformations.map((story) => (
+            <article class="flex flex-col gap-6 p-6 md:p-8 bg-[#191919] rounded-xl border border-[#2e2e2e]">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-16 h-16 rounded-full bg-cover bg-center"
+                  style={`background-image: url(${story.image})`}
+                />
+                <div>
+                  <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg">
+                    {story.name}
+                  </h3>
+                  <p class="[font-family:'Montserrat',Helvetica] font-normal text-variable-collection-coloryellow text-sm">
+                    {story.result}
+                  </p>
+                </div>
+              </div>
+              <blockquote class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base leading-relaxed">
+                "{story.text}"
+              </blockquote>
+            </article>
+          ))}
+        </div>
+
+        <a
+          href="/personal-training"
+          class="inline-flex items-center justify-center gap-2.5 text-variable-collection-coloryellow hover:underline"
+        >
+          <span class="[font-family:'Montserrat',Helvetica] font-medium text-base">
+            View Full Transformation Gallery
+          </span>
+          <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" style="filter: brightness(0) saturate(100%) invert(89%) sepia(36%) saturate(1025%) hue-rotate(358deg) brightness(103%) contrast(99%);" />
+        </a>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="flex flex-col w-full max-w-[900px] items-center gap-8 md:gap-12 px-4 md:px-8 py-16 md:py-20 mx-auto">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              Questions answered
+            </p>
+            <img class="w-16 md:w-[110.67px] h-[2.97px]" alt="" src="/img/rectangle-5-2.svg" />
+          </div>
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-tight">
+            Body Transformation FAQ
+          </h2>
+        </header>
+
+        <div class="flex flex-col gap-4 w-full">
+          {faqData.map((faq) => (
+            <details class="group bg-[#191919] rounded-xl border border-[#2e2e2e] overflow-hidden">
+              <summary class="flex items-center justify-between gap-4 p-5 md:p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-lg text-left">
+                  {faq.question}
+                </h3>
+                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-variable-collection-coloryellow transition-transform group-open:rotate-45">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-5 md:px-6 pb-5 md:pb-6">
+                <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-sm md:text-base leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="flex flex-col w-full max-w-[1010px] items-center justify-center gap-6 md:gap-10 p-8 md:p-[60px] mx-4 md:mx-auto mb-12 bg-variable-collection-coloryellow rounded-xl">
+        <h2 class="[font-family:'Prompt',Helvetica] font-medium text-variable-collection-colorpriamry text-3xl md:text-5xl text-center tracking-[0] leading-tight md:leading-[53px]">
+          Your Transformation Starts Today
+        </h2>
+        <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#222222] text-base md:text-xl text-center tracking-[0] leading-relaxed max-w-2xl">
+          Stop waiting for the perfect moment. Book your free consultation and take the first step toward the body and life you deserve.
+        </p>
+        <a
+          href="/contact"
+          class="inline-flex h-12 md:h-14 items-center justify-center gap-3 px-6 py-4 bg-variable-collection-colorpriamry rounded-xl hover:opacity-90 transition-opacity"
+        >
+          <span class="[font-family:'Montserrat',Helvetica] font-medium text-white text-sm md:text-base">
+            Start Your Transformation
+          </span>
+          <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-white.svg" />
+        </a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm">
+              Calgary's trusted personal training facility. Transform your body and mind with personalized coaching.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="/memberships" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Memberships</a>
+              <a href="/group-sessions" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Sessions</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <a href="/personal-trainer-mayland-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Mayland Heights</a>
+              <a href="/personal-trainer-meridian-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Meridian</a>
+              <a href="/personal-trainer-raddison-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Raddison Heights</a>
+              <a href="/personal-trainer-bridgeland-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Bridgeland-Riverside</a>
+              <a href="/personal-trainer-renfrew-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Renfrew</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+              mobileMenu.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+              hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+              hamburgerLines[1].style.opacity = '0';
+              hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+              mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              isMenuOpen = false;
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
