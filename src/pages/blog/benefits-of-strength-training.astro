@@ -1,0 +1,294 @@
+---
+import '../../styles/global.css';
+import SEO from '../../components/SEO.astro';
+import LocalBusinessSchema from '../../components/LocalBusinessSchema.astro';
+
+const pageTitle = "10 Benefits of Strength Training Beyond Building Muscle | Ambition Fitness";
+const pageDescription = "Discover the surprising health benefits of strength training that go far beyond bigger muscles. Learn why every Calgary resident should include resistance training in their fitness routine.";
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: false },
+  { label: "Group Sessions", path: "/group-sessions", isActive: false },
+  { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+];
+
+const benefits = [
+  {
+    number: "1",
+    title: "Increased Metabolic Rate",
+    description: "Muscle tissue burns more calories at rest than fat tissue. By building lean muscle through strength training, you increase your resting metabolic rate—meaning you burn more calories 24/7, even while sleeping.",
+  },
+  {
+    number: "2",
+    title: "Improved Bone Density",
+    description: "Strength training is one of the most effective ways to prevent osteoporosis. The stress placed on bones during resistance exercises stimulates bone-building cells, increasing bone density and reducing fracture risk.",
+  },
+  {
+    number: "3",
+    title: "Better Mental Health",
+    description: "Research consistently shows that strength training reduces symptoms of anxiety and depression. The combination of endorphin release, improved self-efficacy, and the meditative focus required during lifting contributes to better mental wellbeing.",
+  },
+  {
+    number: "4",
+    title: "Enhanced Insulin Sensitivity",
+    description: "Resistance training improves how your body processes glucose, making it a powerful tool for preventing and managing type 2 diabetes. Muscle tissue acts as a glucose sink, helping regulate blood sugar levels.",
+  },
+  {
+    number: "5",
+    title: "Reduced Back Pain",
+    description: "A strong core and posterior chain (back, glutes, hamstrings) provide better support for your spine. Many chronic back pain sufferers see significant improvement after starting a properly designed strength training program.",
+  },
+  {
+    number: "6",
+    title: "Improved Heart Health",
+    description: "While often associated with cardio, strength training also benefits your cardiovascular system. It helps lower blood pressure, improve cholesterol levels, and reduce the risk of heart disease.",
+  },
+  {
+    number: "7",
+    title: "Better Sleep Quality",
+    description: "Regular strength training has been shown to improve sleep quality and help you fall asleep faster. The physical stress of resistance exercise promotes deeper, more restorative sleep.",
+  },
+  {
+    number: "8",
+    title: "Increased Functional Strength",
+    description: "Everyday activities become easier—carrying groceries, climbing stairs, playing with kids. Strength training builds the functional capacity that makes life easier and reduces injury risk during daily activities.",
+  },
+  {
+    number: "9",
+    title: "Improved Posture",
+    description: "Modern life (sitting, phones, computers) creates postural imbalances. Strength training can correct these by strengthening weak muscles and improving overall body alignment.",
+  },
+  {
+    number: "10",
+    title: "Healthy Aging",
+    description: "After age 30, we naturally lose muscle mass (sarcopenia). Strength training is the most effective way to slow this process, maintaining independence, mobility, and quality of life as we age.",
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/blog/benefits-of-strength-training" />
+    <LocalBusinessSchema />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "10 Benefits of Strength Training Beyond Building Muscle",
+      "description": pageDescription,
+      "author": { "@type": "Organization", "name": "Ambition Fitness" },
+      "publisher": { "@type": "Organization", "name": "Ambition Fitness" },
+      "datePublished": "2024-11-28",
+      "dateModified": "2024-11-28"
+    })} />
+  </head>
+  <body class="bg-black min-h-screen">
+    <!-- Navigation -->
+    <nav class="w-full z-50 bg-black/90 backdrop-blur-sm">
+      <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto">
+        <a href="/"><img class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50" alt="Ambition Fitness Logo" src="/img/image-3-2.png" /></a>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative" aria-label="Toggle mobile menu">
+          <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+          <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+          <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+        <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+          <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+            {navigationLinks.map((link) => (<a class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm lg:text-lg text-center text-white hover:text-variable-collection-coloryellow transition-colors" href={link.path}>{link.label}</a>))}
+          </div>
+          <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto hover:opacity-90 transition-opacity">
+            <span class="relative flex items-center justify-center w-fit font-medium text-black text-base">Get in Touch</span>
+            <img class="relative w-[18.33px] h-[11.41px]" alt="Arrow" src="/img/line-108-3.svg" />
+          </a>
+        </div>
+      </div>
+      <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-40 hidden md:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8">
+          {navigationLinks.map((link) => (<a class="text-2xl font-medium text-white" href={link.path}>{link.label}</a>))}
+          <a href="/contact" class="mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 bg-variable-collection-coloryellow rounded-full"><span class="font-medium text-black">Get in Touch</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main class="flex flex-col w-full items-center">
+      <article class="w-full max-w-[800px] px-4 md:px-8 py-12 md:py-16 mx-auto">
+        <nav class="mb-8 text-sm">
+          <a href="/blog" class="text-variable-collection-coloryellow hover:underline">Blog</a>
+          <span class="text-[#919191] mx-2">/</span>
+          <span class="text-[#919191]">Strength Training</span>
+        </nav>
+
+        <header class="mb-12">
+          <span class="inline-block bg-variable-collection-coloryellow text-black text-xs font-semibold px-3 py-1 rounded-full mb-4">Strength Training</span>
+          <h1 class="[font-family:'Montserrat',Helvetica] font-bold text-white text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
+            10 Benefits of Strength Training Beyond Building Muscle
+          </h1>
+          <div class="flex items-center gap-4 text-[#919191] text-sm">
+            <span>November 28, 2024</span>
+            <span>•</span>
+            <span>7 min read</span>
+          </div>
+        </header>
+
+        <div class="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-12">
+          <img src="/img/rectangle-6543.png" alt="Strength training benefits" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="prose prose-invert max-w-none">
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-8">
+            When most people think of strength training, they picture bodybuilders and bulging muscles. But the benefits of lifting weights extend far beyond aesthetics. Whether you're 25 or 65, male or female, strength training offers health benefits that can transform your life.
+          </p>
+
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-8">
+            Here are ten science-backed reasons why everyone should include resistance training in their fitness routine.
+          </p>
+
+          <div class="space-y-6 my-12">
+            {benefits.map((benefit) => (
+              <div class="bg-[#191919] rounded-xl p-6 border border-[#2e2e2e]">
+                <div class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-variable-collection-coloryellow rounded-full text-black font-bold text-sm">
+                    {benefit.number}
+                  </span>
+                  <div>
+                    <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg mb-2">{benefit.title}</h2>
+                    <p class="text-[#e4e4e4] text-base leading-relaxed">{benefit.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-3xl mt-12 mb-6">
+            Getting Started with Strength Training
+          </h2>
+
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-6">
+            If you're new to strength training, here's what we recommend:
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Start with 2-3 sessions per week</strong> — This allows adequate recovery between workouts.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Focus on compound movements</strong> — Squats, deadlifts, presses, and rows work multiple muscle groups efficiently.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Prioritize form over weight</strong> — Proper technique prevents injury and ensures you're targeting the right muscles.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Progress gradually</strong> — Add weight or reps slowly over time to continue making gains safely.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Consider working with a trainer</strong> — Especially when starting out, professional guidance ensures you build a solid foundation.</span>
+            </li>
+          </ul>
+
+          <div class="bg-[#191919] rounded-xl p-8 text-center border border-[#2e2e2e] my-12">
+            <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-xl md:text-2xl mb-4">
+              Start Your Strength Training Journey
+            </h3>
+            <p class="text-[#e4e4e4] mb-6">
+              Our Calgary personal trainers specialize in strength training for all levels. Book a free consultation to learn how we can help you build strength safely and effectively.
+            </p>
+            <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-variable-collection-coloryellow rounded-full hover:opacity-90 transition-all hover:scale-105">
+              <span class="[font-family:'Montserrat',Helvetica] font-medium text-black text-base">Book Free Consultation</span>
+              <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" />
+            </a>
+          </div>
+        </div>
+
+        <div class="border-t border-[#2e2e2e] pt-8 mt-12">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <img src="/img/image-3-2.png" alt="Ambition Fitness" class="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <p class="text-white font-medium">Ambition Fitness</p>
+                <p class="text-[#919191] text-sm">Calgary Personal Training</p>
+              </div>
+            </div>
+            <a href="/blog" class="text-variable-collection-coloryellow hover:underline text-sm">← Back to Blog</a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full mt-12 pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and description -->
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm">Calgary's premier personal training facility.</p>
+          </div>
+          <!-- Services -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="/memberships" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Memberships</a>
+              <a href="/group-sessions" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Sessions</a>
+            </div>
+          </div>
+          <!-- Service Area -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <a href="/personal-trainer-mayland-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Mayland Heights</a>
+              <a href="/personal-trainer-meridian-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Meridian</a>
+              <a href="/personal-trainer-raddison-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Raddison Heights</a>
+              <a href="/personal-trainer-bridgeland-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Bridgeland-Riverside</a>
+              <a href="/personal-trainer-renfrew-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Renfrew</a>
+            </div>
+          </div>
+          <!-- Company -->
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="/blog" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (isOpen) { hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; hamburgerLines[1].style.opacity = '0'; hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)'; }
+            else { hamburgerLines[0].style.transform = ''; hamburgerLines[1].style.opacity = '1'; hamburgerLines[2].style.transform = ''; }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

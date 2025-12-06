@@ -3,8 +3,8 @@ import '../styles/global.css';
 import SEO from '../components/SEO.astro';
 import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 
-const pageTitle = "Group Sessions - Ambition Fitness Calgary";
-const pageDescription = "Join our energizing group fitness classes in Calgary. Senior fitness, boot camps, and more. Build strength and community together.";
+const pageTitle = "Group Fitness Classes Calgary | Small Group Training | Ambition Fitness";
+const pageDescription = "Join Calgary's most effective small group fitness classes. Senior fitness programs, boot camps, limited class sizes, expert coaching. Try your first class free.";
 
 const navigationLinks = [
   { label: "Home", path: "/", isActive: false },
@@ -127,6 +127,30 @@ const whyChooseBenefits = [
   },
 ];
 
+// FAQ Data for Schema
+const faqData = [
+  {
+    question: "How many people are in a group class?",
+    answer: "Our group classes are intentionally kept small, typically 4-8 participants. This ensures personalized attention from our coaches while still providing the energy and motivation of group training.",
+  },
+  {
+    question: "What fitness level do I need for group classes?",
+    answer: "Our classes welcome all fitness levels. Our coaches provide modifications for every exercise, so whether you're a beginner or experienced athlete, you'll get an effective workout that matches your abilities.",
+  },
+  {
+    question: "How do I book a group session?",
+    answer: "You can book a group session by contacting us through our website, calling us directly, or messaging us on Instagram. We'll help you find the right class for your schedule and fitness goals.",
+  },
+  {
+    question: "What types of group classes do you offer?",
+    answer: "We offer Senior Fitness classes designed for improved mobility and balance, and Boot Camp classes for high-energy full-body workouts. Both are suitable for various fitness levels with proper modifications.",
+  },
+  {
+    question: "Can I try a class before committing?",
+    answer: "Yes! We encourage you to try a class before committing. Contact us to schedule your first session and experience our group training environment firsthand.",
+  },
+];
+
 const scheduleData = {
   title: "Class Schedule",
   subtitle: "Join us for energizing group sessions throughout the week",
@@ -188,6 +212,19 @@ const scheduleData = {
     <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
     <SEO title={pageTitle} description={pageDescription} canonical="/group-sessions" />
     <LocalBusinessSchema />
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    })} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Preload fonts for non-blocking loading -->
@@ -525,6 +562,52 @@ const scheduleData = {
         </div>
       </section>
 
+      <!-- Group Sessions FAQ Section -->
+      <section id="faq" class="flex flex-col w-full max-w-[1010px] items-center gap-8 md:gap-12 px-4 md:px-8 py-16 md:py-20 mx-auto">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              Common questions answered
+            </p>
+            <img
+              class="w-16 md:w-[110.67px] h-[2.97px]"
+              alt=""
+              src="/img/rectangle-5-2.svg"
+              role="presentation"
+            />
+          </div>
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-tight">
+            Group Sessions FAQ
+          </h2>
+        </header>
+
+        <div class="flex flex-col gap-4 w-full">
+          {faqData.map((faq, index) => (
+            <details class="group bg-[#191919] rounded-xl border border-[#2e2e2e] overflow-hidden">
+              <summary class="flex items-center justify-between gap-4 p-5 md:p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-lg text-left">
+                  {faq.question}
+                </h3>
+                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-variable-collection-coloryellow transition-transform group-open:rotate-45">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-5 md:px-6 pb-5 md:pb-6">
+                <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-sm md:text-base leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#919191] text-sm text-center">
+          Have more questions? <a href="/contact" class="text-variable-collection-coloryellow hover:underline">Contact us</a> to learn more about our classes.
+        </p>
+      </section>
+
       <!-- Call to Action Section -->
       <section class="flex flex-col w-full max-w-[1010px] items-center justify-center gap-6 md:gap-10 p-8 md:p-[60px] mx-4 md:mx-auto mt-12 md:mt-16 mb-8 md:mb-12 bg-variable-collection-coloryellow rounded-xl">
         <div class="flex flex-col items-start justify-center gap-4 md:gap-5 relative self-stretch w-full">
@@ -581,10 +664,11 @@ const scheduleData = {
           <div>
             <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
             <div class="space-y-2">
-              <span class="block text-[#e4e4e4] text-sm">Mayland Heights</span>
-              <span class="block text-[#e4e4e4] text-sm">Meridian</span>
-              <span class="block text-[#e4e4e4] text-sm">Raddison Heights</span>
-              <span class="block text-[#e4e4e4] text-sm">Bridgeland-Riverside</span>
+              <a href="/personal-trainer-mayland-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Mayland Heights</a>
+              <a href="/personal-trainer-meridian-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Meridian</a>
+              <a href="/personal-trainer-raddison-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Raddison Heights</a>
+              <a href="/personal-trainer-bridgeland-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Bridgeland-Riverside</a>
+              <a href="/personal-trainer-renfrew-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Renfrew</a>
             </div>
           </div>
           <!-- Company -->
@@ -592,7 +676,7 @@ const scheduleData = {
             <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
             <div class="space-y-2">
               <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
-              <a href="#" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/blog" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
               <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
             </div>
           </div>
