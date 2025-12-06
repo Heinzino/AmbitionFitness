@@ -275,13 +275,15 @@ const equipment = [
     </main>
 
     <!-- Footer -->
-    <footer class="flex flex-col w-full items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 bg-[#0e0e0e]">
-      <div class="flex flex-col md:flex-row w-full max-w-[1194px] justify-between gap-8 md:gap-12">
-        <div class="flex flex-col items-start gap-4 max-w-sm">
-          <img class="w-16 md:w-20 h-auto" alt="Ambition Fitness Logo" src="/img/image-3-2.png" />
-          <p class="[font-family:'Montserrat',Helvetica] text-[#919191] text-sm leading-relaxed">Calgary's premier personal training facility.</p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+    <footer class="w-full mt-12 pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo and description -->
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm">Calgary's premier personal training facility.</p>
+          </div>
+          <!-- Services -->
           <div>
             <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
             <div class="space-y-2">
@@ -290,6 +292,7 @@ const equipment = [
               <a href="/group-sessions" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Sessions</a>
             </div>
           </div>
+          <!-- Service Area -->
           <div>
             <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
             <div class="space-y-2">
@@ -300,6 +303,7 @@ const equipment = [
               <a href="/personal-trainer-renfrew-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Renfrew</a>
             </div>
           </div>
+          <!-- Company -->
           <div>
             <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
             <div class="space-y-2">
@@ -309,10 +313,13 @@ const equipment = [
             </div>
           </div>
         </div>
-      </div>
-      <div class="pt-8 border-t border-gray-700 w-full max-w-[1194px] flex justify-between items-center">
-        <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
-        <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer"><img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" /></a>
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
       </div>
     </footer>
 
@@ -320,7 +327,7 @@ const equipment = [
       document.addEventListener('DOMContentLoaded', () => {
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
         if (mobileMenuBtn && mobileMenu) {
           mobileMenuBtn.addEventListener('click', () => {
             const isOpen = mobileMenu.classList.contains('hidden');
