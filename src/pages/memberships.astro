@@ -3,8 +3,8 @@ import '../styles/global.css';
 import SEO from '../components/SEO.astro';
 import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 
-const pageTitle = "Memberships - Ambition Fitness Calgary";
-const pageDescription = "Flexible membership options at Ambition Fitness Calgary. Access elite equipment and expert coaching. Find the perfect plan for your fitness goals.";
+const pageTitle = "Gym Membership Calgary | Flexible Fitness Plans | Ambition Fitness";
+const pageDescription = "Affordable gym memberships in Calgary with 24/7 access, no contracts, and premium equipment. Private facility, limited spots, never crowded. Book your free tour today.";
 
 const navigationLinks = [
   { label: "Home", path: "/", isActive: false },
@@ -84,6 +84,30 @@ const membershipIncludes = [
   "Friendly, supportive training environment",
 ];
 
+// FAQ Data for Schema
+const faqData = [
+  {
+    question: "How much is a gym membership in Calgary?",
+    answer: "Gym membership costs in Calgary vary widely. At Ambition Fitness, we offer competitive rates for our premium private facility with 24/7 access. Contact us for current pricing and to find a plan that fits your budget.",
+  },
+  {
+    question: "Do you offer month-to-month memberships?",
+    answer: "Yes! We offer flexible month-to-month memberships with no long-term contracts. You can cancel anytime with no penalties or hidden fees.",
+  },
+  {
+    question: "What's included in the membership?",
+    answer: "Your membership includes 24/7 facility access, use of all equipment, free parking, and participation in member-only events and challenges.",
+  },
+  {
+    question: "Can I freeze my membership?",
+    answer: "Yes, we offer membership freezes for vacations, injuries, or other circumstances. Contact us to discuss your specific situation and we'll work with you to find a solution.",
+  },
+  {
+    question: "Do you have a free trial or tour?",
+    answer: "Absolutely! We encourage you to book a free in-person tour to see our facility and meet our team. You can also take a virtual tour on our website to get a preview of our space.",
+  },
+];
+
 ---
 
 <!DOCTYPE html>
@@ -95,6 +119,19 @@ const membershipIncludes = [
     <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
     <SEO title={pageTitle} description={pageDescription} canonical="/memberships" />
     <LocalBusinessSchema />
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    })} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Preload fonts for non-blocking loading -->
@@ -121,7 +158,7 @@ const membershipIncludes = [
     </style>
   </head>
   <body class="bg-black min-h-screen">
-    <div class="relative w-full lg:min-h-[3600px]">
+    <div class="relative w-full lg:min-h-[4350px]">
 
       <!-- Hero/Header Section with Background -->
       <div class="relative w-full h-[400px] md:h-[450px] lg:h-[458px] bg-[#14181f]">
@@ -420,8 +457,54 @@ const membershipIncludes = [
         src="/img/memberships-main.jpg"
       />
 
+      <!-- Membership FAQ Section -->
+      <section id="faq" class="flex flex-col w-full max-w-[1010px] items-center gap-8 md:gap-12 px-4 md:px-8 py-16 md:py-20 mx-auto lg:absolute lg:top-[2950px] lg:left-[calc(50%_-_505px)]">
+        <header class="flex flex-col items-center gap-4 text-center">
+          <div class="inline-flex items-center gap-1.5">
+            <p class="font-montserrat font-medium text-[#fedf41] text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+              Common questions answered
+            </p>
+            <img
+              class="w-16 md:w-[110.67px] h-[2.97px]"
+              alt=""
+              src="/img/rectangle-5-2.svg"
+              role="presentation"
+            />
+          </div>
+          <h2 class="font-montserrat font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-tight">
+            Membership FAQ
+          </h2>
+        </header>
+
+        <div class="flex flex-col gap-4 w-full">
+          {faqData.map((faq, index) => (
+            <details class="group bg-[#191919] rounded-xl border border-[#2e2e2e] overflow-hidden">
+              <summary class="flex items-center justify-between gap-4 p-5 md:p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <h3 class="font-montserrat font-medium text-white text-base md:text-lg text-left">
+                  {faq.question}
+                </h3>
+                <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-[#fedf41] transition-transform group-open:rotate-45">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+              </summary>
+              <div class="px-5 md:px-6 pb-5 md:pb-6">
+                <p class="font-montserrat font-normal text-[#e4e4e4] text-sm md:text-base leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <p class="font-montserrat font-normal text-[#919191] text-sm text-center">
+          Have more questions? <a href="/contact" class="text-[#fedf41] hover:underline">Contact us</a> or book a tour.
+        </p>
+      </section>
+
       <!-- Get Started Today Section -->
-      <section class="flex flex-col items-center justify-center gap-6 md:gap-10 p-8 md:p-12 lg:p-[60px] mx-4 md:mx-8 lg:mx-auto lg:absolute lg:top-[3086px] lg:left-[calc(50%_-_505px)] lg:w-[1010px] bg-[#fedf41] rounded-xl mt-4 lg:mt-0 mb-8 md:mb-12">
+      <section class="flex flex-col items-center justify-center gap-6 md:gap-10 p-8 md:p-12 lg:p-[60px] mx-4 md:mx-8 lg:mx-auto lg:absolute lg:top-[3800px] lg:left-[calc(50%_-_505px)] lg:w-[1010px] bg-[#fedf41] rounded-xl mt-4 lg:mt-0 mb-8 md:mb-12">
         <div class="flex flex-col items-center justify-center gap-4 md:gap-5 w-full">
           <h2 class="font-prompt font-medium text-[#14181f] text-2xl md:text-3xl lg:text-5xl text-center tracking-[0] leading-[1.2] lg:leading-[53.3px]">
             Get Started Today!

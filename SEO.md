@@ -252,3 +252,291 @@
 3. **Configure Google Search Console** - Add your verification code to `.env` (`PUBLIC_GSC_VERIFICATION=your-code`)
 4. ~~**Optimize images** - Migrate to Astro's `<Image>` component for automatic WebP/AVIF conversion~~ ✅ **COMPLETED** - Images converted to WebP with 94% size reduction
 5. **Consider removing Meyer Reset** - Tailwind already includes a CSS reset
+
+---
+
+# SEO Content Plan - Phase 2
+
+## Overview
+Comprehensive SEO content strategy to expand Ambition Fitness's search visibility in Calgary. This includes improving existing pages and creating new keyword-targeted landing pages.
+
+---
+
+## Part A: Existing Page Improvements
+
+### 1. Personal Training Page ✅ COMPLETED
+**File:** `src/pages/personal-training.astro`
+
+**SEO Updates:**
+- Title: "Personal Trainer Calgary | 1-on-1 Personal Training | Ambition Fitness"
+- Meta Description: "Calgary's top personal trainers for weight loss, strength training, and body transformations. Certified coaches, customized 1-on-1 programs, proven results. Book your free consultation."
+
+**New Sections Added:**
+- Calgary Personal Training Programs section with 3 program cards:
+  - 1-on-1 Personal Training
+  - Weight Loss Coaching
+  - Strength & Conditioning
+- FAQ Section with schema markup (5 FAQs)
+- Video Testimonials section (commented out for later)
+
+**FAQ Questions:**
+1. How much does a personal trainer cost in Calgary?
+2. How many personal training sessions per week do I need?
+3. Is personal training good for beginners?
+4. Do you offer personal training for women?
+5. What results can I expect from personal training?
+
+---
+
+### 2. Memberships Page ✅ COMPLETED
+**File:** `src/pages/memberships.astro`
+
+**SEO Updates:**
+- Title: "Gym Membership Calgary | Flexible Fitness Plans | Ambition Fitness"
+- Meta Description: "Affordable gym memberships in Calgary with 24/7 access, no contracts, and premium equipment. Private facility, limited spots, never crowded. Book your free tour today."
+
+**Existing Sections (Already Present):**
+- Membership benefits cards (6 benefits)
+- "Why Ambition Fitness?" section
+- "What's Included" checklist
+
+**New Section Added:**
+- FAQ Section with schema markup (5 FAQs)
+
+**FAQ Questions:**
+1. How much is a gym membership in Calgary?
+2. Do you offer month-to-month memberships?
+3. What's included in the membership?
+4. Can I freeze my membership?
+5. Do you have a free trial or tour?
+
+---
+
+### 3. Group Sessions Page ✅ COMPLETED
+**File:** `src/pages/group-sessions.astro`
+
+**SEO Updates:**
+- Title: "Group Fitness Classes Calgary | Small Group Training | Ambition Fitness"
+- Meta Description: "Join Calgary's most effective small group fitness classes. Senior fitness programs, boot camps, limited class sizes, expert coaching. Try your first class free."
+
+**Existing Sections (Already Present):**
+- Group session cards (Senior Fitness, Boot Camp)
+- Class schedule section
+- "Why Choose Group Sessions?" benefits
+
+**New Section Added:**
+- FAQ Section with schema markup (5 FAQs)
+
+**FAQ Questions:**
+1. How many people are in a group class?
+2. What fitness level do I need for group classes?
+3. How do I book a group session?
+4. What types of group classes do you offer?
+5. Can I try a class before committing?
+
+---
+
+## Part B: New Landing Pages
+
+### 1. Personal Trainer Calgary ⏳ PENDING
+**File:** `src/pages/personal-trainer-calgary.astro`
+**Target Keywords:** "personal trainer calgary", "calgary personal trainer", "best personal trainer calgary"
+
+**Page Structure:**
+- Hero: "Calgary's Premier Personal Training Studio"
+- Why choose a Calgary personal trainer section
+- Our training approach
+- Trainer credentials/certifications
+- Client transformations gallery
+- Testimonials
+- FAQ section (5 questions)
+- CTA
+
+---
+
+### 2. Weight Loss Personal Trainer Calgary ⏳ PENDING
+**File:** `src/pages/weight-loss-personal-trainer-calgary.astro`
+**Target Keywords:** "weight loss personal trainer calgary", "weight loss coach calgary", "fat loss trainer calgary"
+
+**Page Structure:**
+- Hero: "Proven Weight Loss Programs in Calgary"
+- Our weight loss methodology
+- Nutrition guidance overview
+- Success stories/transformations
+- Program options
+- FAQ section (5 questions)
+- CTA
+
+---
+
+### 3. Personal Training for Women Calgary ⏳ PENDING
+**File:** `src/pages/personal-training-women-calgary.astro`
+**Target Keywords:** "personal training for women calgary", "female personal trainer calgary", "women's fitness calgary"
+
+**Page Structure:**
+- Hero: "Women's Personal Training in Calgary"
+- Why women choose Ambition Fitness
+- Women-specific training programs
+- Safe, comfortable environment
+- Success stories from female clients
+- FAQ section (5 questions)
+- CTA
+
+---
+
+### 4. Small Group Training Calgary ⏳ PENDING
+**File:** `src/pages/small-group-training-calgary.astro`
+**Target Keywords:** "small group training calgary", "group fitness calgary", "semi-private training calgary"
+
+**Page Structure:**
+- Hero: "Small Group Training in Calgary"
+- Benefits of small group vs large classes
+- Class types and schedule
+- Community/atmosphere
+- Pricing comparison
+- FAQ section (5 questions)
+- CTA
+
+---
+
+### 5. Strength Training Calgary ⏳ PENDING
+**File:** `src/pages/strength-training-calgary.astro`
+**Target Keywords:** "strength training calgary", "weightlifting gym calgary", "strength coach calgary"
+
+**Page Structure:**
+- Hero: "Build Real Strength in Calgary"
+- Our strength training philosophy
+- Equipment and facilities
+- Programs for all levels
+- Athlete success stories
+- FAQ section (5 questions)
+- CTA
+
+---
+
+### 6. Body Transformation Calgary ⏳ PENDING
+**File:** `src/pages/body-transformation-calgary.astro`
+**Target Keywords:** "body transformation calgary", "fitness transformation calgary", "12 week transformation calgary"
+
+**Page Structure:**
+- Hero: "Complete Body Transformation Programs"
+- The transformation process
+- Before/after gallery
+- What's included in program
+- Timeline expectations
+- FAQ section (5 questions)
+- CTA
+
+---
+
+### 7. Beginner Personal Training Calgary ⏳ PENDING
+**File:** `src/pages/beginner-personal-training-calgary.astro`
+**Target Keywords:** "beginner personal training calgary", "new to fitness calgary", "fitness for beginners calgary"
+
+**Page Structure:**
+- Hero: "Start Your Fitness Journey Right"
+- Why beginners need personal training
+- Our beginner-friendly approach
+- What to expect in first session
+- Beginner success stories
+- FAQ section (5 questions)
+- CTA
+
+---
+
+### 8. Online Personal Training Calgary ⏳ PENDING
+**File:** `src/pages/online-personal-training-calgary.astro`
+**Target Keywords:** "online personal training calgary", "virtual personal trainer calgary", "remote fitness coaching calgary"
+
+**Page Structure:**
+- Hero: "Online Personal Training from Calgary's Best"
+- How online training works
+- Technology/app overview
+- Program options
+- Who online training is for
+- FAQ section (5 questions)
+- CTA
+
+---
+
+## Part C: Local SEO Neighborhood Pages ⏳ PENDING
+
+Target neighborhoods for local landing pages:
+1. Beltline
+2. Kensington
+3. Inglewood
+4. Bridgeland
+5. Mission
+6. Eau Claire
+7. Downtown Calgary
+8. Victoria Park
+
+**Template Structure for Each:**
+- Hero: "Personal Training in [Neighborhood]"
+- Location-specific content
+- Distance/accessibility info
+- Local testimonials if available
+- Map embed
+- FAQ section
+- CTA
+
+---
+
+## Part D: Blog Articles ⏳ PENDING
+
+### Planned Blog Topics:
+
+1. **"How to Choose a Personal Trainer in Calgary: Complete Guide"**
+   - Target: "how to choose personal trainer calgary"
+   - Content: Credentials to look for, questions to ask, red flags
+
+2. **"Personal Training vs Gym Membership: What's Right for You?"**
+   - Target: "personal training vs gym membership"
+   - Content: Cost comparison, results comparison, time investment
+
+3. **"10 Benefits of Hiring a Personal Trainer"**
+   - Target: "benefits of personal trainer"
+   - Content: Accountability, form correction, customization, etc.
+
+4. **"What to Expect in Your First Personal Training Session"**
+   - Target: "first personal training session"
+   - Content: Assessment, goal setting, sample workout
+
+5. **"How Long Does It Take to See Results from Personal Training?"**
+   - Target: "personal training results timeline"
+   - Content: Realistic expectations, factors affecting results
+
+6. **"Calgary's Best Gyms for Personal Training [2025 Guide]"**
+   - Target: "best gyms calgary personal training"
+   - Content: Comparison guide featuring Ambition Fitness
+
+---
+
+## Part E: Content Plan Progress Tracker
+
+| Task | Status | Date Completed |
+|------|--------|----------------|
+| Personal Training page improvements | ✅ Complete | Dec 2024 |
+| Memberships page improvements | ✅ Complete | Dec 2024 |
+| Group Sessions page improvements | ✅ Complete | Dec 2024 |
+| Personal Trainer Calgary page | ⏳ Pending | - |
+| Weight Loss PT page | ⏳ Pending | - |
+| Women's PT page | ⏳ Pending | - |
+| Small Group Training page | ⏳ Pending | - |
+| Strength Training page | ⏳ Pending | - |
+| Body Transformation page | ⏳ Pending | - |
+| Beginner PT page | ⏳ Pending | - |
+| Online PT page | ⏳ Pending | - |
+| Local SEO neighborhood pages | ⏳ Pending | - |
+| Blog articles | ⏳ Pending | - |
+
+---
+
+## Implementation Notes
+
+- All new pages should follow existing design patterns from `personal-training.astro`
+- Reuse components: SEO, LocalBusinessSchema, navigation, footer
+- Each page should have unique, valuable content (no thin content)
+- Target 1,500+ words per landing page for SEO value
+- Include internal links between related pages
+- Add FAQ schema markup to all new pages
