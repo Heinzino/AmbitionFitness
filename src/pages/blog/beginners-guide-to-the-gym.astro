@@ -1,0 +1,335 @@
+---
+import '../../styles/global.css';
+import SEO from '../../components/SEO.astro';
+import LocalBusinessSchema from '../../components/LocalBusinessSchema.astro';
+
+const pageTitle = "A Beginner's Complete Guide to the Gym | Ambition Fitness Calgary";
+const pageDescription = "Feeling intimidated by the gym? This comprehensive guide covers everything beginners need to know to start their fitness journey with confidence in Calgary.";
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: false },
+  { label: "Group Sessions", path: "/group-sessions", isActive: false },
+  { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+];
+
+const tips = [
+  {
+    number: "1",
+    title: "Start with a Plan",
+    description: "Walking into a gym without a plan is like going grocery shopping without a list—you'll wander aimlessly and leave frustrated. Before your first session, have a basic idea of what you want to accomplish. A simple full-body workout hitting major muscle groups is a great starting point.",
+  },
+  {
+    number: "2",
+    title: "Learn Basic Movement Patterns",
+    description: "Every exercise falls into a few basic categories: push, pull, squat, hinge, and carry. Master these patterns with bodyweight or light weights before progressing. This builds a foundation that prevents injury and accelerates progress.",
+  },
+  {
+    number: "3",
+    title: "Start Lighter Than You Think",
+    description: "Your ego will tell you to lift heavier. Ignore it. Starting light allows you to perfect your form and build the mind-muscle connection. You can always add weight—you can't undo an injury from lifting too heavy too soon.",
+  },
+  {
+    number: "4",
+    title: "Don't Skip the Warm-Up",
+    description: "Five to ten minutes of light cardio and dynamic stretching prepares your body for exercise. It increases blood flow, raises body temperature, and reduces injury risk. Think of it as essential, not optional.",
+  },
+  {
+    number: "5",
+    title: "Focus on Compound Exercises",
+    description: "Exercises that work multiple muscle groups (squats, deadlifts, rows, presses) give you the most bang for your buck. They burn more calories, build functional strength, and are more time-efficient than isolation exercises.",
+  },
+  {
+    number: "6",
+    title: "Rest Between Sets",
+    description: "Rest is when your muscles recover and prepare for the next set. For strength training, 60-90 seconds between sets is typical. Don't rush—proper rest means better performance on your next set.",
+  },
+  {
+    number: "7",
+    title: "Stay Hydrated",
+    description: "Bring a water bottle and drink throughout your workout. Dehydration affects performance, focus, and recovery. Aim to drink water before, during, and after your session.",
+  },
+  {
+    number: "8",
+    title: "Don't Compare Yourself to Others",
+    description: "Everyone in the gym started somewhere. The person lifting heavy weights was once a nervous beginner too. Focus on your own progress and celebrate your improvements, no matter how small.",
+  },
+];
+
+const equipment = [
+  { name: "Dumbbells", use: "Versatile for upper and lower body exercises. Great for beginners learning movement patterns." },
+  { name: "Barbells", use: "Used for heavier compound lifts like squats, deadlifts, and bench press once you've built a foundation." },
+  { name: "Cable Machines", use: "Provide constant tension throughout movements. Good for beginners as they guide your range of motion." },
+  { name: "Resistance Bands", use: "Perfect for warm-ups, mobility work, and adding variety to exercises." },
+  { name: "Kettlebells", use: "Excellent for dynamic movements like swings that combine cardio and strength." },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/blog/beginners-guide-to-the-gym" />
+    <LocalBusinessSchema />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "A Beginner's Complete Guide to the Gym",
+      "description": pageDescription,
+      "author": { "@type": "Organization", "name": "Ambition Fitness" },
+      "publisher": { "@type": "Organization", "name": "Ambition Fitness" },
+      "datePublished": "2024-11-22",
+      "dateModified": "2024-11-22"
+    })} />
+  </head>
+  <body class="bg-black min-h-screen">
+    <!-- Navigation -->
+    <nav class="w-full z-50 bg-black/90 backdrop-blur-sm">
+      <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto">
+        <a href="/"><img class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50" alt="Ambition Fitness Logo" src="/img/image-3-2.png" /></a>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative" aria-label="Toggle mobile menu">
+          <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+          <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+          <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+        <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+          <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]">
+            {navigationLinks.map((link) => (<a class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm lg:text-lg text-center text-white hover:text-variable-collection-coloryellow transition-colors" href={link.path}>{link.label}</a>))}
+          </div>
+          <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-variable-collection-coloryellow rounded-[12.39px] w-full md:w-auto hover:opacity-90 transition-opacity">
+            <span class="relative flex items-center justify-center w-fit font-medium text-black text-base">Get in Touch</span>
+            <img class="relative w-[18.33px] h-[11.41px]" alt="Arrow" src="/img/line-108-3.svg" />
+          </a>
+        </div>
+      </div>
+      <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-40 hidden md:hidden">
+        <div class="flex flex-col items-center justify-center h-full gap-8">
+          {navigationLinks.map((link) => (<a class="text-2xl font-medium text-white" href={link.path}>{link.label}</a>))}
+          <a href="/contact" class="mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 bg-variable-collection-coloryellow rounded-full"><span class="font-medium text-black">Get in Touch</span></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main class="flex flex-col w-full items-center">
+      <article class="w-full max-w-[800px] px-4 md:px-8 py-12 md:py-16 mx-auto">
+        <nav class="mb-8 text-sm">
+          <a href="/blog" class="text-variable-collection-coloryellow hover:underline">Blog</a>
+          <span class="text-[#919191] mx-2">/</span>
+          <span class="text-[#919191]">Beginners</span>
+        </nav>
+
+        <header class="mb-12">
+          <span class="inline-block bg-variable-collection-coloryellow text-black text-xs font-semibold px-3 py-1 rounded-full mb-4">Beginners</span>
+          <h1 class="[font-family:'Montserrat',Helvetica] font-bold text-white text-3xl md:text-4xl lg:text-5xl leading-tight mb-6">
+            A Beginner's Complete Guide to the Gym
+          </h1>
+          <div class="flex items-center gap-4 text-[#919191] text-sm">
+            <span>November 22, 2024</span>
+            <span>•</span>
+            <span>8 min read</span>
+          </div>
+        </header>
+
+        <div class="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-12">
+          <img src="/img/rectangle-6542.png" alt="Beginner at the gym" class="w-full h-full object-cover" />
+        </div>
+
+        <div class="prose prose-invert max-w-none">
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-8">
+            Walking into a gym for the first time can be intimidating. The unfamiliar equipment, the people who seem to know exactly what they're doing, the fear of looking foolish—it's enough to make anyone want to turn around and leave.
+          </p>
+
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-8">
+            But here's the truth: everyone started exactly where you are. And with the right knowledge, you can walk into any gym with confidence. This guide covers everything you need to know to get started.
+          </p>
+
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-3xl mt-12 mb-6">
+            8 Essential Tips for Gym Beginners
+          </h2>
+
+          <div class="space-y-6 my-10">
+            {tips.map((tip) => (
+              <div class="bg-[#191919] rounded-xl p-6 border border-[#2e2e2e]">
+                <div class="flex items-start gap-4">
+                  <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-variable-collection-coloryellow rounded-full text-black font-bold text-sm">
+                    {tip.number}
+                  </span>
+                  <div>
+                    <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-lg mb-2">{tip.title}</h3>
+                    <p class="text-[#e4e4e4] text-base leading-relaxed">{tip.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-3xl mt-12 mb-6">
+            Basic Gym Equipment Guide
+          </h2>
+
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-6">
+            Here's a quick overview of the most common equipment you'll encounter:
+          </p>
+
+          <div class="space-y-4 mb-10">
+            {equipment.map((item) => (
+              <div class="bg-[#191919] rounded-lg p-4 border border-[#2e2e2e]">
+                <h4 class="text-variable-collection-coloryellow font-semibold mb-1">{item.name}</h4>
+                <p class="text-[#e4e4e4] text-sm">{item.use}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-3xl mt-12 mb-6">
+            A Simple Beginner Workout
+          </h2>
+
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-6">
+            Here's a basic full-body workout you can do 2-3 times per week:
+          </p>
+
+          <div class="bg-[#191919] rounded-xl p-6 border border-[#2e2e2e] mb-8">
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3 text-[#e4e4e4]">
+                <span class="text-variable-collection-coloryellow">•</span>
+                Goblet Squats: 3 sets of 10 reps
+              </li>
+              <li class="flex items-center gap-3 text-[#e4e4e4]">
+                <span class="text-variable-collection-coloryellow">•</span>
+                Dumbbell Romanian Deadlifts: 3 sets of 10 reps
+              </li>
+              <li class="flex items-center gap-3 text-[#e4e4e4]">
+                <span class="text-variable-collection-coloryellow">•</span>
+                Dumbbell Bench Press: 3 sets of 10 reps
+              </li>
+              <li class="flex items-center gap-3 text-[#e4e4e4]">
+                <span class="text-variable-collection-coloryellow">•</span>
+                Cable Rows: 3 sets of 10 reps
+              </li>
+              <li class="flex items-center gap-3 text-[#e4e4e4]">
+                <span class="text-variable-collection-coloryellow">•</span>
+                Plank: 3 sets of 30 seconds
+              </li>
+            </ul>
+          </div>
+
+          <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-3xl mt-12 mb-6">
+            When to Consider a Personal Trainer
+          </h2>
+
+          <p class="text-[#e4e4e4] text-lg leading-relaxed mb-6">
+            While you can absolutely start your fitness journey on your own, working with a personal trainer—especially as a beginner—offers significant advantages:
+          </p>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Proper form from day one</strong> — Avoid developing bad habits that lead to injury.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Customized programming</strong> — A plan designed for your specific goals and limitations.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Accountability</strong> — Someone expecting you makes it harder to skip sessions.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-variable-collection-coloryellow mt-1">•</span>
+              <span class="text-[#e4e4e4] text-base"><strong class="text-white">Faster results</strong> — Expert guidance means less trial and error.</span>
+            </li>
+          </ul>
+
+          <div class="bg-[#191919] rounded-xl p-8 text-center border border-[#2e2e2e] my-12">
+            <h3 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-xl md:text-2xl mb-4">
+              Ready to Start Your Fitness Journey?
+            </h3>
+            <p class="text-[#e4e4e4] mb-6">
+              Our Calgary personal trainers specialize in helping beginners build confidence and get results. Book a free consultation and train in our private, judgment-free facility.
+            </p>
+            <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-variable-collection-coloryellow rounded-full hover:opacity-90 transition-all hover:scale-105">
+              <span class="[font-family:'Montserrat',Helvetica] font-medium text-black text-base">Book Free Consultation</span>
+              <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" />
+            </a>
+          </div>
+        </div>
+
+        <div class="border-t border-[#2e2e2e] pt-8 mt-12">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <img src="/img/image-3-2.png" alt="Ambition Fitness" class="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <p class="text-white font-medium">Ambition Fitness</p>
+                <p class="text-[#919191] text-sm">Calgary Personal Training</p>
+              </div>
+            </div>
+            <a href="/blog" class="text-variable-collection-coloryellow hover:underline text-sm">← Back to Blog</a>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="flex flex-col w-full items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 bg-[#0e0e0e]">
+      <div class="flex flex-col md:flex-row w-full max-w-[1194px] justify-between gap-8 md:gap-12">
+        <div class="flex flex-col items-start gap-4 max-w-sm">
+          <img class="w-16 md:w-20 h-auto" alt="Ambition Fitness Logo" src="/img/image-3-2.png" />
+          <p class="[font-family:'Montserrat',Helvetica] text-[#919191] text-sm leading-relaxed">Calgary's premier personal training facility.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="/memberships" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Memberships</a>
+              <a href="/group-sessions" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Sessions</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <a href="/personal-trainer-mayland-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Mayland Heights</a>
+              <a href="/personal-trainer-meridian-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Meridian</a>
+              <a href="/personal-trainer-raddison-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Raddison Heights</a>
+              <a href="/personal-trainer-bridgeland-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Bridgeland-Riverside</a>
+              <a href="/personal-trainer-renfrew-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Renfrew</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="/blog" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-gray-700 w-full max-w-[1194px] flex justify-between items-center">
+        <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+        <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer"><img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" /></a>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line');
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (isOpen) { hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; hamburgerLines[1].style.opacity = '0'; hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)'; }
+            else { hamburgerLines[0].style.transform = ''; hamburgerLines[1].style.opacity = '1'; hamburgerLines[2].style.transform = ''; }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
