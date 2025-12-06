@@ -3,8 +3,8 @@ import '../styles/global.css';
 import SEO from '../components/SEO.astro';
 import LocalBusinessSchema from '../components/LocalBusinessSchema.astro';
 
-const pageTitle = "Personal Training - Ambition Fitness Calgary";
-const pageDescription = "Transform your body with Calgary's top personal trainers. Customized programs, dedicated coaching, and real results. See our client success stories.";
+const pageTitle = "Personal Trainer Calgary | 1-on-1 Personal Training | Ambition Fitness";
+const pageDescription = "Calgary's top personal trainers for weight loss, strength training, and body transformations. Certified coaches, customized 1-on-1 programs, proven results. Book your free consultation.";
 
 const navigationLinks = [
   { label: "Home", path: "/", isActive: false },
@@ -38,33 +38,6 @@ const clientTransformations = [
     backgroundImage: "/img/review-7.png",
     profileImage: "/img/user-profile-2.png",
     playIcon: "/img/icon-park-solid-play-2.svg",
-  },
-];
-
-const features = [
-  {
-    id: "expertise",
-    icon: {
-      primary: "/img/vector-yellow.svg",
-    },
-    title: "Our expertise",
-    description:
-      "Our trainers design transformations, not just workouts. Each session is tailored to your body, goals, and lifestyle for results that last.",
-  },
-  {
-    id: "results",
-    icon: {
-      primary: "/img/vector-1-yellow.svg",
-      secondary: "/img/vector-2-yellow.svg",
-    },
-    title: "Lasting Results",
-  },
-  {
-    id: "accountability",
-    icon: {
-      primary: "/img/vector-3-yellow.svg",
-    },
-    title: "Accountability",
   },
 ];
 
@@ -152,6 +125,52 @@ const rows = [
   transformationData.slice(33, 36),
   transformationData.slice(36, 38),
 ];
+
+// Personal Training Programs Data
+const trainingPrograms = [
+  {
+    id: "one-on-one",
+    icon: "/img/vector-yellow.svg",
+    title: "1-on-1 Personal Training",
+    description: "Fully customized sessions with your dedicated trainer. Every workout is designed around your goals, schedule, and fitness level.",
+  },
+  {
+    id: "weight-loss",
+    icon: "/img/vector-1-yellow.svg",
+    title: "Weight Loss Coaching",
+    description: "Evidence-based weight loss programs combining effective training protocols with nutrition guidance for sustainable results.",
+  },
+  {
+    id: "strength",
+    icon: "/img/vector-3-yellow.svg",
+    title: "Strength & Conditioning",
+    description: "Build functional strength and improve athletic performance with progressive training programs tailored to your goals.",
+  },
+];
+
+// FAQ Data for Schema
+const faqData = [
+  {
+    question: "How much does a personal trainer cost in Calgary?",
+    answer: "Personal training rates in Calgary vary based on session frequency and program type. At Ambition Fitness, we offer flexible packages to fit different budgets. Contact us for a free consultation to discuss pricing options that match your goals.",
+  },
+  {
+    question: "How many personal training sessions per week do I need?",
+    answer: "Most clients see optimal results with 2-4 sessions per week, depending on their goals. During your initial assessment, we'll recommend the right frequency based on your objectives, schedule, and current fitness level.",
+  },
+  {
+    question: "Is personal training good for beginners?",
+    answer: "Absolutely. Personal training is ideal for beginners because you learn proper form from day one, reducing injury risk and building a strong foundation. Our trainers specialize in creating comfortable, judgment-free environments for those new to fitness.",
+  },
+  {
+    question: "Do you offer personal training for women?",
+    answer: "Yes. We provide personal training programs designed for women's specific fitness goals, whether that's weight loss, strength building, or overall wellness. Our private facility offers a comfortable, supportive environment for all clients.",
+  },
+  {
+    question: "What results can I expect from personal training?",
+    answer: "Results depend on your commitment and consistency. Many clients see noticeable changes within 4-6 weeks, with significant transformations occurring over 12 weeks. View our transformation gallery to see real results from Calgary clients.",
+  },
+];
 ---
 
 <!DOCTYPE html>
@@ -163,6 +182,19 @@ const rows = [
     <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
     <SEO title={pageTitle} description={pageDescription} canonical="/personal-training" />
     <LocalBusinessSchema />
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqData.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    })} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Preload fonts for non-blocking loading -->
@@ -378,7 +410,9 @@ const rows = [
 
       <!-- Main Content -->
       <div class="flex flex-col w-full items-center">
-        <!-- TODO: Add testimonial videos later
+
+        <!-- Video Testimonials Section - Commented out for now -->
+        <!--
         <section class="flex flex-col w-full max-w-[1194px] items-start gap-8 md:gap-[50px] px-4 md:px-8 py-12 md:py-16 mx-auto">
           <header class="inline-flex flex-col items-start justify-center gap-3 relative flex-[0_0_auto]">
             <div class="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
@@ -395,7 +429,7 @@ const rows = [
             </div>
 
             <h2 class="relative flex items-center justify-center self-stretch [font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-[28.8px]">
-              Testimonials
+              Video Testimonials
             </h2>
           </header>
 
@@ -419,7 +453,7 @@ const rows = [
         </section>
         -->
 
-        <!-- Personal Training Features Section with Background -->
+        <!-- Calgary Personal Training Programs Section with Background -->
         <div class="relative w-full py-16 md:py-24">
           <!-- Background Image -->
           <img
@@ -428,81 +462,51 @@ const rows = [
             src="/img/union-grey.svg"
           />
 
-          <!-- Personal Training Features Section -->
-          <section class="relative flex flex-col w-full max-w-[1192px] items-center gap-12 md:gap-[83px] px-4 md:px-8 mx-auto z-10">
-            <h2 class="self-stretch font-semibold text-3xl md:text-[45px] text-center leading-tight md:leading-[72.0px] relative mt-[-1.00px] [font-family:'Montserrat',Helvetica] text-white tracking-[0]">
-              Personal Training
-            </h2>
+          <!-- Personal Training Programs Section -->
+          <section class="relative flex flex-col w-full max-w-[1194px] items-center gap-12 md:gap-16 px-4 md:px-8 mx-auto z-10">
+            <header class="flex flex-col items-center gap-4 text-center">
+              <div class="inline-flex items-center gap-1.5">
+                <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+                  Personalized programs for every goal
+                </p>
+                <img
+                  class="w-16 md:w-[110.67px] h-[2.97px]"
+                  alt=""
+                  src="/img/rectangle-5-2.svg"
+                  role="presentation"
+                />
+              </div>
+              <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] lg:text-[45px] tracking-[0] leading-tight">
+                Calgary Personal Training Programs
+              </h2>
+              <p class="max-w-2xl [font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-base md:text-lg leading-relaxed">
+                Whether you're looking to lose weight, build strength, or completely transform your body, our certified Calgary personal trainers have a program designed for you.
+              </p>
+            </header>
 
-            <div class="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-[117px] relative self-stretch w-full flex-[0_0_auto]">
-              <div class="flex flex-col w-full lg:w-[466.94px] items-start gap-8 md:gap-[55px] relative">
-                <article class="flex flex-col items-start gap-4 md:gap-[16.21px] relative self-stretch w-full flex-[0_0_auto]">
-                  <div class="inline-flex items-start gap-2.5 relative flex-[0_0_auto]">
-                    <div class="relative w-[30px] h-[30px] aspect-[1]" aria-hidden="true">
-                      <img
-                        class="absolute w-[91.67%] h-[91.67%] top-0 left-0"
-                        alt=""
-                        src={features[0].icon.primary}
-                      />
-                    </div>
-
-                    <h3 class="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-xl md:text-2xl tracking-[0] leading-[26.6px] whitespace-nowrap">
-                      {features[0].title}
-                    </h3>
-                  </div>
-
-                  <p class="relative self-stretch [font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-[19.5px] tracking-[0] leading-relaxed md:leading-[29.2px]">
-                    {features[0].description}
-                  </p>
-                </article>
-
-                <div class="flex flex-col items-start gap-8 md:gap-[55px] relative self-stretch w-full flex-[0_0_auto]">
-                  <hr
-                    class="relative self-stretch w-full h-px mt-[-1.00px] border-0 bg-[url(/img/line-225.svg)] bg-cover"
-                    aria-hidden="true"
-                  />
-
-                  <article class="flex flex-col items-start gap-4 md:gap-[22.7px] relative self-stretch w-full flex-[0_0_auto] rounded-[6.49px]">
-                    <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-                      <div class="relative w-[30px] h-[30px] aspect-[1]" aria-hidden="true">
-                        <img
-                          class="absolute w-[37.50%] h-[37.50%] top-[40.62%] left-[31.25%]"
-                          alt=""
-                          src={features[1].icon.primary}
-                        />
-
-                        <img
-                          class="absolute w-[68.75%] h-[87.50%] top-[6.25%] left-[15.62%]"
-                          alt=""
-                          src={features[1].icon.secondary}
-                        />
+            <!-- Program Features with Image -->
+            <div class="flex flex-col lg:flex-row items-start gap-8 md:gap-12 lg:gap-[117px] relative self-stretch w-full">
+              <div class="flex flex-col w-full lg:w-[500px] items-start gap-6 md:gap-8 relative">
+                {trainingPrograms.map((program, index) => (
+                  <>
+                    <article class="flex flex-col items-start gap-3 md:gap-4 relative self-stretch w-full">
+                      <div class="inline-flex items-center gap-2.5">
+                        <div class="w-[30px] h-[30px] flex items-center justify-center" aria-hidden="true">
+                          <img src={program.icon} alt="" class="w-6 h-6" />
+                        </div>
+                        <h3 class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-xl md:text-2xl tracking-[0] leading-[26.6px]">
+                          {program.title}
+                        </h3>
                       </div>
-
-                      <h3 class="relative w-fit mt-[-0.58px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-xl md:text-2xl tracking-[0] leading-[normal]">
-                        {features[1].title}
-                      </h3>
-                    </div>
-                  </article>
-
-                  <hr
-                    class="relative self-stretch w-full h-px border-0 bg-[url(/img/line-225.svg)] bg-cover"
-                    aria-hidden="true"
-                  />
-
-                  <article class="flex items-center justify-center gap-[15px] relative self-stretch w-full flex-[0_0_auto]">
-                    <div class="relative w-[30px] h-[30px] aspect-[1]" aria-hidden="true">
-                      <img
-                        class="absolute w-[83.33%] h-[83.33%] top-[8.33%] left-[8.33%]"
-                        alt=""
-                        src={features[2].icon.primary}
-                      />
-                    </div>
-
-                    <h3 class="relative flex-1 mt-[-1.08px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-xl md:text-2xl tracking-[0] leading-9">
-                      {features[2].title}
-                    </h3>
-                  </article>
-                </div>
+                      <p class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-[19.5px] tracking-[0] leading-relaxed md:leading-[29.2px]">
+                        {program.description}
+                      </p>
+                    </article>
+                    {index < trainingPrograms.length - 1 && (
+                      <hr class="self-stretch w-full h-px border-0 bg-[url(/img/line-225.svg)] bg-cover" aria-hidden="true" />
+                    )}
+                  </>
+                ))}
               </div>
 
               <div
@@ -512,6 +516,16 @@ const rows = [
                 aria-label="Personal training session"
               />
             </div>
+
+            <a
+              href="/contact"
+              class="inline-flex items-center justify-center gap-2.5 px-6 md:px-8 py-3 md:py-4 bg-variable-collection-coloryellow rounded-full hover:opacity-90 transition-opacity"
+            >
+              <span class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-sm md:text-base">
+                Book a Free Consultation
+              </span>
+              <img class="w-[18px] h-[11px]" alt="" src="/img/line-108-3.svg" aria-hidden="true" />
+            </a>
           </section>
         </div>
 
@@ -659,6 +673,52 @@ const rows = [
               aria-hidden="true"
             />
           </button>
+        </section>
+
+        <!-- Personal Training FAQ Section -->
+        <section id="faq" class="flex flex-col w-full max-w-[1010px] items-center gap-8 md:gap-12 px-4 md:px-8 py-16 md:py-20 mx-auto">
+          <header class="flex flex-col items-center gap-4 text-center">
+            <div class="inline-flex items-center gap-1.5">
+              <p class="[font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
+                Common questions answered
+              </p>
+              <img
+                class="w-16 md:w-[110.67px] h-[2.97px]"
+                alt=""
+                src="/img/rectangle-5-2.svg"
+                role="presentation"
+              />
+            </div>
+            <h2 class="[font-family:'Montserrat',Helvetica] font-semibold text-white text-2xl md:text-[35px] tracking-[0] leading-tight">
+              Personal Training FAQ
+            </h2>
+          </header>
+
+          <div class="flex flex-col gap-4 w-full">
+            {faqData.map((faq, index) => (
+              <details class="group bg-[#191919] rounded-xl border border-[#2e2e2e] overflow-hidden">
+                <summary class="flex items-center justify-between gap-4 p-5 md:p-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <h3 class="[font-family:'Montserrat',Helvetica] font-medium text-white text-base md:text-lg text-left">
+                    {faq.question}
+                  </h3>
+                  <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center text-variable-collection-coloryellow transition-transform group-open:rotate-45">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </span>
+                </summary>
+                <div class="px-5 md:px-6 pb-5 md:pb-6">
+                  <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#e4e4e4] text-sm md:text-base leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
+              </details>
+            ))}
+          </div>
+
+          <p class="[font-family:'Montserrat',Helvetica] font-normal text-[#919191] text-sm text-center">
+            Have more questions? <a href="/contact" class="text-variable-collection-coloryellow hover:underline">Contact us</a> for a free consultation.
+          </p>
         </section>
 
         <!-- Call to Action Section -->
