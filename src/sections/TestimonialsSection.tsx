@@ -117,7 +117,7 @@ export const TestimonialsSection = (): JSX.Element => {
 
   return (
     <section
-      className="flex flex-col w-full lg:w-[1200px] mx-auto lg:mx-0 items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 lg:py-0 relative lg:absolute lg:top-[5950px] lg:left-[calc(50.00%_-_600px)]"
+      className="flex flex-col w-full max-w-[1200px] mx-auto items-center gap-8 md:gap-12 px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-0 py-12 md:py-16 lg:py-24"
       itemScope
       itemType="https://schema.org/LocalBusiness"
     >

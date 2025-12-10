@@ -27,7 +27,7 @@ export const NewsletterSection = (): JSX.Element => {
 
   return (
     <section
-      className="grid grid-cols-2 lg:flex w-full lg:w-[1181px] items-center justify-between gap-6 md:gap-8 p-6 md:p-[30px] mx-auto my-8 md:my-12 lg:my-0 relative lg:absolute lg:top-[956px] lg:left-[calc(50.00%_-_590px)] bg-variable-collection-coloryellow rounded-[23px]"
+      className="grid grid-cols-2 lg:flex w-full max-w-[1181px] items-center justify-between gap-6 md:gap-8 p-6 md:p-[30px] mx-auto my-8 md:my-12 lg:my-16 bg-variable-collection-coloryellow rounded-[23px]"
       aria-label="Company Statistics"
     >
       {stats.map((stat, index) => (

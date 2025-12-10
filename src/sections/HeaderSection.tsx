@@ -19,9 +19,9 @@ export const HeaderSection = (): JSX.Element => {
   return (
     <>
       {/* Desktop Version - Hidden on mobile/tablet */}
-      <section className="hidden lg:inline-flex items-center gap-[50px] absolute top-[1336px] left-[calc(50.00%_-_600px)]">
+      <section className="hidden lg:flex items-center gap-8 xl:gap-[50px] py-16 xl:py-24 px-8 lg:px-12 xl:px-16 2xl:px-0 max-w-[1200px] mx-auto">
         <img
-          className="relative w-[520px] h-[688px] object-cover"
+          className="w-[400px] xl:w-[520px] h-[530px] xl:h-[688px] object-cover flex-shrink-0"
           alt="Fitness trainer working with client"
           src="/img/rectangle-6540.webp"
           width={520}
@@ -29,9 +29,9 @@ export const HeaderSection = (): JSX.Element => {
           loading="lazy"
         />
 
-        <div className="flex flex-col w-[631px] items-start gap-[30px] relative">
-          <div className="flex flex-col items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-            <header className="flex flex-col w-[559px] items-start gap-2.5 relative flex-[0_0_auto]">
+        <div className="flex flex-col flex-1 max-w-[631px] items-start gap-[30px]">
+          <div className="flex flex-col items-start gap-5 w-full">
+            <header className="flex flex-col w-full max-w-[559px] items-start gap-2.5">
               <div className="inline-flex items-center gap-1.5 relative flex-[0_0_auto]">
                 <h2 className="relative w-fit mt-[-1.00px] [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">
                   Who We Are
@@ -62,11 +62,11 @@ export const HeaderSection = (): JSX.Element => {
             aria-hidden="true"
           />
 
-          <div className="flex items-center gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
+          <div className="flex items-center gap-4 xl:gap-[30px] w-full">
             {features.map((feature, index) => (
               <article
                 key={index}
-                className="flex flex-col w-[300.5px] items-start gap-[25px] relative"
+                className="flex flex-col flex-1 items-start gap-[25px]"
               >
                 <div className="flex items-center gap-[15px] relative self-stretch w-full flex-[0_0_auto]">
                   <img
