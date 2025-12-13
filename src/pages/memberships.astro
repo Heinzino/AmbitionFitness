@@ -158,7 +158,7 @@ const faqData = [
     </style>
   </head>
   <body class="bg-black min-h-screen">
-    <div class="relative w-full lg:min-h-[4350px]">
+    <div class="relative w-full">
 
       <!-- Hero/Header Section with Background -->
       <div class="relative w-full h-[400px] md:h-[450px] lg:h-[458px] bg-[#14181f]">
@@ -172,7 +172,7 @@ const faqData = [
 
         <!-- Navigation -->
         <nav class="absolute top-0 left-0 w-full z-50">
-          <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-0 lg:relative lg:inline-flex lg:gap-[221px] lg:top-[15px] lg:left-[360px] lg:w-auto">
+          <div class="flex items-center justify-between px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-[360px] py-4 lg:py-4 max-w-[1920px] mx-auto">
             <!-- Logo -->
             <a href="/" aria-label="Home">
               <img
@@ -195,9 +195,9 @@ const faqData = [
             </button>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center justify-end gap-4 md:gap-6 lg:gap-10 w-full lg:w-auto relative lg:flex-[0_0_auto]">
+            <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-10">
               <div
-                class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center relative lg:inline-flex lg:flex-[0_0_auto]"
+                class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center"
                 aria-label="Main navigation"
               >
                 {navigationLinks.map((item) =>
@@ -222,14 +222,14 @@ const faqData = [
 
               <a
                 href="/contact"
-                class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] relative flex-[0_0_auto] bg-[#fedf41] rounded-[12.39px] cursor-pointer transition-opacity hover:opacity-90"
+                class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] bg-[#fedf41] rounded-[12.39px] cursor-pointer transition-opacity hover:opacity-90"
                 aria-label="Get in Touch"
               >
-                <span class="relative flex items-center justify-center w-fit font-montserrat font-medium text-[#14181f] text-sm md:text-base text-center tracking-[0] leading-[25.6px] whitespace-nowrap">
+                <span class="flex items-center justify-center w-fit font-montserrat font-medium text-[#14181f] text-base text-center whitespace-nowrap">
                   Get in Touch
                 </span>
                 <img
-                  class="relative w-[18.33px] h-[11.41px] mr-[-0.77px]"
+                  class="w-[18.33px] h-[11.41px]"
                   alt=""
                   src="/img/line-108-1.svg"
                   aria-hidden="true"
@@ -294,21 +294,11 @@ const faqData = [
         </section>
       </div>
 
-      <!-- Background decorative elements (Desktop only) -->
-      <img
-        class="hidden lg:block absolute top-[1169px] left-0 w-[1920px] h-[787px]"
-        alt="Union"
-        src="/img/union.svg"
-      />
-
-      <img
-        class="hidden lg:block absolute top-[1438px] left-[1009px] w-[559px] h-[354px]"
-        alt="Rectangle"
-        src="/img/memberships-why-ambition.webp"
-      />
+      <!-- Background decorative elements - hidden as they rely on absolute positioning -->
+      <!-- These decorative elements are not compatible with responsive centered layout -->
 
       <!-- Membership Benefits Section -->
-      <section class="flex flex-col items-start gap-6 md:gap-[30px] px-4 md:px-8 lg:px-0 py-12 md:py-16 lg:py-24 lg:absolute lg:top-[428px] lg:left-[360px] lg:w-[1194px]">
+      <section class="flex flex-col items-start gap-6 md:gap-[30px] px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-0 py-12 md:py-16 lg:py-24 max-w-[1194px] mx-auto">
         <!-- First Row of Benefits -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-[30px] w-full">
           {membershipBenefitsRow1.map((benefit) => (
@@ -350,7 +340,7 @@ const faqData = [
 
       <!-- Why Ambition Fitness Section -->
       <section
-        class="flex flex-col items-start gap-8 md:gap-11 px-4 md:px-8 lg:px-[49px] py-8 md:py-10 mx-4 md:mx-8 lg:mx-auto lg:absolute lg:top-[1386px] lg:left-[calc(50%_-_595px)] lg:w-[748px] bg-black rounded-xl border border-solid border-[#363d49] shadow-[0px_1px_2px_#0000000d] mt-8 lg:mt-0"
+        class="flex flex-col items-start gap-8 md:gap-11 px-4 md:px-8 lg:px-[49px] py-8 md:py-10 mx-4 md:mx-8 lg:mx-auto max-w-[748px] bg-black rounded-xl border border-solid border-[#363d49] shadow-[0px_1px_2px_#0000000d] mt-8"
         aria-labelledby="testimonials-heading"
       >
         <div class="flex flex-col items-start gap-3.5 w-full">
@@ -415,7 +405,7 @@ const faqData = [
 
       <!-- What's Included Section -->
       <section
-        class="flex flex-col items-start gap-8 md:gap-12 px-4 md:px-8 lg:px-0 py-8 md:py-12 lg:py-20 lg:absolute lg:top-[2032px] lg:left-[calc(50%_-_367px)] lg:w-[734px] mt-12 lg:mt-0"
+        class="flex flex-col items-start gap-8 md:gap-12 px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-0 py-8 md:py-12 lg:py-20 max-w-[734px] mx-auto mt-12"
         aria-labelledby="whats-included-heading"
       >
         <div class="flex flex-col items-center w-full">
@@ -452,13 +442,13 @@ const faqData = [
 
       <!-- Main Image -->
       <img
-        class="w-full lg:w-[1196px] h-[250px] md:h-[350px] lg:h-[449px] object-cover mx-auto px-4 md:px-8 lg:px-0 rounded-lg lg:rounded-none lg:absolute lg:top-[2450px] lg:left-[360px]"
+        class="w-full max-w-[1196px] h-[250px] md:h-[350px] lg:h-[449px] object-cover mx-auto px-4 md:px-8 lg:px-0 rounded-lg"
         alt="Ambition Fitness Facility"
         src="/img/memberships-main.jpg"
       />
 
       <!-- Membership FAQ Section -->
-      <section id="faq" class="flex flex-col w-full max-w-[1010px] items-center gap-8 md:gap-12 px-4 md:px-8 py-16 md:py-20 mx-auto lg:absolute lg:top-[2950px] lg:left-[calc(50%_-_505px)]">
+      <section id="faq" class="flex flex-col w-full max-w-[1010px] items-center gap-8 md:gap-12 px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-0 py-16 md:py-20 mx-auto">
         <header class="flex flex-col items-center gap-4 text-center">
           <div class="inline-flex items-center gap-1.5">
             <p class="font-montserrat font-medium text-[#fedf41] text-sm md:text-[15px] tracking-[0.45px] leading-[24px]">
@@ -504,7 +494,7 @@ const faqData = [
       </section>
 
       <!-- Get Started Today Section -->
-      <section class="flex flex-col items-center justify-center gap-6 md:gap-10 p-8 md:p-12 lg:p-[60px] mx-4 md:mx-8 lg:mx-auto lg:absolute lg:top-[3800px] lg:left-[calc(50%_-_505px)] lg:w-[1010px] bg-[#fedf41] rounded-xl mt-4 lg:mt-0 mb-8 md:mb-12">
+      <section class="flex flex-col items-center justify-center gap-6 md:gap-10 p-8 md:p-12 lg:p-[60px] mx-4 md:mx-8 lg:mx-auto max-w-[1010px] bg-[#fedf41] rounded-xl mt-4 mb-8 md:mb-12">
         <div class="flex flex-col items-center justify-center gap-4 md:gap-5 w-full">
           <h2 class="font-prompt font-medium text-[#14181f] text-2xl md:text-3xl lg:text-5xl text-center tracking-[0] leading-[1.2] lg:leading-[53.3px]">
             Get Started Today!

@@ -39,7 +39,7 @@ const transformationData: TransformationCard[] = [
 
 export const ClientTransformationsSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full lg:w-[1203px] mx-auto lg:mx-0 items-center gap-8 md:gap-12 lg:gap-[50px] px-4 md:px-8 py-12 md:py-16 lg:py-0 relative lg:absolute lg:top-[2981px] lg:left-[calc(50.00%_-_601px)]">
+    <section className="flex flex-col w-full max-w-[1203px] mx-auto items-center gap-8 md:gap-12 lg:gap-[50px] px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-0 py-12 md:py-16 lg:py-24">
       <header className="flex flex-col items-start gap-4 md:gap-[25px] w-full">
         <div className="inline-flex items-center gap-1.5">
           <p className="w-fit [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-coloryellow text-sm md:text-[15px] text-center tracking-[0.45px] leading-[24.0px] whitespace-nowrap">

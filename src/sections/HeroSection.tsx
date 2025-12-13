@@ -2,7 +2,7 @@ import React from "react";
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full lg:w-[783px] items-start justify-center gap-6 md:gap-10 px-4 md:px-8 lg:px-0 pt-24 pb-12 md:py-16 lg:py-0 relative lg:absolute lg:top-[272px] lg:left-[357px] z-10">
+    <section className="flex flex-col w-full max-w-[783px] items-start justify-center gap-6 md:gap-10 px-4 md:px-8 lg:px-12 xl:px-0 pt-24 pb-12 md:py-16 lg:pt-[180px] lg:pb-16 mx-auto lg:mx-0 lg:ml-[8%] xl:ml-[12%] 2xl:ml-[18%] z-10">
       <header className="flex flex-col items-start gap-4 md:gap-6 relative self-stretch w-full flex-[0_0_auto]">
         <div className="flex flex-col items-start gap-6 md:gap-[30px] relative self-stretch w-full flex-[0_0_auto]">
           <div className="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">

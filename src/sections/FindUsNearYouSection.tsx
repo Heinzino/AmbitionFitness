@@ -5,7 +5,7 @@ export const FindUsNearYouSection = (): JSX.Element => {
   const placeId = "ChIJkVH-mdV6cVMR4AVhyOPuTYw";
 
   return (
-    <section className="flex flex-col w-full lg:w-[1200px] mx-auto lg:mx-0 items-center gap-8 md:gap-12 px-4 md:px-8 py-12 md:py-16 lg:py-0 relative lg:absolute lg:top-[6903px] lg:left-[calc(50.00%_-_600px)]">
+    <section className="flex flex-col w-full max-w-[1200px] mx-auto items-center gap-8 md:gap-12 px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-0 py-12 md:py-16 lg:py-24">
       <header className="flex flex-col w-full max-w-[1010px] items-start justify-center gap-4 md:gap-5">
         <h2 className="flex items-center justify-center self-stretch [font-family:'Prompt',Helvetica] font-medium text-white text-3xl md:text-4xl lg:text-5xl text-center tracking-[0] leading-tight md:leading-[53.3px]">
           Train With the Best—Right Here in Calgary
