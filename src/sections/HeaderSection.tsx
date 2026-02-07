@@ -23,7 +23,7 @@ export const HeaderSection = (): JSX.Element => {
         <img
           className="w-[400px] xl:w-[520px] h-[530px] xl:h-[688px] object-cover flex-shrink-0"
           alt="Fitness trainer working with client"
-          src="/img/rectangle-6540.webp"
+          src="/img/AF_main.jpeg"
           width={520}
           height={688}
           loading="lazy"
@@ -112,8 +112,8 @@ export const HeaderSection = (): JSX.Element => {
         <img
           className="w-full max-w-[520px] h-auto object-cover rounded-lg"
           alt="Fitness trainer working with client"
-          src="/img/rectangle-6540-sm.webp"
-          srcSet="/img/rectangle-6540-sm.webp 520w"
+          src="/img/AF_main.jpeg"
+          srcSet="/img/AF_main.jpeg 520w"
           sizes="(max-width: 520px) 100vw, 520px"
           width={520}
           height={688}
