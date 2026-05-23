@@ -11,7 +11,7 @@
 | Performance | 9/10 | Good |
 | Local SEO | 9/10 | Good |
 
-**Last Updated:** 2025-11-29
+**Last Updated:** 2026-05-22
 
 ---
 
