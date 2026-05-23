@@ -1,0 +1,455 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+
+const pageTitle = "Terms of Service - Ambition Fitness Calgary";
+const pageDescription = "Read the Terms of Service for Ambition Fitness covering training services, memberships, health acknowledgement, bookings, SMS messaging, and your obligations as a client.";
+
+const navigationLinks = [
+  { label: "Home", path: "/", isActive: false },
+  { label: "Personal Training", path: "/personal-training", isActive: false },
+  { label: "Memberships", path: "/memberships", isActive: false },
+  { label: "Group Sessions", path: "/group-sessions", isActive: false },
+  { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+];
+
+const lastUpdated = "May 22, 2026";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/img/AF_Logo_White.png" />
+    <SEO title={pageTitle} description={pageDescription} canonical="/terms-of-service" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Montserrat:wght@400;500;600;700&family=Prompt:wght@500&display=swap" /></noscript>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { overflow-x: hidden; overflow-y: auto; }
+    </style>
+  </head>
+  <body class="bg-black min-h-screen">
+    <!-- Navigation -->
+    <nav class="relative w-full z-50 bg-black">
+      <div class="flex items-center justify-between px-4 md:px-8 lg:px-0 py-4 lg:py-6 lg:max-w-[1200px] lg:mx-auto">
+        <a href="/">
+          <img
+            class="w-16 md:w-20 lg:w-[95px] h-auto aspect-[0.93] object-cover relative z-50"
+            alt="Ambition Fitness Logo"
+            src="/img/image-3-2.png"
+          />
+        </a>
+
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden flex flex-col justify-center items-center w-10 h-10 bg-transparent border-0 cursor-pointer z-50 relative"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+          <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
+          <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
+        </button>
+
+        <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-10">
+          <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center">
+            {navigationLinks.map((link) => (
+              <a
+                class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
+                href={link.path}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] bg-variable-collection-coloryellow rounded-[12.39px] hover:opacity-90 transition-opacity">
+            <span class="flex items-center justify-center w-fit [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-base text-center whitespace-nowrap">
+              Get in Touch
+            </span>
+            <img class="relative w-[18.33px] h-[11.41px]" alt="Line" src="/img/line-108-3.svg" />
+          </a>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden md:hidden">
+        <div class="flex flex-col items-center justify-center h-full px-4">
+          <div class="flex flex-col items-center gap-8 w-full max-w-sm">
+            {navigationLinks.map((link) => (
+              <a class="text-white text-2xl font-semibold [font-family:'Inter',Helvetica] hover:text-variable-collection-coloryellow transition-colors" href={link.path}>
+                {link.label}
+              </a>
+            ))}
+            <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-variable-collection-coloryellow rounded-[12.39px] mt-4">
+              <span class="font-semibold text-variable-collection-colorpriamry text-lg [font-family:'Inter',Helvetica]">Get in Touch</span>
+              <img class="w-[18.33px] h-[11.41px]" alt="Line" src="/img/line-108-3.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="w-full px-4 md:px-8 py-12 md:py-16 lg:py-20">
+      <article class="max-w-3xl mx-auto [font-family:'Montserrat',Helvetica]">
+        <header class="mb-10 md:mb-14">
+          <h1 class="font-semibold text-white text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight">
+            Terms of <span class="text-variable-collection-coloryellow">Service</span>
+          </h1>
+          <p class="mt-4 text-[#919191] text-sm md:text-base">Last updated: {lastUpdated}</p>
+        </header>
+
+        <div class="space-y-10 text-[#e4e4e4] text-base md:text-lg leading-relaxed">
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Introduction</h2>
+            <p>
+              Welcome to Ambition Fitness ("Company," "we," "our," or "us"). These Terms of Service ("Terms")
+              govern your use of our website, training services, memberships, and SMS messaging program. By
+              booking a session, purchasing a membership, or signing up for SMS communications, you agree to be
+              bound by these Terms.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Services Description</h2>
+            <p>
+              Ambition Fitness operates a personal training facility in Calgary, Alberta. Our services include
+              one-on-one personal training, small group training, group fitness sessions, memberships, virtual
+              coaching, body transformation programs, and related fitness and wellness services delivered at our
+              facility or online.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Health Acknowledgement and Assumption of Risk</h2>
+            <p>
+              Participation in exercise and physical training carries inherent risks, including the risk of injury,
+              illness, or in rare cases more serious outcomes. By using our services, you acknowledge that:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>
+                You should consult a qualified medical professional before starting any new exercise program,
+                particularly if you have any pre-existing medical conditions, injuries, or concerns.
+              </li>
+              <li>
+                You are responsible for disclosing relevant medical history, injuries, medications, pregnancy, and
+                any other condition that may affect your ability to train safely.
+              </li>
+              <li>
+                You will follow your coach's instructions, train within your current ability, and stop and notify
+                staff immediately if you experience pain, dizziness, or any other warning sign.
+              </li>
+              <li>
+                You voluntarily assume the risks associated with physical training, including any equipment use,
+                and you accept full responsibility for any injuries that may occur.
+              </li>
+            </ul>
+            <p>
+              Where required, you agree to sign a separate waiver and informed-consent document prior to
+              participating in training. These Terms do not replace that waiver.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Memberships, Packages, and Payments</h2>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>
+                Membership and package terms, including pricing, billing frequency, session counts, and expiry,
+                are described at the point of purchase and form part of these Terms.
+              </li>
+              <li>
+                Unless otherwise stated, memberships renew automatically until cancelled in writing with the
+                notice period specified in your agreement.
+              </li>
+              <li>
+                Sessions and packages are non-transferable unless we explicitly approve a transfer in writing.
+              </li>
+              <li>
+                Refunds, pauses, and freezes are handled in accordance with the specific terms of your membership
+                or package and any applicable consumer-protection legislation in Alberta.
+              </li>
+              <li>
+                Failed or chargeback payments may result in suspension of access until the balance is resolved.
+              </li>
+            </ul>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Bookings, Cancellations, and No-Shows</h2>
+            <p>
+              You are responsible for managing your bookings through our scheduling system. Unless otherwise
+              communicated in writing:
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Sessions cancelled with less than 24 hours' notice may be charged in full or counted against your remaining sessions.</li>
+              <li>No-shows are treated as a used session.</li>
+              <li>We reserve the right to reschedule or substitute a coach in the event of illness, emergency, or operational issues.</li>
+            </ul>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Facility Rules and Conduct</h2>
+            <p>
+              While using our facility, you agree to follow our posted rules, treat staff and other members with
+              respect, and use equipment as instructed. We may suspend or terminate your access for behaviour that
+              is unsafe, threatening, discriminatory, or otherwise inconsistent with the values of our community.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">SMS Messaging Program</h2>
+
+            <h3 class="text-white text-xl md:text-2xl font-semibold mt-4">Program Description</h3>
+            <p>
+              Users who consent receive text messages that may include transactional updates (such as booking
+              confirmations, appointment reminders, and account notifications) and promotional content (only with
+              explicit opt-in).
+            </p>
+
+            <h3 class="text-white text-xl md:text-2xl font-semibold mt-4">Opt-Out Instructions</h3>
+            <p>
+              Simply text <strong class="text-white">STOP</strong> to the phone number from which you received the
+              message. We will send a confirmation that you have been unsubscribed.
+            </p>
+
+            <h3 class="text-white text-xl md:text-2xl font-semibold mt-4">Rejoining Instructions</h3>
+            <p>
+              You can re-enroll through our website or by contacting us directly to resume receiving messages
+              based on your preferences.
+            </p>
+
+            <h3 class="text-white text-xl md:text-2xl font-semibold mt-4">Help Instructions</h3>
+            <p>
+              Reply with the keyword <strong class="text-white">HELP</strong> for more assistance, or reach out
+              directly to <a href="mailto:info@ambitionfitness.ca" class="text-variable-collection-coloryellow hover:underline">info@ambitionfitness.ca</a>.
+            </p>
+
+            <h3 class="text-white text-xl md:text-2xl font-semibold mt-4">Message Frequency</h3>
+            <p>Frequency varies based on your interactions, bookings, and the message types you have opted into.</p>
+
+            <h3 class="text-white text-xl md:text-2xl font-semibold mt-4">Message and Data Rates</h3>
+            <p>Message and data rates may apply for messages sent to you from us and to us from you.</p>
+
+            <h3 class="text-white text-xl md:text-2xl font-semibold mt-4">Carrier Liability</h3>
+            <p>Carriers are not liable for delayed or undelivered messages.</p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Age Requirement</h2>
+            <p>
+              You must be 18 years of age or older to enter into these Terms and to use our SMS messaging program.
+              Training services for individuals under 18 are arranged directly with a parent or legal guardian who
+              accepts these Terms on the minor's behalf.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">User Responsibilities</h2>
+            <p>You agree to:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Provide accurate, current, and complete information at registration and when booking sessions</li>
+              <li>Maintain the confidentiality of any account credentials you create</li>
+              <li>Use our services lawfully and in accordance with these Terms</li>
+              <li>Avoid any conduct that interferes with the operation of our website, facility, or other members' experience</li>
+              <li>Comply with all applicable laws and regulations</li>
+            </ul>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Intellectual Property</h2>
+            <p>
+              All content, features, and functionality of our website and services, including but not limited to
+              text, graphics, logos, photography, video, programming, training materials, and software, are the
+              exclusive property of Ambition Fitness or its licensors and are protected by Canadian and
+              international intellectual property laws. You may not reproduce, distribute, or create derivative
+              works from our content without our prior written consent.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by law, Ambition Fitness shall not be liable for any indirect,
+              incidental, special, consequential, or punitive damages, including but not limited to loss of
+              profits, data, goodwill, or other intangible losses, arising out of or related to your use of our
+              website, facility, or services. Nothing in these Terms limits any liability that cannot be excluded
+              under applicable law.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Indemnification</h2>
+            <p>
+              You agree to defend, indemnify, and hold harmless Ambition Fitness, its owners, employees, and
+              contractors from and against any claims, liabilities, damages, losses, and expenses (including
+              reasonable legal fees) arising out of or related to your use of our services, your breach of these
+              Terms, or your violation of any applicable law or third-party right.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Privacy</h2>
+            <p>
+              For information about how we handle your personal data, please refer to our
+              <a href="/privacy-policy" class="text-variable-collection-coloryellow hover:underline">Privacy Policy</a>.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Compliance</h2>
+            <p>
+              Our SMS practices comply with Canada's Anti-Spam Legislation (CASL), applicable provisions of
+              PIPEDA and Alberta's PIPA, and standard wireless carrier guidelines.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Modifications to Terms</h2>
+            <p>
+              We may update these Terms from time to time. Changes will be posted on this page with an updated
+              "Last updated" date. Continued use of our services after changes are posted indicates your
+              acceptance of the revised Terms.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Governing Law</h2>
+            <p>
+              These Terms are governed by the laws of the Province of Alberta and the federal laws of Canada
+              applicable therein. Any dispute arising out of or related to these Terms or our services shall be
+              resolved in the courts of Calgary, Alberta, unless otherwise required by law.
+            </p>
+          </section>
+
+          <section class="space-y-4">
+            <h2 class="text-white text-2xl md:text-3xl font-semibold">Contact Us</h2>
+            <p>If you have any questions about these Terms, please contact us at:</p>
+            <div class="rounded-xl border border-white/10 bg-white/5 p-5 md:p-6 space-y-2">
+              <p class="text-white font-semibold">Ambition Fitness</p>
+              <p>1440 52 St NE #130, Calgary, AB T2A 4T8</p>
+              <p>
+                Phone:
+                <a href="tel:403-507-3099" class="text-variable-collection-coloryellow hover:underline">403-507-3099</a>
+              </p>
+              <p>
+                Email:
+                <a href="mailto:info@ambitionfitness.ca" class="text-variable-collection-coloryellow hover:underline">info@ambitionfitness.ca</a>
+              </p>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full mt-12 pt-12 pb-8 px-4 md:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div class="md:col-span-1">
+            <img class="w-[50px] md:w-[63px] h-auto mb-4" alt="Ambition Fitness Logo" src="/img/image-3-2-1.png" />
+            <p class="text-[#e4e4e4] text-sm mb-4">
+              Join a community that's transforming lives through evidence-based fitness strategies.
+            </p>
+            <!-- footer-contact-info -->
+            <div class="space-y-2 text-sm mt-4">
+              <a href="https://maps.google.com/?q=1440+52+St+NE+%23130,+Calgary,+AB+T2A+4T8" target="_blank" rel="noopener noreferrer" class="flex items-start gap-2 text-[#e4e4e4] hover:text-variable-collection-coloryellow transition-colors">
+                <svg class="w-4 h-4 mt-0.5 flex-shrink-0 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                <span>1440 52 St NE #130<br />Calgary, AB T2A 4T8</span>
+              </a>
+              <a href="tel:403-507-3099" class="flex items-center gap-2 text-[#e4e4e4] hover:text-variable-collection-coloryellow transition-colors">
+                <svg class="w-4 h-4 flex-shrink-0 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>403-507-3099</span>
+              </a>
+              <a href="mailto:info@ambitionfitness.ca" class="flex items-center gap-2 text-[#e4e4e4] hover:text-variable-collection-coloryellow transition-colors break-all">
+                <svg class="w-4 h-4 flex-shrink-0 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@ambitionfitness.ca</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Services</h3>
+            <div class="space-y-2">
+              <a href="/personal-training" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Personal Training</a>
+              <a href="/memberships" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Memberships</a>
+              <a href="/group-sessions" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Group Sessions</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Service Area</h3>
+            <div class="space-y-2">
+              <a href="/personal-trainer-mayland-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Mayland Heights</a>
+              <a href="/personal-trainer-meridian-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Meridian</a>
+              <a href="/personal-trainer-raddison-heights-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Raddison Heights</a>
+              <a href="/personal-trainer-bridgeland-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Bridgeland-Riverside</a>
+              <a href="/personal-trainer-renfrew-calgary" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Renfrew</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-variable-collection-coloryellow font-semibold mb-4">Company</h3>
+            <div class="space-y-2">
+              <a href="/" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Home</a>
+              <a href="/blog" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Blog</a>
+              <a href="/contact" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Contact Us</a>
+              <a href="/privacy-policy" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Privacy Policy</a>
+              <a href="/terms-of-service" class="block text-[#e4e4e4] text-sm hover:text-variable-collection-coloryellow">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-gray-700 flex justify-between items-center">
+          <p class="text-[#919191] text-sm">© 2025 Ambition Fitness · All rights reserved.</p>
+          <a href="https://www.instagram.com/ambitionfitness.ca" target="_blank" rel="noopener noreferrer">
+            <img class="w-8 h-8" alt="Instagram" src="/img/instagram-icon.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerLines = document.querySelectorAll('.hamburger-line') as NodeListOf<HTMLElement>;
+        let isMenuOpen = false;
+
+        if (mobileMenuBtn && mobileMenu) {
+          mobileMenuBtn.addEventListener('click', function() {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+              mobileMenu.classList.remove('hidden');
+              document.body.style.overflow = 'hidden';
+              hamburgerLines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+              hamburgerLines[1].style.opacity = '0';
+              hamburgerLines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+              mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              isMenuOpen = false;
+              mobileMenu.classList.add('hidden');
+              document.body.style.overflow = '';
+              hamburgerLines[0].style.transform = '';
+              hamburgerLines[1].style.opacity = '1';
+              hamburgerLines[2].style.transform = '';
+              mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
