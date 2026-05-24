@@ -166,7 +166,7 @@
 |-------|-------|
 | Name | Ambition Fitness |
 | Location | Calgary, Alberta |
-| Phone | 403-507-3099 |
+| Phone | 825-479-2977 |
 | Email | info@ambitionfitness.ca |
 | Instagram | @ambitionfitness.ca |
 | Google Place ID | ChIJkVH-mdV6cVMR4AVhyOPuTYw |
@@ -238,7 +238,7 @@
 "Get in touch with Ambition Fitness Calgary. Book a consultation, schedule a tour, or ask questions. Located in NE Calgary, serving Bridgeland and surrounding areas."
 
 ### Get In Touch
-"Contact Ambition Fitness for personalized training inquiries. Call 403-507-3099 or book online. Your fitness journey starts here."
+"Contact Ambition Fitness for personalized training inquiries. Call 825-479-2977 or book online. Your fitness journey starts here."
 
 ### Virtual Tour
 "Take a virtual tour of Ambition Fitness Calgary. Explore our state-of-the-art private training facility from the comfort of your home."
