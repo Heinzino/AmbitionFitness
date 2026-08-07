@@ -13,6 +13,7 @@ const navigationLinks = [
   { label: "Memberships", path: "/memberships", isActive: false },
   { label: "Group Sessions", path: "/group-sessions", isActive: false },
   { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+  { label: "Apparel", path: "https://www.hellolubdub.com/collections/ambition-fitness", isActive: false },
 ];
 
 const localBenefits = [
@@ -100,10 +101,12 @@ const faqData = [
             <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
             <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
           </button>
-          <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-10">
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center">
+          <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-6 xl:gap-10">
+            <div class="flex flex-wrap justify-center gap-3 lg:gap-5 xl:gap-[30px] items-center">
               {navigationLinks.map((link) => (
-                <a class={`relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`} href={link.path}>{link.label}</a>
+                <a class={`relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm xl:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`} href={link.path}
+                target={link.path.startsWith("http") ? "_blank" : undefined}
+                rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a>
               ))}
             </div>
             <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] bg-variable-collection-coloryellow rounded-[12.39px] hover:opacity-90 transition-opacity">
@@ -116,7 +119,9 @@ const faqData = [
           <div class="flex flex-col items-center justify-center h-full px-4">
             <div class="flex flex-col items-center gap-8 w-full max-w-sm">
               {navigationLinks.map((link) => (
-                <a class={`text-2xl font-semibold [font-family:'Inter',Helvetica] ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`} href={link.path}>{link.label}</a>
+                <a class={`text-2xl font-semibold [font-family:'Inter',Helvetica] ${link.isActive ? 'text-variable-collection-coloryellow' : 'text-white hover:text-variable-collection-coloryellow transition-colors'}`} href={link.path}
+                target={link.path.startsWith("http") ? "_blank" : undefined}
+                rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a>
               ))}
               <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-8 py-4 bg-variable-collection-coloryellow rounded-[12.39px] mt-4 hover:opacity-90 transition-opacity">
                 <span class="font-semibold text-variable-collection-colorpriamry text-lg [font-family:'Inter',Helvetica]">Get in Touch</span>

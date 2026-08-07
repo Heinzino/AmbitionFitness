@@ -12,6 +12,7 @@ const navigationLinks = [
   { label: "Memberships", path: "/memberships", isActive: false },
   { label: "Group Sessions", path: "/group-sessions", isActive: false },
   { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+  { label: "Apparel", path: "https://www.hellolubdub.com/collections/ambition-fitness", isActive: false },
 ];
 
 const tips = [
@@ -96,9 +97,11 @@ const equipment = [
           <span class="hamburger-line block w-7 h-0.5 bg-white mb-1.5 transition-all duration-300"></span>
           <span class="hamburger-line block w-7 h-0.5 bg-white transition-all duration-300"></span>
         </button>
-        <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-10">
-          <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center">
-            {navigationLinks.map((link) => (<a class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm lg:text-lg text-center text-white hover:text-variable-collection-coloryellow transition-colors" href={link.path}>{link.label}</a>))}
+        <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-6 xl:gap-10">
+          <div class="flex flex-wrap justify-center gap-3 lg:gap-5 xl:gap-[30px] items-center">
+            {navigationLinks.map((link) => (<a class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-sm xl:text-lg text-center text-white hover:text-variable-collection-coloryellow transition-colors" href={link.path}
+            target={link.path.startsWith("http") ? "_blank" : undefined}
+            rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a>))}
           </div>
           <a href="/contact" class="inline-flex items-center justify-center gap-[10.33px] px-4 md:px-[23px] py-3 md:py-[15.49px] bg-variable-collection-coloryellow rounded-[12.39px] hover:opacity-90 transition-opacity">
             <span class="flex items-center justify-center w-fit [font-family:'Montserrat',Helvetica] font-medium text-variable-collection-colorpriamry text-base text-center whitespace-nowrap">Get in Touch</span>
@@ -108,7 +111,9 @@ const equipment = [
       </div>
       <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-40 hidden md:hidden">
         <div class="flex flex-col items-center justify-center h-full gap-8">
-          {navigationLinks.map((link) => (<a class="text-2xl font-medium text-white" href={link.path}>{link.label}</a>))}
+          {navigationLinks.map((link) => (<a class="text-2xl font-medium text-white" href={link.path}
+          target={link.path.startsWith("http") ? "_blank" : undefined}
+          rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}>{link.label}</a>))}
           <a href="/contact" class="mt-4 inline-flex items-center justify-center gap-2 px-8 py-4 bg-variable-collection-coloryellow rounded-full"><span class="font-medium text-black">Get in Touch</span></a>
         </div>
       </div>

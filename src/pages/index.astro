@@ -51,6 +51,7 @@ const navigationLinks = [
   { label: "Memberships", path: "/memberships", isActive: false },
   { label: "Group Sessions", path: "/group-sessions", isActive: false },
   { label: "Virtual Tour", path: "/virtual-tour", isActive: false },
+  { label: "Apparel", path: "https://www.hellolubdub.com/collections/ambition-fitness", isActive: false },
 ];
 ---
 
@@ -202,20 +203,24 @@ const navigationLinks = [
           </button>
 
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-10">
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center">
+          <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-6 xl:gap-10">
+            <div class="flex flex-wrap justify-center gap-3 lg:gap-5 xl:gap-[30px] items-center">
               {navigationLinks.map((link) =>
                 link.isActive ? (
                   <a
-                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-variable-collection-coloryellow text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-variable-collection-coloryellow text-sm xl:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>
                 ) : (
                   <a
-                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
+                    class="relative flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm xl:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-variable-collection-coloryellow transition-colors"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>
@@ -249,6 +254,8 @@ const navigationLinks = [
                   <a
                     class="text-variable-collection-coloryellow text-2xl font-semibold [font-family:'Inter',Helvetica]"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>
@@ -256,6 +263,8 @@ const navigationLinks = [
                   <a
                     class="text-white text-2xl font-semibold [font-family:'Inter',Helvetica] hover:text-variable-collection-coloryellow transition-colors"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>

@@ -12,6 +12,7 @@ const navigationLinks = [
   { label: "Memberships", path: "/memberships", isActive: false },
   { label: "Group Sessions", path: "/group-sessions", isActive: false },
   { label: "Virtual Tour", path: "/virtual-tour", isActive: true },
+  { label: "Apparel", path: "https://www.hellolubdub.com/collections/ambition-fitness", isActive: false },
 ];
 
 const facilityFeatures = [
@@ -121,20 +122,24 @@ const galleryImages = [
           </button>
 
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-10">
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-[30px] items-center">
+          <div class="hidden md:flex items-center gap-4 md:gap-6 lg:gap-6 xl:gap-10">
+            <div class="flex flex-wrap justify-center gap-3 lg:gap-5 xl:gap-[30px] items-center">
               {navigationLinks.map((link) =>
                 link.isActive ? (
                   <a
-                    class="flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-[#fedf41] text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
+                    class="flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-[#fedf41] text-sm xl:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>
                 ) : (
                   <a
-                    class="flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm lg:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-[#fedf41] transition-colors"
+                    class="flex items-center justify-center w-fit [font-family:'Inter',Helvetica] font-medium text-white text-sm xl:text-lg text-center tracking-[0] leading-[27px] whitespace-nowrap hover:text-[#fedf41] transition-colors"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>
@@ -168,6 +173,8 @@ const galleryImages = [
                   <a
                     class="text-[#fedf41] text-2xl font-semibold [font-family:'Inter',Helvetica]"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>
@@ -175,6 +182,8 @@ const galleryImages = [
                   <a
                     class="text-white text-2xl font-semibold [font-family:'Inter',Helvetica] hover:text-[#fedf41] transition-colors"
                     href={link.path}
+                    target={link.path.startsWith("http") ? "_blank" : undefined}
+                    rel={link.path.startsWith("http") ? "noopener noreferrer" : undefined}
                   >
                     {link.label}
                   </a>
