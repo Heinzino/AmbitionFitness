@@ -123,7 +123,7 @@ export const TestimonialsSection = (): JSX.Element => {
     >
       <meta itemProp="name" content="Ambition Fitness" />
       <meta itemProp="image" content="https://ambitionfitness.ca/img/image-3-2.png" />
-      <meta itemProp="telephone" content="+1-587-328-1695" />
+      <meta itemProp="telephone" content="+1-403-507-3099" />
       <meta itemProp="address" content="2421 Centre Ave #4, Calgary, AB T2E 0A9, Canada" />
       <div itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
         <meta itemProp="ratingValue" content="4.7" />
